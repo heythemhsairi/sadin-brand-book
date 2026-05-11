@@ -1131,6 +1131,11 @@ html,body{overflow-x:hidden}
 
 @media (max-width:1488px){
   .slide{
+    /* Keep the 1440-px layout box; the body's overflow-x:hidden clips
+       the un-scaled overflow and the transform handles the visual fit.
+       Without max-width:none, narrow viewports would shrink the layout
+       box BEFORE the scale was applied, double-shrinking every slide. */
+    max-width:none;
     transform:scale(var(--scale));
     margin-bottom:calc(810px * (var(--scale) - 1));
   }
