@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes,viewport-fit=cover" />
 <title>Sadine Tours · Brand Identity System · 2026</title>
 <meta name="description" content="Sadine Tours — premium travel brand identity system. Strategy, logo, color, type, visual language, applications." />
 
@@ -1135,6 +1135,44 @@ html,body{overflow-x:hidden}
     margin-bottom:calc(810px * (var(--scale) - 1));
   }
 }
+
+/* ─────────── Mobile / tablet — let slides claim more screen width ─────────── */
+@media (max-width:900px){
+  .book{padding:24px 0 64px;gap:20px}
+  .slide{
+    border-radius:8px;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,.55);
+    /* Browser pinch-zoom remains the natural way to read detail */
+    touch-action:pan-y pinch-zoom;
+  }
+  /* Hint pill that fades after first scroll so people know they can pinch */
+  .mobile-hint{
+    position:fixed;left:50%;transform:translateX(-50%);
+    bottom:18px;z-index:1000;
+    background:rgba(15,5,33,.85);backdrop-filter:blur(10px);
+    border:1px solid var(--hair-strong);border-radius:99px;
+    padding:9px 16px;
+    font-family:var(--display);font-weight:500;font-size:11px;
+    letter-spacing:.28em;text-transform:uppercase;color:var(--soft);
+    box-shadow:0 12px 32px -8px rgba(0,0,0,.6);
+    transition:opacity .5s,transform .5s;
+    pointer-events:none;
+  }
+  .mobile-hint.hide{opacity:0;transform:translate(-50%,12px)}
+}
+@media (min-width:901px){
+  .mobile-hint{display:none}
+}
+@media (max-width:480px){
+  .book{padding:16px 0 48px;gap:14px}
+}
+/* Disable hover lift on touch screens — it's a desktop-only treatment */
+@media (hover:none) and (pointer:coarse){
+  .card:hover,.six .v:hover,.swatch-card:hover,.grad:hover,.frame-img:hover,
+  .logo-grid .tile:hover,.feed-grid .post:hover,.stories .story:hover,
+  .env:hover,.uniform-card:hover{transform:none;box-shadow:none;border-color:inherit}
+}
+@media print{.mobile-hint{display:none !important}}
 
 /* ─────────── Entrance reveal ─────────── */
 .slide.reveal-init{
@@ -2898,12 +2936,16 @@ html,body{overflow-x:hidden}
 
   /* ───────── 1 · Reactive scale: fit slides to any viewport ───────── */
   const SLIDE_W = 1440;
-  const H_GUTTER = 48; /* matches .book left+right padding */
 
   function applyScale(){
     const w = window.innerWidth;
-    const target = SLIDE_W + H_GUTTER;
-    const s = w >= target ? 1 : Math.max(0.18, (w - 24) / SLIDE_W);
+    /* On phones / tablets the .book has no horizontal padding, so the
+       slide can claim the full viewport width. On desktop we keep a
+       48-px outer gutter for editorial framing. */
+    const isMobile = w < 901;
+    const gutter = isMobile ? 0 : 48;
+    const target = SLIDE_W + gutter;
+    const s = w >= target ? 1 : Math.max(0.18, (w - gutter) / SLIDE_W);
     root.style.setProperty('--scale', s.toFixed(4));
   }
 
@@ -2934,16 +2976,34 @@ html,body{overflow-x:hidden}
     slides.forEach(s => s.classList.add('in-view'));
   }
 
-  /* ───────── 3 · Floating progress bar ───────── */
+  /* ───────── 3 · Floating progress bar + mobile pinch-hint ───────── */
   const progress = document.createElement('div');
   progress.className = 'nav-progress';
   progress.setAttribute('aria-hidden', 'true');
   document.body.appendChild(progress);
 
-  /* (Removed: the bottom-right slide-indicator chip and the EN/FR pill —
-     they were appearing on every slide. The cover's EN/FR picker in the
-     topbar is the single source of language switching now.) */
-  const indicator = { querySelector(){ return { textContent:'' } } }; // no-op stub
+  /* Mobile-only hint that fades after the first user scroll. Visible
+     because the brand book is editorially scaled — pinch is how you
+     actually read each slide on a phone. */
+  if (window.matchMedia('(max-width: 900px)').matches){
+    const hint = document.createElement('div');
+    hint.className = 'mobile-hint';
+    hint.textContent = 'Pinch · to read';
+    document.body.appendChild(hint);
+    let hidden = false;
+    const dismiss = () => {
+      if (hidden) return;
+      hidden = true;
+      hint.classList.add('hide');
+      setTimeout(() => hint.remove(), 600);
+    };
+    setTimeout(dismiss, 5500);
+    window.addEventListener('scroll', dismiss, { once: true, passive: true });
+    window.addEventListener('touchstart', dismiss, { once: true, passive: true });
+  }
+
+  /* (Removed: the bottom-right slide-indicator chip and the EN/FR pill.) */
+  const indicator = { querySelector(){ return { textContent:'' } } };
   const indCur = { textContent:'' };
 
   /* Apply the initial language NOW that the cover buttons exist in the DOM */
