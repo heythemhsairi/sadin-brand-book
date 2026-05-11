@@ -1,0 +1,3053 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Sadine Tours · Brand Identity System · 2026</title>
+<meta name="description" content="Sadine Tours — premium travel brand identity system. Strategy, logo, color, type, visual language, applications." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;700&family=Cairo:wght@400;500;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+:root{
+  --purple:#4B2E83;
+  --plum:#2A124F;
+  --plum-deep:#1B0A36;
+  --gold:#F5B942;
+  --soft:#F8F6FC;
+  --lav:#D8C8F3;
+  --lav-dim:rgba(216,200,243,.55);
+  --hair:rgba(248,246,252,.12);
+  --hair-strong:rgba(248,246,252,.22);
+  --glow:rgba(123,91,206,.55);
+  --display:'Satoshi','Manrope',system-ui,sans-serif;
+  --text:'Manrope','Satoshi',system-ui,sans-serif;
+  --ar:'Zain Mob','Alexandria','Cairo',system-ui,sans-serif;
+
+  /* 8pt spacing scale */
+  --s-1:4px;
+  --s-2:8px;
+  --s-3:12px;
+  --s-4:16px;
+  --s-5:20px;
+  --s-6:24px;
+  --s-7:32px;
+  --s-8:40px;
+  --s-9:56px;
+  --s-10:72px;
+  --s-11:96px;
+
+  /* Slide safe-area: editorial book proportions on a 1440 × 810 page */
+  --safe-top:60px;
+  --safe-x:88px;
+  --safe-bot:52px;
+
+  /* Vertical rhythm tokens */
+  --rhythm-section:40px;   /* between topbar and headline block */
+  --rhythm-block:32px;     /* between headline block and content grid */
+  --rhythm-tight:24px;     /* tighter siblings */
+}
+
+/* Zain Mob — Arabic display typeface, self-hosted (3 weights: 400 / 600 / 800).
+   format('truetype') alone is the safest hint for static TTF files across
+   every browser; format('truetype-variations') is for VF axes, which the
+   user's files don't expose. */
+@font-face{font-family:'Zain Mob';font-weight:400;font-style:normal;font-display:swap;src:url('assets/fonts/zain-mob-400.ttf') format('truetype')}
+@font-face{font-family:'Zain Mob';font-weight:600;font-style:normal;font-display:swap;src:url('assets/fonts/zain-mob-600.ttf') format('truetype')}
+@font-face{font-family:'Zain Mob';font-weight:800;font-style:normal;font-display:swap;src:url('assets/fonts/zain-mob-800.ttf') format('truetype')}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html,body{background:#0A0418;color:var(--soft);font-family:var(--text);-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+.slide{scroll-margin-top:16px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+
+/* ───────────  Slide framework  ─────────── */
+.book{
+  display:flex;flex-direction:column;align-items:center;gap:40px;
+  padding:48px 24px 96px;
+  min-height:100vh;
+  counter-reset:page 0;
+}
+.slide{counter-increment:page}
+.pgnum::after{content:counter(page, decimal-leading-zero);font-variant-numeric:tabular-nums}
+.pgnum.total::after{content:counter(page, decimal-leading-zero) " / 038";font-variant-numeric:tabular-nums}
+.slide{
+  position:relative;
+  width:1440px;max-width:100%;
+  aspect-ratio:16/9;
+  background:
+    radial-gradient(120% 90% at 85% 10%, rgba(245,185,66,.08) 0%, rgba(245,185,66,0) 55%),
+    radial-gradient(80% 70% at 15% 90%, rgba(123,91,206,.35) 0%, rgba(123,91,206,0) 60%),
+    linear-gradient(135deg, var(--plum) 0%, var(--purple) 100%);
+  color:var(--soft);
+  overflow:hidden;
+  border:1px solid var(--hair);
+  border-radius:18px;
+  box-shadow:0 60px 120px -40px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.02) inset;
+}
+.slide.dark{
+  background:
+    radial-gradient(70% 60% at 80% 20%, rgba(245,185,66,.06) 0%, rgba(245,185,66,0) 60%),
+    radial-gradient(90% 70% at 20% 100%, rgba(75,46,131,.55) 0%, rgba(75,46,131,0) 60%),
+    linear-gradient(180deg, #15082B 0%, var(--plum-deep) 100%);
+}
+.slide.light{
+  background:
+    radial-gradient(70% 60% at 90% 0%, rgba(216,200,243,.55) 0%, rgba(216,200,243,0) 60%),
+    linear-gradient(180deg, var(--soft) 0%, #ECE5F8 100%);
+  color:var(--plum);
+}
+.slide.light .hair{background:rgba(42,18,79,.18)}
+
+/* slide chrome — consistent safe-area and bottom hairline rule */
+.frame{
+  position:absolute;
+  top:var(--safe-top);
+  right:var(--safe-x);
+  bottom:var(--safe-bot);
+  left:var(--safe-x);
+  display:flex;
+  flex-direction:column;
+}
+.eyebrow{
+  font-family:var(--display);font-weight:500;letter-spacing:.32em;
+  font-size:11px;text-transform:uppercase;color:var(--lav);
+}
+.slide.light .eyebrow{color:rgba(42,18,79,.6)}
+
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:var(--s-6);min-height:18px;flex-shrink:0}
+.topbar .id{display:flex;gap:14px;align-items:center}
+.topbar .id .dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
+
+.botbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:auto;
+  padding-top:22px;
+  border-top:1px solid var(--hair);
+  gap:var(--s-6);
+  flex-shrink:0;
+  min-height:36px;
+}
+/* Global breathing room — whatever sits directly above the footer
+   gets a bottom buffer so its content never visually kisses the
+   hairline rule. Works on every slide regardless of layout. */
+.frame > *:has(+ .botbar){
+  padding-bottom:22px;
+}
+.botbar .pg{font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--lav)}
+.slide.light .botbar{border-top-color:rgba(42,18,79,.18)}
+.slide.light .botbar .pg{color:rgba(42,18,79,.6)}
+
+.hair{height:1px;width:100%;background:var(--hair)}
+.hair.gold{background:linear-gradient(90deg, transparent 0%, var(--gold) 30%, var(--gold) 70%, transparent 100%);opacity:.7}
+.hair.short{width:64px}
+
+/* Section header — consistent eyebrow → headline → lead rhythm */
+.section-head{
+  display:flex;flex-direction:column;gap:var(--s-3);
+  margin-top:var(--rhythm-section);
+}
+.section-head.row{flex-direction:row;justify-content:space-between;align-items:flex-end;gap:var(--s-7)}
+.section-head .lead{max-width:680px}
+
+/* glow puck behind marks */
+.glow{
+  position:absolute;border-radius:50%;
+  background:radial-gradient(closest-side, var(--glow) 0%, rgba(123,91,206,0) 70%);
+  filter:blur(20px);pointer-events:none;
+}
+
+/* utility */
+.row{display:flex;gap:var(--s-7)}
+.col{display:flex;flex-direction:column;gap:var(--s-6)}
+.center{display:flex;align-items:center;justify-content:center;flex-direction:column}
+.grow{flex:1}
+.mute{color:var(--lav)}
+.gold{color:var(--gold)}
+.white{color:var(--soft)}
+.cap{font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.4em;text-transform:uppercase}
+.h1{font-family:var(--display);font-weight:700;font-size:84px;line-height:1.0;letter-spacing:-.025em}
+.h2{font-family:var(--display);font-weight:700;font-size:52px;line-height:1.05;letter-spacing:-.018em}
+.h3{font-family:var(--display);font-weight:500;font-size:30px;line-height:1.2;letter-spacing:-.005em}
+.h4{font-family:var(--display);font-weight:500;font-size:22px;line-height:1.25}
+.lead{font-family:var(--text);font-weight:400;font-size:17px;line-height:1.6;color:var(--lav);letter-spacing:-.003em}
+.body{font-family:var(--text);font-weight:400;font-size:14px;line-height:1.7;color:var(--lav)}
+.kbd{font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--lav)}
+
+/* page break for print */
+@media print{
+  html,body{background:#0A0418}
+  .book{gap:0;padding:0}
+  .slide{
+    page-break-after:always;break-after:page;
+    border-radius:0;border:0;box-shadow:none;
+    width:100%;height:100vh;aspect-ratio:auto;
+  }
+  @page{size:1440px 810px;margin:0}
+}
+
+/* ───────────  Slide-specific  ─────────── */
+
+/* Cover */
+.cover .frame{justify-content:space-between}
+.cover .center-mark{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:32px}
+.cover .center-mark .glow-large{
+  position:absolute;width:900px;height:900px;border-radius:50%;
+  background:radial-gradient(closest-side, rgba(123,91,206,.45) 0%, rgba(123,91,206,0) 70%);
+  filter:blur(30px);
+  top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;
+}
+.cover .center-mark .wordmark{position:relative;width:760px}
+.cover .stamp{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:8px 14px;border:1px solid var(--hair-strong);border-radius:999px;
+  font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;
+  background:rgba(255,255,255,.06);backdrop-filter:blur(10px);
+  color:var(--soft);
+}
+.cover .stamp .pulse{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px var(--gold)}
+.cover .credits{display:flex;gap:48px}
+.cover .credits .c{display:flex;flex-direction:column;gap:6px}
+
+/* Cover hero · full-bleed image variant */
+.cover-hero{
+  background:#0A0418;
+  overflow:hidden;
+  isolation:isolate;
+}
+.cover-hero .cover-img{
+  position:absolute;inset:0;z-index:0;
+  background-image:url('assets/cover-hero.jpg');
+  background-position:center center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  /* fallback while the image hasn't been saved: subtle purple sky placeholder */
+  background-color:#2A124F;
+}
+.cover-hero .cover-overlay{
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    /* Soft brand-purple wash across the entire photo */
+    linear-gradient(180deg, rgba(75,46,131,.18) 0%, rgba(42,18,79,.22) 60%, rgba(27,10,54,.32) 100%),
+    /* Top haze + lower fade for chrome legibility */
+    linear-gradient(180deg, rgba(15,5,33,.45) 0%, rgba(15,5,33,0) 22%, rgba(15,5,33,0) 38%, rgba(42,18,79,.30) 65%, rgba(15,5,33,.88) 100%),
+    /* Subtle radial vignette pulls focus to middle */
+    radial-gradient(130% 90% at 50% 45%, rgba(15,5,33,0) 35%, rgba(15,5,33,.35) 100%);
+}
+.cover-hero .frame{position:absolute;z-index:2}
+.cover-hero .cover-title{
+  margin:auto 0;
+  align-self:flex-start;
+  display:flex;flex-direction:column;align-items:flex-start;
+  text-align:left;
+  max-width:900px;
+  gap:22px;
+}
+.cover-hero .cover-eyebrow{
+  font-family:var(--display);font-weight:500;font-size:12px;
+  letter-spacing:.4em;text-transform:uppercase;
+  color:rgba(248,246,252,.82);
+  text-shadow:0 1px 12px rgba(15,5,33,.65);
+  display:inline-flex;align-items:center;gap:14px;
+}
+.cover-hero .cover-eyebrow::before{
+  content:"";width:32px;height:1px;background:var(--gold);
+  display:inline-block;
+}
+.cover-hero .cover-h{
+  font-family:var(--display);font-weight:700;
+  font-size:228px;line-height:.86;letter-spacing:-.045em;
+  color:var(--soft);
+  text-shadow:0 8px 48px rgba(15,5,33,.55), 0 1px 2px rgba(15,5,33,.6);
+  margin:0;
+}
+.cover-hero .cover-sub{
+  font-family:var(--display);font-weight:500;font-size:14px;
+  letter-spacing:.32em;text-transform:uppercase;
+  color:rgba(248,246,252,.78);
+  text-shadow:0 1px 12px rgba(15,5,33,.65);
+  margin-top:6px;
+}
+.cover-hero .botbar{border-top-color:rgba(255,255,255,.18)}
+.cover-hero .botbar .pg,
+.cover-hero .botbar .cap,
+.cover-hero .topbar .cap{
+  color:rgba(248,246,252,.85);
+  text-shadow:0 1px 12px rgba(15,5,33,.6);
+}
+.cover-hero .credits .c .cap{color:rgba(248,246,252,.65)}
+.cover-hero .credits .c .kbd{color:var(--soft)}
+
+/* ─────────── Language system ─────────── */
+.lang-fr{display:none}
+body[data-lang="fr"] .lang-en{display:none}
+body[data-lang="fr"] .lang-fr{display:inline}
+
+/* Language picker — sits in the cover topbar right slot */
+.lang-picker{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--display);font-weight:500;
+  font-size:11px;letter-spacing:.32em;text-transform:uppercase;
+}
+.lang-picker .lang-sep{opacity:.35;color:var(--soft)}
+.lang-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:transparent;border:0;padding:4px 0;
+  color:rgba(248,246,252,.55);
+  font:inherit;letter-spacing:inherit;text-transform:inherit;
+  cursor:pointer;transition:color .3s;
+  text-shadow:0 1px 12px rgba(15,5,33,.6);
+}
+.lang-btn .dot{
+  width:5px;height:5px;border-radius:50%;
+  background:transparent;border:1px solid rgba(248,246,252,.4);
+  transition:background .3s,border-color .3s,box-shadow .3s;
+}
+.lang-btn:hover{color:var(--soft)}
+.lang-btn[aria-pressed="true"]{color:var(--gold)}
+.lang-btn[aria-pressed="true"] .dot{
+  background:var(--gold);border-color:var(--gold);
+  box-shadow:0 0 10px rgba(245,185,66,.6);
+}
+
+/* Index — grouped TOC across 2 columns per page (split across 2 pages) */
+.toc-grouped{display:grid;grid-template-columns:repeat(2,1fr);gap:64px;flex:1;align-content:start}
+.toc-col{display:flex;flex-direction:column;gap:32px}
+.toc-section{display:flex;flex-direction:column}
+.toc-section-head{
+  font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.32em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:12px;
+  padding-bottom:10px;border-bottom:1px solid rgba(245,185,66,.35);
+}
+.toc-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  border-bottom:1px solid var(--hair);padding:11px 4px;gap:18px;
+  text-decoration:none;color:inherit;cursor:pointer;border-radius:4px;
+}
+.toc-row:last-child{border-bottom:0}
+.toc-row .num{font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.3em;color:var(--lav);min-width:24px}
+.toc-row .name{font-family:var(--display);font-weight:500;font-size:14.5px;flex:1;line-height:1.3}
+.toc-row .pg{font-family:var(--display);font-weight:500;font-size:10px;color:var(--lav);letter-spacing:.16em}
+.toc-row:hover{background:rgba(245,185,66,.05);padding-left:10px;padding-right:10px;border-color:rgba(245,185,66,.32)}
+.toc-row:hover .name{color:var(--gold)}
+.toc-row:hover .pg{color:var(--gold)}
+
+/* Manifesto */
+.manifesto-quote{font-family:var(--display);font-weight:700;font-size:60px;line-height:1.08;letter-spacing:-.022em;max-width:1100px}
+.manifesto-quote .gold{font-style:normal}
+
+/* Three column blocks (positioning/mission/vision, audience) */
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
+.card{
+  position:relative;
+  padding:32px;
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--hair);
+  border-radius:16px;
+  backdrop-filter:blur(10px);
+  display:flex;flex-direction:column;gap:18px;
+  min-height:280px;
+}
+.card .num{
+  font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;color:var(--gold);text-transform:uppercase
+}
+.card.dark{background:rgba(0,0,0,.25)}
+.card.lav{background:var(--lav);color:var(--plum)}
+.card.lav .num{color:var(--purple)}
+
+/* Values — 6 grid */
+.six{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.six .v{padding:28px;border:1px solid var(--hair);border-radius:14px;background:rgba(255,255,255,.03);min-height:170px;display:flex;flex-direction:column;gap:12px}
+.six .v .n{font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;color:var(--gold);text-transform:uppercase}
+.six .v .t{font-family:var(--display);font-weight:700;font-size:24px;line-height:1.15}
+
+/* Personality + tone */
+.split{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:start}
+.tone-list{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.tone-list .col{gap:0}
+.tone-list .col h5{font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--lav);margin-bottom:18px}
+.tone-list ul{list-style:none;display:flex;flex-direction:column;gap:0}
+.tone-list li{font-family:var(--display);font-weight:500;font-size:17px;border-bottom:1px solid var(--hair);padding:10px 0}
+.tone-list li:first-child{padding-top:0}
+.tone-list .y li{color:var(--soft)}
+.tone-list .n li{color:rgba(248,246,252,.4);text-decoration:line-through;text-decoration-color:rgba(248,246,252,.2)}
+.sample{background:rgba(0,0,0,.28);border-left:2px solid var(--gold);padding:18px 22px;border-radius:0 12px 12px 0;font-family:var(--text);font-size:14.5px;line-height:1.6}
+.sample .lab{display:block;font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+
+/* Logo slide */
+.logo-stage{
+  position:relative;flex:1;display:flex;align-items:center;justify-content:center;
+}
+.logo-stage .glow-l{
+  position:absolute;width:680px;height:680px;border-radius:50%;
+  background:radial-gradient(closest-side, rgba(123,91,206,.4) 0%, rgba(123,91,206,0) 70%);
+  filter:blur(30px);
+  top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;
+}
+.logo-stage .wm{position:relative;width:760px}
+.logo-stage .wm.small{width:520px}
+.logo-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;border-top:1px solid var(--hair);padding-top:22px;margin-top:24px}
+.logo-meta .m h6{font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--lav);margin-bottom:8px}
+.logo-meta .m p{font-family:var(--display);font-weight:500;font-size:14px;line-height:1.4}
+
+/* Anatomy — wordmark with construction lines */
+.anatomy{position:relative;flex:1;display:flex;align-items:center;justify-content:center}
+.anatomy .wm{width:880px;position:relative;z-index:2}
+.anatomy .grid-bg{
+  position:absolute;inset:50px;border:1px dashed rgba(245,185,66,.4);border-radius:8px;
+  background-image:
+    linear-gradient(to right, rgba(245,185,66,.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(245,185,66,.08) 1px, transparent 1px);
+  background-size:48px 48px;
+}
+.anatomy .annot{position:absolute;font-family:var(--display);font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+.annot.a1{top:24%;left:10%}
+.annot.a2{top:24%;right:10%}
+.annot.a3{bottom:30%;left:18%}
+.annot.a4{bottom:30%;right:18%}
+.annot.a5{top:50%;left:50%;transform:translate(-50%,-50%)}
+
+/* Logo family — 6 tile grid */
+.logo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;flex:1}
+.logo-grid .tile{
+  position:relative;
+  border:1px solid var(--hair);border-radius:16px;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;flex-direction:column;
+  min-height:180px;padding:32px;gap:14px;
+}
+.logo-grid .tile.purple{background:linear-gradient(160deg, var(--plum) 0%, var(--purple) 100%)}
+.logo-grid .tile.dark{background:#0E0420}
+.logo-grid .tile.light{background:var(--soft)}
+.logo-grid .tile.lav{background:var(--lav)}
+.logo-grid .tile.gold{background:var(--gold)}
+.logo-grid .tile .l{font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.5);position:absolute;top:18px;left:20px}
+.logo-grid .tile.light .l, .logo-grid .tile.lav .l, .logo-grid .tile.gold .l{color:rgba(42,18,79,.55)}
+.logo-grid .tile .wm{width:75%;max-width:320px}
+.logo-grid .tile .icon{width:80px}
+
+/* Clear space + minimum */
+.clear{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;flex:1}
+.clear .stage{position:relative;border:1px solid var(--hair);border-radius:16px;background:rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;padding:72px}
+.clear .stage .wm{width:80%;max-width:520px;position:relative;z-index:2}
+.clear .stage .clear-space-svg{
+  max-width:100%;max-height:100%;
+  width:auto;height:auto;
+  display:block;object-fit:contain;
+  position:relative;z-index:2;
+}
+.clear .stage .x-marks{position:absolute;inset:36px;border:1px dashed rgba(245,185,66,.5);border-radius:8px}
+.clear .stage .x-corners{position:absolute;width:32px;height:32px;border:1px solid var(--gold)}
+.clear .stage .xc1{top:36px;left:36px;border-right:0;border-bottom:0}
+.clear .stage .xc2{top:36px;right:36px;border-left:0;border-bottom:0}
+.clear .stage .xc3{bottom:36px;left:36px;border-right:0;border-top:0}
+.clear .stage .xc4{bottom:36px;right:36px;border-left:0;border-top:0}
+.clear .stage .x-label{position:absolute;font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+.clear .stage .x-label.t{top:12px;left:50%;transform:translateX(-50%)}
+.clear .stage .x-label.l{left:12px;top:50%;transform:translateY(-50%) rotate(-90deg)}
+.clear .min-list{display:flex;flex-direction:column;gap:16px}
+.clear .min-item{padding:20px;border:1px solid var(--hair);border-radius:14px;background:rgba(255,255,255,.03);display:flex;align-items:center;gap:18px}
+.clear .min-item .swatch{width:80px;display:flex;align-items:center;justify-content:center;flex-shrink:0;height:42px;background:rgba(0,0,0,.25);border-radius:6px}
+.clear .min-item .meta h6{font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--lav)}
+.clear .min-item .meta p{font-family:var(--display);font-weight:500;font-size:16px;margin-top:4px}
+
+/* Misuse grid */
+.misuse{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:18px;flex:1}
+.misuse .m{
+  position:relative;border:1px solid var(--hair);border-radius:16px;
+  display:flex;align-items:center;justify-content:center;padding:32px;
+  background:rgba(0,0,0,.25);overflow:hidden;
+}
+.misuse .m .x-overlay{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(45deg, transparent 49.4%, rgba(255,68,68,.85) 49.6%, rgba(255,68,68,.85) 50.4%, transparent 50.6%),
+    linear-gradient(-45deg, transparent 49.4%, rgba(255,68,68,.85) 49.6%, rgba(255,68,68,.85) 50.4%, transparent 50.6%);
+  pointer-events:none;
+}
+.misuse .m .lab{position:absolute;top:16px;left:18px;font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:#ff6b6b;z-index:3}
+.misuse .m .wm{width:55%;position:relative;z-index:2}
+.misuse .m.stretched .wm{transform:scaleX(1.6) scaleY(.7)}
+.misuse .m.busy{background:linear-gradient(135deg,#ff6b6b 0%,#4ecdc4 50%,#ffd93d 100%)}
+.misuse .m.rotated .wm{transform:rotate(-12deg)}
+.misuse .m.shadow{filter:drop-shadow(0 6px 0 rgba(0,0,0,.6))}
+/* .recolor and .outlined now load dedicated SVG assets directly (assets/logo-misuse-*.svg)
+   so no CSS color hack is needed — the bad colors / stroke are baked into those files. */
+
+/* Color palette */
+.palette{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:16px;flex:1}
+.swatch-card{
+  position:relative;
+  border-radius:18px;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:28px;
+  border:1px solid var(--hair);
+  min-height:360px;
+}
+.swatch-card .name{font-family:var(--display);font-weight:700;font-size:22px;margin-bottom:8px;line-height:1.1}
+.swatch-card .role{font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.32em;text-transform:uppercase;opacity:.7;margin-bottom:22px}
+.swatch-card .vals{display:flex;flex-direction:column;gap:6px;font-family:var(--display);font-weight:500;font-size:11.5px;letter-spacing:.04em}
+.swatch-card .vals .row{display:flex;justify-content:space-between;border-top:1px solid currentColor;padding-top:8px;opacity:.85}
+.swatch-card .vals .row:first-child{border-top:0;padding-top:0}
+.s-purple{background:linear-gradient(160deg,#5C3AA1 0%, #4B2E83 60%, #3A2266 100%);color:var(--soft)}
+.s-plum{background:linear-gradient(160deg, #3A1A6B 0%, #2A124F 60%, #1A0833 100%);color:var(--soft)}
+.s-gold{background:linear-gradient(160deg,#FFD06E 0%, #F5B942 60%, #D89A24 100%);color:#3D2700}
+.s-soft{background:linear-gradient(160deg,#FFFFFF 0%, #F8F6FC 60%, #ECE5F8 100%);color:var(--plum)}
+.s-lav{background:linear-gradient(160deg,#E5D8FA 0%, #D8C8F3 60%, #BFA9E6 100%);color:var(--plum)}
+
+/* Gradient slide */
+.gradients{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+.grad{
+  position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--hair);
+  padding:28px;display:flex;flex-direction:column;justify-content:space-between;min-height:300px;
+}
+.grad .name{font-family:var(--display);font-weight:700;font-size:24px;line-height:1.1}
+.grad .role{font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.32em;text-transform:uppercase;opacity:.75;margin-top:6px}
+.grad .vals{font-family:var(--display);font-weight:500;font-size:12px;letter-spacing:.04em;opacity:.85}
+.grad.g1{background:linear-gradient(135deg,#2A124F 0%, #4B2E83 100%);color:var(--soft)}
+.grad.g2{background:linear-gradient(135deg,#4B2E83 0%, #7B5BCE 100%);color:var(--soft)}
+.grad.g3{background:linear-gradient(135deg,#4B2E83 0%, #F5B942 100%);color:var(--soft)}
+
+/* Color ratios */
+.ratio-bar{display:flex;height:88px;border-radius:14px;overflow:hidden;border:1px solid var(--hair)}
+.ratio-bar .seg{display:flex;align-items:flex-end;padding:18px;font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+.ratio-bar .s60{flex:60;background:var(--purple);color:var(--soft)}
+.ratio-bar .s25{flex:25;background:var(--soft);color:var(--plum)}
+.ratio-bar .s10{flex:10;background:var(--lav);color:var(--plum)}
+.ratio-bar .s5{flex:5;background:var(--gold);color:#3D2700}
+
+/* Typography */
+.type-stage{flex:1;display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:stretch}
+.type-stage .display{display:flex;flex-direction:column;justify-content:space-between;gap:32px}
+.specimen{
+  font-family:var(--display);font-weight:700;
+  font-size:220px;line-height:.95;letter-spacing:-.04em;
+}
+.specimen.med{font-weight:500}
+.specimen.man{font-family:var(--text);font-weight:600;font-size:200px;letter-spacing:-.03em}
+.specimen.ar{font-family:var(--ar);font-weight:700;font-size:200px;line-height:1.1;letter-spacing:0;direction:rtl;text-align:right}
+.glyph-row{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.glyph{
+  border:1px solid var(--hair);border-radius:10px;aspect-ratio:1;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--display);font-weight:500;font-size:32px;color:var(--soft);
+  background:rgba(0,0,0,.25);
+}
+.glyph.man{font-family:var(--text);font-weight:500}
+.glyph.ar{font-family:var(--ar);font-weight:500;font-size:36px}
+.weights{display:flex;flex-direction:column;gap:14px}
+.weights .w{font-family:var(--display);font-size:32px;border-bottom:1px solid var(--hair);padding-bottom:14px;line-height:1.1}
+.weights .w.man{font-family:var(--text)}
+.weights .w.ar{font-family:var(--ar);direction:rtl;text-align:right}
+.weights .w small{font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--lav);float:right;margin-top:14px}
+.weights .w.man small,.weights .w.ar small{font-family:var(--display)}
+
+/* Differentiation table — fills the whole frame area below the title
+   block by using flex layout for the rows (so they stretch instead of
+   sizing to content), and an explicit column grid that keeps numbers
+   tidy. */
+.diff-table-card{
+  margin-top:24px;flex:1;min-height:0;padding:0;
+  background:rgba(0,0,0,.28);overflow:hidden;
+  display:flex;flex-direction:column;
+}
+.diff-row{
+  display:grid;grid-template-columns:18% 22% 22% 38%;
+  align-items:center;
+  padding:0 22px;
+  border-top:1px solid var(--hair);
+  flex:1;            /* rows split available height equally */
+  min-height:0;
+}
+.diff-row:first-child{border-top:0;background:rgba(0,0,0,.35);flex:0 0 56px}
+.diff-row .cell{
+  font-family:var(--display);font-weight:400;
+  font-size:13.5px;line-height:1.35;
+  color:var(--soft);
+}
+.diff-row.head .cell{
+  font-weight:500;font-size:10px;letter-spacing:.32em;
+  text-transform:uppercase;color:var(--lav);
+}
+.diff-row.head .cell.gold{color:var(--gold)}
+.diff-row .cell.dim{color:var(--lav)}
+.diff-row .cell.gold{color:var(--gold)}
+
+/* ─────────── Creative type pages: anatomy / magazine / arabic-hero ─────────── */
+
+/* SATOSHI — anatomy specimen with callouts */
+.type-anatomy{
+  flex:1;min-height:0;margin-top:20px;
+  display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:stretch;
+  border-top:1px solid var(--hair);padding-top:24px;
+}
+.anat-letter{
+  position:relative;
+  display:flex;align-items:center;justify-content:center;
+  border-right:1px solid var(--hair);padding-right:36px;
+  min-height:0;
+}
+.anat-glyph{
+  font-family:var(--display);font-weight:700;
+  font-size:520px;line-height:.78;letter-spacing:-.06em;color:var(--soft);
+  text-shadow:0 0 60px rgba(123,91,206,.15);
+  position:relative;z-index:2;
+}
+/* Horizontal guide lines (baseline / x-height / cap-height) */
+.anat-guide{
+  position:absolute;left:0;right:36px;height:1px;
+  background:linear-gradient(90deg, transparent 0%, rgba(245,185,66,.45) 12%, rgba(245,185,66,.45) 88%, transparent 100%);
+  pointer-events:none;z-index:1;
+}
+.anat-guide::after{
+  content:attr(data-l);
+  position:absolute;right:0;top:-7px;
+  background:transparent;
+  font-family:var(--display);font-weight:500;font-size:9px;
+  letter-spacing:.32em;text-transform:uppercase;color:var(--gold);
+}
+.gl-cap{top:18%}
+.gl-x{top:46%}
+.gl-base{top:84%}
+
+/* Callout chips connected by thin gold leader lines */
+.anat-callout{
+  position:absolute;
+  font-family:var(--display);font-weight:500;font-size:10px;
+  letter-spacing:.32em;text-transform:uppercase;color:var(--gold);
+  padding:5px 10px;border:1px solid rgba(245,185,66,.45);border-radius:99px;
+  background:rgba(15,5,33,.5);backdrop-filter:blur(6px);
+  z-index:3;
+}
+.anat-callout::before{
+  content:"";position:absolute;width:1px;background:rgba(245,185,66,.55);
+  pointer-events:none;
+}
+.c-stem    {top:48%;left:8%}
+.c-stem::before    {height:14px;left:50%;top:100%}
+.c-bowl    {top:24%;left:48%}
+.c-bowl::before    {height:30px;left:50%;top:100%}
+.c-counter {top:62%;left:50%}
+.c-counter::before {height:30px;left:50%;bottom:100%}
+.c-terminal{top:78%;left:14%}
+.c-terminal::before{height:18px;left:50%;top:100%}
+
+.anat-meta{
+  display:flex;flex-direction:column;justify-content:space-between;min-height:0;
+}
+.anat-weights{
+  display:flex;flex-direction:column;gap:14px;
+  border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);
+  padding:18px 0;
+}
+.anat-weights .aw{
+  display:grid;grid-template-columns:auto auto 1fr;align-items:baseline;gap:18px;
+}
+.aw .wlab{font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--lav)}
+.aw .wnum{font-family:var(--display);font-weight:500;font-size:11px;color:rgba(216,200,243,.55);font-variant-numeric:tabular-nums}
+.aw .wspec{font-family:var(--display);font-size:40px;line-height:1;letter-spacing:-.022em;color:var(--soft);text-align:right;justify-self:end}
+.aw .wspec.ar{font-family:var(--ar);font-size:42px}
+.anat-footnotes{
+  display:flex;flex-direction:column;gap:6px;
+}
+.anat-footnotes span{font-family:var(--text);font-size:11px;color:var(--lav);line-height:1.5}
+.anat-footnotes strong{color:var(--soft);font-weight:500}
+
+/* MANROPE — magazine spread */
+.type-magazine{
+  flex:1;min-height:0;margin-top:18px;
+  display:grid;
+  grid-template-rows:auto auto 1fr auto;
+  gap:18px;
+  border-top:1px solid rgba(42,18,79,.18);padding-top:18px;
+}
+.mag-mast{
+  display:flex;justify-content:space-between;gap:24px;
+  font-family:var(--display);font-weight:500;font-size:11px;
+  letter-spacing:.32em;text-transform:uppercase;
+  color:rgba(42,18,79,.6);
+  border-bottom:1px solid rgba(42,18,79,.18);padding-bottom:14px;
+}
+.mag-mast strong{color:var(--purple);font-weight:600}
+.mag-h1{
+  font-family:var(--text);font-weight:700;
+  font-size:120px;line-height:.92;letter-spacing:-.028em;
+  color:var(--purple);
+}
+.mag-body{
+  display:grid;grid-template-columns:1.4fr 1.4fr .9fr;gap:36px;
+  min-height:0;
+}
+.mag-col p{
+  font-family:var(--text);font-weight:400;font-size:15.5px;line-height:1.65;
+  color:rgba(42,18,79,.78);
+  margin:0 0 12px;text-align:justify;
+}
+.mag-col p:last-child{margin-bottom:0}
+.mag-side{
+  display:flex;flex-direction:column;gap:14px;
+  border-left:1px solid rgba(42,18,79,.18);padding-left:24px;
+}
+.mag-side .aw{
+  display:grid;grid-template-columns:auto 1fr;align-items:center;gap:14px;
+}
+.mag-side .aw .wspec{font-size:48px;color:var(--purple);justify-self:start}
+.mag-side .aw .wlab{color:rgba(42,18,79,.6)}
+.mag-foot{
+  border-top:1px solid rgba(42,18,79,.18);padding-top:14px;
+}
+.mag-foot p{
+  font-family:var(--text);font-weight:500;font-size:12px;
+  letter-spacing:.32em;text-transform:uppercase;
+  color:rgba(42,18,79,.55);text-align:center;
+}
+
+/* ZAIN MOB — centered Arabic hero poster (clean, symmetric, breathable) */
+.ar-strip{
+  margin-top:24px;display:flex;justify-content:space-between;align-items:baseline;
+  border-bottom:1px solid var(--hair);padding-bottom:18px;
+}
+.ar-stage{
+  flex:1;min-height:0;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:18px 0;
+}
+.ar-stage-eyebrow{
+  display:inline-flex;align-items:center;gap:14px;
+  font-family:var(--display);font-weight:500;font-size:11px;
+  letter-spacing:.4em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:18px;
+}
+.ar-stage-eyebrow .dash{display:inline-block;width:36px;height:1px;background:var(--gold)}
+.ar-word{
+  font-family:var(--ar);font-weight:800;
+  font-size:280px;line-height:.95;color:var(--soft);
+  direction:rtl;
+  text-shadow:0 0 80px rgba(123,91,206,.22);
+  margin:0;
+}
+.ar-latin{
+  font-family:var(--display);font-weight:500;
+  font-size:18px;letter-spacing:.42em;text-transform:uppercase;
+  color:var(--lav);margin-top:18px;
+}
+
+.ar-foot{
+  display:grid;grid-template-columns:repeat(3,auto) 1fr;gap:36px;align-items:center;
+  border-top:1px solid var(--hair);padding-top:22px;
+}
+.ar-wcell{
+  display:flex;align-items:baseline;gap:16px;
+}
+.ar-wspec{
+  font-family:var(--ar);font-size:60px;line-height:1;color:var(--soft);
+  direction:rtl;
+}
+.ar-wmeta{display:flex;flex-direction:column;gap:2px}
+.ar-wmeta strong{
+  font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--lav);
+}
+.ar-wmeta span{
+  font-family:var(--display);font-weight:500;font-size:11px;
+  color:rgba(216,200,243,.55);font-variant-numeric:tabular-nums;
+}
+.ar-rule{
+  padding-left:24px;border-left:1px solid var(--hair);
+  max-width:280px;
+}
+.ar-rule p{
+  font-family:var(--display);font-weight:500;font-size:12.5px;line-height:1.55;
+  color:var(--soft);margin:0;
+}
+.ar-rule p strong{color:var(--gold);font-weight:600}
+
+/* Hierarchy */
+.hier{display:grid;grid-template-columns:1.4fr 1fr;gap:56px;flex:1}
+.hier .stack{display:flex;flex-direction:column;gap:20px}
+.hier .stack .row{display:flex;align-items:baseline;gap:24px;border-bottom:1px solid var(--hair);padding-bottom:18px}
+.hier .stack .row .lab{font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--lav);width:170px;flex-shrink:0}
+.hier .stack .row .ex{flex:1}
+.hier-h1{font-family:var(--display);font-weight:700;font-size:64px;line-height:1;letter-spacing:-.02em}
+.hier-h2{font-family:var(--display);font-weight:700;font-size:40px;line-height:1.05;letter-spacing:-.015em}
+.hier-h3{font-family:var(--display);font-weight:500;font-size:24px}
+.hier-eyebrow{font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+.hier-body{font-family:var(--text);font-weight:400;font-size:15px;line-height:1.7;color:var(--lav)}
+.hier-cap{font-family:var(--text);font-weight:500;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--lav)}
+
+/* Photography mood */
+.mood{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,1fr);gap:16px;flex:1}
+.mood .frame-img{
+  position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--hair);
+  display:flex;align-items:flex-end;padding:20px;color:var(--soft);min-height:200px;
+}
+.mood .frame-img .lab{font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.32em;text-transform:uppercase;background:rgba(0,0,0,.5);padding:7px 12px;border-radius:99px;backdrop-filter:blur(6px)}
+/* Photography hero — real photo backgrounds + subtle dark fade for label legibility */
+.mood .frame-img.f1,
+.mood .frame-img.f2,
+.mood .frame-img.f3,
+.mood .frame-img.f4{
+  background-color:#15082B;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+.mood .frame-img.f1{background-image:linear-gradient(180deg, rgba(15,5,33,0) 55%, rgba(15,5,33,.7) 100%), url('assets/photo-sunset.jpg')}
+.mood .frame-img.f2{background-image:linear-gradient(180deg, rgba(15,5,33,0) 55%, rgba(15,5,33,.7) 100%), url('assets/photo-cabin-window.jpg')}
+.mood .frame-img.f3{background-image:linear-gradient(180deg, rgba(15,5,33,0) 55%, rgba(15,5,33,.7) 100%), url('assets/photo-marble-lobby.jpg')}
+.mood .frame-img.f4{background-image:linear-gradient(180deg, rgba(15,5,33,0) 55%, rgba(15,5,33,.7) 100%), url('assets/photo-doorway.jpg')}
+.mood .frame-img.f5{background:
+  radial-gradient(70% 60% at 50% 50%, rgba(248,246,252,.18) 0%, transparent 60%),
+  linear-gradient(180deg, #0E0420 0%, #1B0A36 100%)}
+.mood .frame-img.f6{background:
+  linear-gradient(120deg, #4B2E83 0%, #7B5BCE 100%)}
+.mood .frame-img.f7{background:
+  radial-gradient(80% 80% at 50% 100%, rgba(245,185,66,.7) 0%, transparent 60%),
+  linear-gradient(180deg, #0a0418 0%, #4B2E83 100%)}
+.mood .frame-img.f8{background:
+  radial-gradient(60% 40% at 30% 80%, rgba(216,200,243,.5) 0%, transparent 60%),
+  linear-gradient(180deg, #2A124F 0%, #6E4DA5 100%)}
+
+/* Iconography */
+.icon-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:12px}
+.icon-grid .ic{
+  aspect-ratio:1;border:1px solid var(--hair);border-radius:14px;
+  display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.25);
+}
+.icon-grid .ic svg{width:42%;stroke:var(--soft);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+
+/* Social feed */
+.feed-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:10px;flex:1;aspect-ratio:1;max-height:560px}
+.feed-grid .post{
+  position:relative;overflow:hidden;border-radius:6px;
+  display:flex;align-items:center;justify-content:center;flex-direction:column;
+  padding:22px;color:var(--soft);
+}
+.feed-grid .post.cinema{background:linear-gradient(180deg, #1a0a36 0%, #4B2E83 50%, #C77B3A 100%)}
+.feed-grid .post.cinema2{background:linear-gradient(120deg, #2A124F 0%, #7B5BCE 100%)}
+.feed-grid .post.cinema3{background:radial-gradient(70% 60% at 50% 100%, rgba(245,185,66,.6) 0%, transparent 60%),linear-gradient(180deg, #0a0418 0%, #2A124F 100%)}
+.feed-grid .post.quote{background:var(--purple);text-align:center}
+.feed-grid .post.quote .q{font-family:var(--display);font-weight:700;font-size:24px;line-height:1.2;letter-spacing:-.01em}
+.feed-grid .post.detail{background:#0E0420}
+.feed-grid .post.detail .ring{width:60%;aspect-ratio:1;border-radius:50%;background:radial-gradient(closest-side, var(--gold) 0%, transparent 70%);filter:blur(6px)}
+.feed-grid .post .mark{position:absolute;top:12px;right:14px;width:24px}
+
+/* Stories / reels */
+.stories{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;flex:1}
+.stories .story{
+  aspect-ratio:9/16;border-radius:20px;overflow:hidden;border:1px solid var(--hair);
+  display:flex;flex-direction:column;justify-content:space-between;padding:24px;color:var(--soft);
+  position:relative;
+}
+/* Stories — clean full-bleed photo / video (overlays removed; the
+   provided assets already carry copy + logo, so we let them speak
+   for themselves) */
+.stories .story{background-color:#15082B;background-size:cover;background-position:center;padding:0}
+.stories .s1{background-image:url('assets/social-marrakech.png')}
+.stories .s2{background:#0a0418}
+.stories .s2 .reel-video{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+}
+.stories .s3{background-image:url('assets/social-omrah.jpg')}
+.stories .s4{background-image:url('assets/social-itinerary.jpg')}
+.stories .story .top{font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.32em;text-transform:uppercase;opacity:.85}
+.stories .story .copy{font-family:var(--display);font-weight:700;font-size:24px;line-height:1.15}
+.stories .story .bot{display:flex;justify-content:space-between;align-items:center;font-family:var(--display);font-size:10px;letter-spacing:.3em;text-transform:uppercase;opacity:.85}
+.stories .story .bot .icn{width:24px}
+
+/* Mockups — boarding pass */
+.bp{display:flex;width:680px;max-width:100%;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -20px rgba(0,0,0,.5);border:1px solid var(--hair)}
+.bp .left{background:linear-gradient(160deg,#2A124F,#4B2E83);padding:32px;display:flex;flex-direction:column;justify-content:space-between;color:var(--soft);width:300px;flex-shrink:0;position:relative;gap:18px}
+.bp .left .icon{width:42px}
+.bp .left .dest{font-family:var(--display);font-weight:700;font-size:36px;line-height:1;letter-spacing:-.01em;margin-top:6px}
+.bp .left .code{font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--lav)}
+.bp .perf{width:1px;background:repeating-linear-gradient(180deg, rgba(255,255,255,.4) 0px, rgba(255,255,255,.4) 6px, transparent 6px, transparent 12px)}
+.bp .right{background:var(--soft);color:var(--plum);padding:32px;flex:1;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.bp .right .field{display:flex;flex-direction:column;gap:6px}
+.bp .right .field .l{font-family:var(--display);font-weight:500;font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:rgba(42,18,79,.5)}
+.bp .right .field .v{font-family:var(--display);font-weight:500;font-size:14px;line-height:1.3}
+.bp .right .gold-strip{grid-column:1/-1;height:2px;background:var(--gold);margin:8px 0}
+
+/* Mockups — business cards */
+.bc-pair{display:flex;gap:18px}
+.bc{
+  width:280px;height:170px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 30px 60px -20px rgba(0,0,0,.5);
+  position:relative;overflow:hidden;
+}
+.bc.front{background:linear-gradient(160deg,#2A124F 0%, #4B2E83 100%);color:var(--soft);padding:24px;flex-direction:column;align-items:flex-start;justify-content:space-between}
+.bc.back{background:var(--soft);color:var(--plum);padding:24px;flex-direction:column;align-items:flex-start;justify-content:space-between}
+.bc .icn{width:32px}
+.bc .wm{width:62%}
+.bc .stack{display:flex;flex-direction:column;gap:2px}
+.bc .stack .name{font-family:var(--display);font-weight:700;font-size:14px}
+.bc .stack .role{font-family:var(--text);font-weight:400;font-size:10px;color:rgba(42,18,79,.6)}
+.bc .stack .ct{font-family:var(--text);font-weight:500;font-size:10px;margin-top:8px}
+
+/* Luggage tag */
+.tag{
+  width:200px;height:300px;border-radius:16px;
+  background:linear-gradient(160deg,#2A124F 0%, #4B2E83 100%);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;
+  position:relative;box-shadow:0 30px 60px -20px rgba(0,0,0,.5);
+  padding:32px;gap:14px;
+}
+.tag::before{content:"";position:absolute;top:16px;left:50%;transform:translateX(-50%);width:18px;height:6px;border-radius:99px;background:var(--gold)}
+.tag .icn{width:48px;margin-top:18px}
+.tag .lab{font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--lav)}
+.tag .num{font-family:var(--display);font-weight:700;font-size:22px;color:var(--soft)}
+
+/* Pickup signage */
+.sign{
+  width:440px;aspect-ratio:3/4;border-radius:18px;
+  background:linear-gradient(160deg,#2A124F 0%, #4B2E83 100%);
+  display:flex;flex-direction:column;justify-content:space-between;
+  padding:40px;color:var(--soft);
+  box-shadow:0 30px 60px -20px rgba(0,0,0,.5);position:relative;
+}
+.sign .top{display:flex;justify-content:space-between;align-items:center}
+.sign .top .icn{width:32px}
+.sign .name{font-family:var(--display);font-weight:700;font-size:56px;line-height:1.02;letter-spacing:-.01em}
+.sign .meta{font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--lav)}
+
+/* App phone photo — transparent PNG renders directly with a soft
+   purple glow + plum-deep drop-shadow to lift it off the slide */
+.phone-photo{
+  width:auto;
+  max-width:100%;
+  max-height:420px;
+  display:block;
+  filter:
+    drop-shadow(0 0 40px rgba(123,91,206,.35))
+    drop-shadow(0 22px 36px rgba(0,0,0,.55));
+}
+
+/* App + phone (legacy CSS mockup; kept for any other reference) */
+.phone{
+  width:280px;aspect-ratio:9/19;border-radius:38px;
+  background:#0a0418;border:8px solid #15082B;
+  box-shadow:0 30px 60px -20px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.05);
+  position:relative;overflow:hidden;
+}
+.phone .notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:90px;height:24px;background:#000;border-radius:0 0 14px 14px;z-index:5}
+.phone .screen{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(80% 60% at 50% 0%, rgba(123,91,206,.5) 0%, transparent 60%),
+    linear-gradient(180deg, #2A124F 0%, #4B2E83 100%);
+  padding:48px 18px 24px;color:var(--soft);display:flex;flex-direction:column;gap:14px;
+}
+.phone .screen .top{display:flex;justify-content:space-between;font-family:var(--text);font-size:10px;color:var(--lav)}
+.phone .screen h2{font-family:var(--display);font-weight:700;font-size:22px;line-height:1.1;margin-top:16px}
+.phone .screen .pill{display:inline-flex;padding:5px 10px;border:1px solid var(--hair-strong);border-radius:99px;font-family:var(--display);font-weight:500;font-size:9px;letter-spacing:.32em;text-transform:uppercase}
+.phone .screen .card{
+  background:rgba(255,255,255,.06);border:1px solid var(--hair);border-radius:12px;padding:12px;backdrop-filter:blur(6px);
+  display:flex;flex-direction:column;gap:6px;font-family:var(--text);font-size:11px;
+}
+.phone .screen .card .row{display:flex;justify-content:space-between}
+.phone .screen .card .lab{font-family:var(--display);font-weight:500;font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:var(--lav)}
+.phone .screen .card .val{font-family:var(--display);font-weight:500;font-size:13px}
+.phone .screen .card.gold-row{border-color:rgba(245,185,66,.4)}
+.phone .screen .cta{margin-top:auto;background:var(--gold);color:#3D2700;text-align:center;padding:12px;border-radius:99px;font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.04em}
+
+/* App icon */
+.appicon{
+  width:160px;height:160px;border-radius:36px;
+  background:linear-gradient(160deg,#2A124F 0%, #4B2E83 100%);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 20px 40px -10px rgba(0,0,0,.6), 0 0 0 1px rgba(245,185,66,.1);
+  position:relative;
+}
+.appicon::before{content:"";position:absolute;inset:0;border-radius:36px;background:radial-gradient(60% 60% at 50% 0%, rgba(123,91,206,.5) 0%, transparent 60%);pointer-events:none}
+.appicon .ic{width:55%;position:relative;z-index:2}
+
+/* Browser hero */
+.browser{
+  border-radius:16px;overflow:hidden;border:1px solid var(--hair);
+  box-shadow:0 30px 60px -20px rgba(0,0,0,.5);
+  background:#0a0418;
+}
+.browser .bar{background:#15082B;padding:12px 18px;display:flex;align-items:center;gap:10px}
+.browser .bar .dot{width:10px;height:10px;border-radius:50%}
+.browser .bar .d1{background:#ff5f57}.browser .bar .d2{background:#febc2e}.browser .bar .d3{background:#28c840}
+.browser .bar .url{flex:1;background:#0a0418;border:1px solid var(--hair);border-radius:99px;padding:6px 16px;font-family:var(--text);font-size:11px;color:var(--lav);text-align:center}
+.browser .browser-photo{width:100%;height:auto;display:block;max-height:480px;object-fit:cover;object-position:top center}
+
+/* Digital slide — two-column grid sized so both columns fit the
+   remaining frame height without overflowing past the footer */
+.digital-grid{
+  margin-top:16px;flex:1;min-height:0;
+  display:grid;grid-template-columns:1.55fr 1fr;gap:28px;align-items:start;
+}
+.digital-col{min-height:0}
+.appicon-row{
+  display:flex;gap:14px;align-items:center;justify-content:center;width:100%;
+  padding:14px 18px;border:1px solid var(--hair);border-radius:14px;
+  background:rgba(255,255,255,.03);
+}
+.appicon-row .appicon{width:72px;height:72px;border-radius:18px;box-shadow:0 10px 24px -8px rgba(0,0,0,.5)}
+.appicon-row .appicon .ic{width:54%}
+.browser .hero{
+  padding:56px;
+  background:
+    radial-gradient(60% 50% at 90% 30%, rgba(245,185,66,.18) 0%, transparent 60%),
+    radial-gradient(60% 50% at 10% 70%, rgba(123,91,206,.5) 0%, transparent 60%),
+    linear-gradient(180deg, #15082B 0%, #2A124F 100%);
+  min-height:320px;display:flex;flex-direction:column;justify-content:space-between;gap:40px;
+}
+.browser .hero .nav{display:flex;justify-content:space-between;align-items:center;color:var(--soft)}
+.browser .hero .nav .links{display:flex;gap:28px;font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--lav)}
+.browser .hero .nav .nav-mark{width:120px}
+.browser .hero h1{font-family:var(--display);font-weight:700;font-size:54px;line-height:1.05;letter-spacing:-.022em;color:var(--soft);max-width:600px}
+.browser .hero .ctas{display:flex;gap:18px;align-items:center}
+.browser .hero .cta-primary{background:var(--gold);color:#3D2700;padding:13px 24px;border-radius:99px;font-family:var(--display);font-weight:700;font-size:13px}
+.browser .hero .cta-secondary{font-family:var(--display);font-weight:500;font-size:13px;color:var(--soft);border-bottom:1px solid var(--gold);padding-bottom:2px}
+
+/* Storefront / vehicle */
+.environments{display:grid;grid-template-columns:1fr 1fr;gap:24px;flex:1}
+.env{
+  border:1px solid var(--hair);border-radius:18px;overflow:hidden;position:relative;
+  display:flex;align-items:center;justify-content:center;padding:32px;
+  background:rgba(0,0,0,.25);min-height:280px;
+}
+.env .lab{position:absolute;top:18px;left:22px;font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+/* Business cards — vector PDFs embedded so the wordmark stays
+   pin-sharp. Each card is sized in real business-card proportions
+   (85 × 55 mm); the .bc-card wrapper crops via overflow:hidden so
+   any PDF-viewer chrome (Chrome's bottom status strip) is pushed
+   off-canvas. */
+.bc-pair-photo{
+  display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;
+  max-width:580px;width:100%;
+}
+.bc-pair-photo .bc-card{
+  width:100%;
+  aspect-ratio:85 / 55;
+  overflow:hidden;
+  border-radius:10px;
+  background:#0E0420;
+  filter:drop-shadow(0 24px 40px rgba(0,0,0,.55));
+  transition:transform .55s cubic-bezier(.22,1,.36,1);
+}
+.bc-pair-photo .bc-card .pdf-canvas{
+  display:block;width:100%;height:100%;
+  background:transparent;
+}
+.bc-pair-photo .bc-card:first-child{transform:rotate(-2.2deg) translateY(6px)}
+.bc-pair-photo .bc-card:last-child {transform:rotate(2.2deg)  translateY(-6px)}
+
+/* Boarding-pass photo — drop-in mockup image, slight rotation for "found on a desk" feel */
+.bp-photo{
+  width:100%;
+  max-width:760px;
+  height:auto;
+  display:block;
+  border-radius:14px;
+  transform:rotate(-1.2deg);
+  filter:drop-shadow(0 30px 60px rgba(0,0,0,.55));
+}
+
+/* Luggage tag + pickup sign — image on the left column, text on the
+   right. The .luggage-stage gives the image a constrained box so it
+   scales to fit without overflowing the slide vertically. */
+.luggage-stage{
+  display:flex;align-items:center;justify-content:center;
+  height:100%;min-height:0;overflow:hidden;
+}
+.luggage-photo{
+  max-width:100%;
+  max-height:100%;
+  width:auto;height:auto;
+  object-fit:contain;
+  display:block;
+  border-radius:14px;
+  filter:drop-shadow(0 30px 60px rgba(0,0,0,.55));
+}
+
+/* Photographic env panels — full-bleed background image + bottom fade for label legibility */
+.env.photo-airport,
+.env.photo-vehicle{
+  background-color:#15082B;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  padding:0;
+  min-height:248px;
+}
+.env.photo-airport{background-image:linear-gradient(180deg, rgba(15,5,33,0) 55%, rgba(15,5,33,.75) 100%), url('assets/app-airport.png')}
+.env.photo-vehicle{background-image:linear-gradient(180deg, rgba(15,5,33,0) 55%, rgba(15,5,33,.75) 100%), url('assets/app-vehicle.png')}
+.env.photo-airport .lab,
+.env.photo-vehicle .lab{
+  text-shadow:0 1px 12px rgba(15,5,33,.7);
+  background:rgba(15,5,33,.55);
+  padding:6px 12px;border-radius:99px;
+  backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.12);
+  top:18px;left:22px;
+}
+
+/* Uniform / pin */
+.uniform-card{
+  background:linear-gradient(160deg,#2A124F 0%, #1B0A36 100%);
+  border-radius:18px;padding:24px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;border:1px solid var(--hair);min-height:180px
+}
+.uniform-card .pin-photo{
+  width:128px;height:128px;border-radius:50%;
+  background-color:#0F0420;
+  background-image:url('assets/app-pin.png');
+  background-size:165% auto;
+  background-position:center;
+  background-repeat:no-repeat;
+  display:block;flex-shrink:0;
+  box-shadow:0 18px 40px -10px rgba(0,0,0,.6), 0 0 0 1px rgba(245,185,66,.3) inset;
+}
+.uniform-card .lab{font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+
+/* Closing */
+.closing{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:36px;flex:1;text-align:center;position:relative}
+.closing .glow-c{position:absolute;width:760px;height:760px;border-radius:50%;background:radial-gradient(closest-side, rgba(123,91,206,.45) 0%, rgba(123,91,206,0) 70%);filter:blur(30px);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+.closing .wm{width:520px;position:relative;z-index:2}
+.closing .sig{font-family:var(--display);font-weight:500;font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:var(--lav)}
+
+/* ─────────── Reactive scaling — fits any viewport ─────────── */
+:root{--scale:1}
+
+.book{overflow-x:hidden;width:100%}
+html,body{overflow-x:hidden}
+
+.slide{
+  transform-origin:top center;
+  transition:opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1), border-color .9s;
+  will-change:transform,opacity;
+}
+
+@media (max-width:1488px){
+  .slide{
+    transform:scale(var(--scale));
+    margin-bottom:calc(810px * (var(--scale) - 1));
+  }
+}
+
+/* ─────────── Entrance reveal ─────────── */
+.slide.reveal-init{
+  opacity:0;
+  transform:scale(var(--scale)) translateY(48px);
+}
+.slide.reveal-init.in-view{
+  opacity:1;
+  transform:scale(var(--scale)) translateY(0);
+}
+
+/* ─────────── Subtle motion on cards ─────────── */
+.card,.six .v,.swatch-card,.grad,.frame-img,.logo-grid .tile,.min-item,.toc-row,.feed-grid .post,.stories .story,.icon-grid .ic,.glyph,.env,.uniform-card{
+  transition:transform .55s cubic-bezier(.22,1,.36,1), border-color .55s, box-shadow .55s, background-color .55s;
+}
+.card:hover,.six .v:hover,.swatch-card:hover,.grad:hover,.frame-img:hover,.logo-grid .tile:hover,.feed-grid .post:hover,.stories .story:hover,.env:hover,.uniform-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(245,185,66,.32);
+  box-shadow:0 16px 40px -16px rgba(0,0,0,.6), 0 0 0 1px rgba(245,185,66,.06) inset;
+}
+.icon-grid .ic:hover{
+  transform:translateY(-2px);
+  border-color:rgba(245,185,66,.4);
+  background:rgba(245,185,66,.04);
+}
+.glyph:hover{
+  transform:translateY(-2px) scale(1.02);
+  border-color:rgba(245,185,66,.32);
+}
+.toc-row:hover{
+  background:rgba(245,185,66,.04);
+  border-color:rgba(245,185,66,.32);
+}
+.toc-row:hover .name{color:var(--gold)}
+.toc-row .name{transition:color .35s}
+.misuse .m:hover{transform:none} /* misuse tiles intentionally static */
+
+/* ─────────── Glow pucks: gentle pulse ─────────── */
+@keyframes sadine-pulse{
+  0%,100%{opacity:.85;filter:blur(30px)}
+  50%{opacity:1;filter:blur(38px)}
+}
+.cover .center-mark .glow-large,
+.logo-stage .glow-l,
+.closing .glow-c{
+  animation:sadine-pulse 7s ease-in-out infinite;
+}
+
+/* ─────────── The signature halo: a slow runway-light sweep ─────────── */
+@keyframes sadine-sweep{
+  0%{transform:translateX(-100%);opacity:0}
+  10%{opacity:.55}
+  50%{opacity:.85}
+  90%{opacity:.45}
+  100%{transform:translateX(100%);opacity:0}
+}
+.slide.in-view::before{
+  content:"";position:absolute;top:0;bottom:0;width:60%;
+  background:linear-gradient(90deg, transparent 0%, rgba(123,91,206,.15) 35%, rgba(245,185,66,.08) 50%, rgba(123,91,206,.15) 65%, transparent 100%);
+  pointer-events:none;mix-blend-mode:screen;z-index:1;
+  animation:sadine-sweep 1.4s cubic-bezier(.22,1,.36,1) .15s both;
+}
+.slide.light.in-view::before{mix-blend-mode:multiply;opacity:.5}
+
+/* ─────────── Floating progress bar + slide indicator ─────────── */
+.nav-progress{
+  position:fixed;top:0;left:0;height:2px;width:0;
+  background:linear-gradient(90deg, var(--purple) 0%, #7B5BCE 50%, var(--gold) 100%);
+  z-index:1000;transition:width .12s linear;box-shadow:0 0 14px rgba(123,91,206,.6);
+}
+.slide-indicator{
+  position:fixed;bottom:28px;right:28px;
+  background:rgba(15,5,33,.78);backdrop-filter:blur(14px);
+  border:1px solid var(--hair-strong);border-radius:99px;
+  padding:11px 18px 11px 14px;display:flex;align-items:center;gap:10px;
+  font-family:var(--display);font-weight:500;font-size:11px;
+  letter-spacing:.32em;color:var(--soft);text-transform:uppercase;
+  z-index:999;font-variant-numeric:tabular-nums;
+  box-shadow:0 12px 32px -8px rgba(0,0,0,.5), 0 0 0 1px rgba(255,255,255,.04) inset;
+  transition:opacity .4s, transform .4s cubic-bezier(.22,1,.36,1);
+}
+.lang-pill{
+  position:fixed;bottom:28px;right:200px;
+  background:rgba(15,5,33,.78);backdrop-filter:blur(14px);
+  border:1px solid var(--hair-strong);border-radius:99px;
+  padding:9px 14px;display:flex;align-items:center;gap:6px;
+  font-family:var(--display);font-weight:500;font-size:11px;
+  letter-spacing:.32em;text-transform:uppercase;
+  z-index:999;
+  box-shadow:0 12px 32px -8px rgba(0,0,0,.5), 0 0 0 1px rgba(255,255,255,.04) inset;
+}
+.lang-pill .lang-btn{
+  padding:3px 8px;color:rgba(248,246,252,.55);background:transparent;border:0;
+  font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;
+  transition:color .3s;
+}
+.lang-pill .lang-btn:hover{color:var(--soft)}
+.lang-pill .lang-btn[aria-pressed="true"]{color:var(--gold)}
+.lang-pill .lang-sep{opacity:.35;color:var(--soft)}
+@media print{ .lang-pill{display:none !important} }
+.slide-indicator .dot{
+  width:7px;height:7px;border-radius:50%;background:var(--gold);
+  box-shadow:0 0 12px var(--gold);
+  animation:sadine-pulse-dot 2.4s ease-in-out infinite;
+}
+.slide-indicator .sep{opacity:.4}
+.slide-indicator .tot{color:var(--lav)}
+@keyframes sadine-pulse-dot{
+  0%,100%{transform:scale(1);opacity:1}
+  50%{transform:scale(1.35);opacity:.7}
+}
+
+/* Top scroll-arrow nudge for the cover */
+.scroll-cue{
+  position:absolute;bottom:84px;left:50%;transform:translateX(-50%);
+  font-family:var(--display);font-weight:500;font-size:10px;
+  letter-spacing:.4em;text-transform:uppercase;color:var(--lav);
+  display:flex;flex-direction:column;align-items:center;gap:8px;z-index:3;
+  pointer-events:none;
+}
+.scroll-cue::after{
+  content:"";display:block;width:1px;height:32px;
+  background:linear-gradient(180deg, var(--gold) 0%, transparent 100%);
+  animation:sadine-cue 2.2s ease-in-out infinite;
+  transform-origin:top center;
+}
+@keyframes sadine-cue{
+  0%,100%{transform:scaleY(.4);opacity:.5}
+  50%{transform:scaleY(1);opacity:1}
+}
+
+/* ─────────── Reduced-motion respect ─────────── */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+  }
+  .slide.reveal-init{opacity:1;transform:scale(var(--scale))}
+  .slide.in-view::before{display:none}
+}
+
+/* ─────────── Print: kill all dynamics ─────────── */
+@media print{
+  .nav-progress,.slide-indicator,.scroll-cue{display:none !important}
+  .slide.reveal-init{opacity:1 !important;transform:none !important}
+  .slide.in-view::before{display:none !important}
+  .cover .center-mark .glow-large,.logo-stage .glow-l,.closing .glow-c{animation:none !important}
+  @media (max-width:1488px){
+    .slide{transform:none !important;margin-bottom:0 !important}
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Preload base SVG markers used inline below for variants -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="sadine-mark" viewBox="0 0 1180.44 377.17">
+      <g>
+        <path class="cls-2" fill="currentColor" d="M1178.34,161.32c-6.78-33.08-29.63-59.23-62.01-69.32-29.63-9.24-61.86-4.85-87.75,12.46-25.46,17.02-40.55,45.16-41.96,75.49-1.52,32.61,13.5,60.53,41.1,78.21-3.1-.89-7.53-2.37-12.57-4.76-18.78-8.92-29.46-22.72-38.63-34.86-5.71-7.56-12.98-18.48-19.51-32.85l-22.2-41.22c-11.97-19.03-27.37-34.79-47.67-44.89-27.53-13.69-59.17-15.71-88.35-6.2-39.5,12.87-66.59,48.42-68.32,89.94.02,35.17.03,67.11.06,102.27h43.31c.07-34.47.13-65.72.2-100.19,1.71-21.75,14.54-39.97,34.22-49.22,23.92-11.24,51.71-7.17,72.13,9.73,9.64,7.98,17.13,17.69,23.21,28.71l21.06,38.18c7.5,14.56,15.96,25.2,22.42,32.26,6.27,6.85,18.32,19.8,38.11,29.68,4.65,2.32,13.41,6.3,26.39,9.5,45.76,11.28,110.27,6.64,146.75-24.11,7.28-6.14,12.62-13.93,17.75-22.1l-35.47-21.39c-12.26,20.94-33.61,31.56-57.14,30.28-27.31-1.48-49.35-20.68-53.62-47.22l150.23.02c.52-13.11.9-25.64-1.72-38.42ZM1029.71,168.15c5.16-27.92,29.52-46.58,57.94-45.21,25.5,1.23,46.41,18.91,49.75,45.14l-107.69.07Z"/>
+        <path class="cls-2" fill="currentColor" d="M179.14,270.09c-37.7,26.9-97.33,23.89-138.68,4.36-16.14-8.1-29.67-18.92-40.47-33.26l29.67-31.08c23.8,28.04,59.26,41.72,95.22,37.37,8.78-1.53,16.48-3.96,23.61-9.19,13.26-9.73,18.19-27.83,10.19-42.51-14.94-27.41-83.1-27.26-123.77-60.75-17.12-14.09-26.26-34.5-25.93-56.73.26-17.89,5.83-34.65,17.95-47.82C57.42-2.64,113.96-6.89,155.17,8.71c19.71,7.56,36.41,19.53,49.73,36.14l-32.62,29.12c-17.71-19.98-41.61-31.15-67.69-31.49-23.14-.17-46.32,10.29-47.67,33.46-1.49,25.58,24.16,35.43,47.27,43.34l43.62,14.93c14.08,4.82,26.77,11.95,37.86,21.6,16.39,14.27,24.77,33.76,24.21,55.45-.62,23.85-11.24,44.92-30.74,58.83Z"/>
+        <path class="cls-2" fill="currentColor" d="M227.56,225.86c.58-22.03,12.57-40.09,32.35-48.85,11.27-4.99,23.3-8.32,36.03-8.33l67.6-.05c.79-20.34-12.38-37.58-32.52-41.16-14.56-3.49-29.27-1.99-43.42,2.78-9.73,4-17.85,10.03-25.15,18.28l-26.27-26.13c10.48-13.97,23.81-22.86,39.9-28.56,38.41-12.13,92.37-7.89,116,26.7,8.64,12.65,13.65,27.41,13.69,43.13l.37,121.91c-14.2,0-28.4,0-42.6,0v-24.09c-32.75,25.65-70.78,35.06-97.75,22.82-17.64-8.01-27.43-22.22-27.43-22.22-3.76-5.46-11.27-18.47-10.8-36.24ZM334.03,248.1c4.19-1.74,10.66-4.94,16.82-11.61,12.83-13.9,12.87-31.42,12.7-36.43-19.54.01-39.07.02-58.61.03-6.81,0-13.64,1.7-19.66,4.06-9.35,4.73-14.68,12.79-14.47,22.65.21,9.67,5.76,17.38,15.35,21.95,14.97,5.95,32.14,5.89,47.87-.65Z"/>
+        <path class="cls-2" fill="currentColor" d="M700.23,285.6c-14.51,0-29.03,0-43.54,0,.03-65.68.06-132.39.09-198.08h43.6c-.05,65.68-.1,132.4-.15,198.08Z"/>
+        <path class="cls-1" fill="var(--mark-bird, #F5B942)" d="M658.34,77.75c7.04-3.59,13.5-6.7,19.6-11.11,3.64-2.76,6.97-5.67,9.54-9.29,1.42-2.19,1.84-4.53,1.32-6.65-.19-.75-.79-2.71-3.52-4.82-6.95-5.37-27.8-11.89-29.57-12.44-11.33-4.34-16.28-17.33-14.84-29.65,8.98,7.71,17.11,12.23,22.74,14.9,12.03,5.7,27.46,9.96,36.61,19.58,1.54,1.62,3.59,4.15,4.53,7.78,1.08,4.15.51,8.67-1.78,12.75-7.47,13.29-29.07,20.22-44.62,18.96Z"/>
+        <path class="cls-1" fill="var(--mark-bird, #F5B942)" d="M681.2,47.6c.31.1,3.47,1.14,4.25,4.05.26.98.17,1.86.04,2.46l-19.33-2.5c-7.78-1.01-13.53-6.85-14.28-14.89,9.78,3.63,19.55,7.26,29.33,10.88Z"/>
+        <path class="cls-1" fill="var(--mark-bird, #F5B942)" d="M703.24,25.15c-1.54,2.47-2.42,5.24-3.05,8.36-3.89-3.33-7.85-5.76-12.45-7.61,4.85-9.48,13.9-14.34,23.17-9,1.32.76,3.2.87,4.55,2.39-5.09-.11-9.33,1.73-12.22,5.87Z"/>
+        <g>
+          <path class="cls-2" fill="currentColor" d="M361,356.38l-143.02.02c-.77-1.99-.92-4.45-.71-7.29l143.53-.06.19,7.33Z"/>
+          <path class="cls-2" fill="currentColor" d="M960.54,356.38l-143.43.03c-.37-2.39-.42-4.68-.14-7.32l143.58-.03v7.32Z"/>
+          <g>
+            <path class="cls-2" fill="currentColor" d="M669.08,377.17l-10.12-15.26-9.3-.14.29,15.27-10.57-.05.11-47.34,24.38.23c7.87.07,14.2,5.56,15.15,11.97,1.16,7.8-1.65,14.82-9.8,18.07l11.19,17.04-11.34.21ZM662.71,352.61c3.11-.02,6.17-3.86,6.36-6.26.23-2.88-1.83-7.29-5-7.37l-14.4-.33.08,14.05,12.95-.09Z"/>
+            <path class="cls-2" fill="currentColor" d="M543.51,335.98c7.23,7.76,8.33,18.37,4.08,27.52-3.82,8.23-12.82,13.55-22.83,13.67-14.38.17-25.42-10.19-25.78-23.62-.38-13.88,10.07-24.97,24.61-25.26,7.26-.14,14.61,1.99,19.92,7.69ZM517.44,366.53c7.7,3.85,16.25.74,20.11-5.76,3.62-6.11,2.73-14.33-2.69-19.51-4.96-4.74-13.42-5.68-19.63-1.06-4.53,3.37-6.09,8.84-5.73,14.53.27,4.16,2.93,9.31,7.93,11.81Z"/>
+            <path class="cls-2" fill="currentColor" d="M605.62,329.26l10.18-.27-.36,32.08c-.13,11.2-11.6,16.33-21.51,16.09-11.67-.28-20.38-7.57-20.28-19.51l.25-28.65,10.3.2.26,30.77c.05,5.35,5.9,7.86,9.9,8.07,4.29.23,11.02-2.26,11.06-7.75l.2-31.04Z"/>
+            <path class="cls-2" fill="currentColor" d="M733.61,375.31c-10.32,3.83-21.26,1.57-29.63-5.22l6-7.65c5.17,5.48,13.65,7.24,19.38,4.88,1.35-.56,3.16-3.33,3-4.51-.2-1.37-2.63-3.55-3.98-4.01l-17.29-5.87c-4.95-1.68-5.81-8.07-4.97-12.89.72-4.15,4.1-8.8,9.08-10.3,9.11-2.76,18.52-1.17,25.68,4.26l-5.3,7.64c-8.16-6.27-18.53-5.89-19.59-.41-.27,1.38,1.71,4.35,3.15,4.79l13.2,3.94c6.14,1.83,9.74,6.29,9.89,11.8.16,5.61-2.24,11.2-8.61,13.57Z"/>
+            <polygon class="cls-2" fill="currentColor" points="460.37 377.07 450.37 377.17 450.38 338.98 435.56 338.83 435.67 330.02 475.37 329.89 475.4 338.98 460.35 338.96 460.37 377.07"/>
+          </g>
+        </g>
+        <path class="cls-2" fill="currentColor" d="M628.32,12.93h-43.55l.04,99.85c-37.1-36.14-95.92-31.76-131.53,2.51-22.23,21.4-33.23,51.75-29.83,83.25,3.81,35.32,24.21,66.6,57.33,81.62,33.55,15.22,72.54,11.86,103.04-7.21.66-.41,1.3-.83,1.95-1.26v13.92c14.16,0,28.33-.01,42.49-.02v-96.35l.06-176.31ZM579.84,214.89c-9.89,20.91-29.69,33.43-51.67,34.21-22,.79-42.55-10.46-53.65-30.28-9.68-17.28-10.9-37.98-2.94-56.15,10.23-23.35,33.04-37.23,58.06-35.91,24.2,1.27,45.59,17.24,53.38,41.24,4.97,15.31,3.96,31.8-3.17,46.89Z"/>
+      </g>
+    </symbol>
+    <symbol id="sadine-icon" viewBox="0 0 74.83 74.1">
+      <g>
+        <path class="cls-1" fill="#F5B942" d="M17.72,73.96c7.04-3.59,13.5-6.7,19.6-11.11,3.64-2.76,6.97-5.67,9.54-9.29,1.42-2.19,1.84-4.53,1.32-6.65-.19-.75-.79-2.71-3.52-4.82-6.95-5.37-27.8-11.89-29.57-12.44C3.75,25.31-1.2,12.32.24,0c8.98,7.71,17.11,12.23,22.74,14.9,12.03,5.7,27.46,9.96,36.61,19.58,1.54,1.62,3.59,4.15,4.53,7.78,1.08,4.15.51,8.67-1.78,12.75-7.47,13.29-29.07,20.22-44.62,18.96Z"/>
+        <path class="cls-1" fill="#F5B942" d="M40.57,43.81c.31.1,3.47,1.14,4.25,4.05.26.98.17,1.86.04,2.46l-19.33-2.5c-7.78-1.01-13.53-6.85-14.28-14.89,9.78,3.63,19.55,7.26,29.33,10.88Z"/>
+        <path class="cls-1" fill="#F5B942" d="M62.61,21.36c-1.54,2.47-2.42,5.24-3.05,8.36-3.89-3.33-7.85-5.76-12.45-7.61,4.85-9.48,13.9-14.34,23.17-9,1.32.76,3.2.87,4.55,2.39-5.09-.11-9.33,1.73-12.22,5.87Z"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<style>
+  /* Variants drive the mark via inherited `color` (wordmark paths use
+     fill="currentColor") and `--mark-bird` (bird paths use
+     fill="var(--mark-bird,#F5B942)"). Both inherit reliably through
+     the <use> shadow tree in every modern browser, so the mark
+     re-colors correctly without overriding presentation attributes. */
+  .mark-default       { color:#F8F6FC; --mark-bird:#F5B942 }
+  .mark-on-light      { color:#4B2E83; --mark-bird:#F5B942 }
+  .mark-mono-white    { color:#F8F6FC; --mark-bird:#F8F6FC }
+  .mark-mono-purple   { color:#4B2E83; --mark-bird:#4B2E83 }
+  .mark-mono-plum     { color:#0A0418; --mark-bird:#0A0418 }
+  .mark-gold-on-purple{ color:#F8F6FC; --mark-bird:#F5B942 }
+
+  /* icon variants */
+  .icon-gold .cls-1{fill:#F5B942 !important}
+  .icon-white .cls-1{fill:#F8F6FC !important}
+  .icon-purple .cls-1{fill:#4B2E83 !important}
+  .icon-plum .cls-1{fill:#2A124F !important}
+</style>
+
+<div class="book">
+
+<!-- ─────────── 01 · COVER ─────────── -->
+<section id="s-01" class="slide cover cover-hero">
+  <div class="cover-img"></div>
+  <div class="cover-overlay"></div>
+
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Sadine Tours · <span class="lang-en">2026 Edition</span><span class="lang-fr">Édition 2026</span></span></div>
+      <div class="lang-picker" role="group" aria-label="Language">
+        <button type="button" class="lang-btn" data-set-lang="en"><span class="dot"></span>English</button>
+        <span class="lang-sep">·</span>
+        <button type="button" class="lang-btn" data-set-lang="fr"><span class="dot"></span>Français</button>
+      </div>
+    </div>
+
+    <div class="cover-title">
+      <span class="cover-eyebrow">
+        <span class="lang-en">Volume 01 · Strategy · Identity · Guidelines</span>
+        <span class="lang-fr">Volume 01 · Stratégie · Identité · Directives</span>
+      </span>
+      <h1 class="cover-h">Brand<br/>Book.</h1>
+      <span class="cover-sub">
+        <span class="lang-en">Forty-one pages · One single voice</span>
+        <span class="lang-fr">Quarante et une pages · Une seule voix</span>
+      </span>
+    </div>
+
+    <div class="botbar">
+      <div class="credits">
+        <div class="c"><span class="cap mute"><span class="lang-en">Document</span><span class="lang-fr">Document</span></span><span class="kbd white">Brand Book / v1.0</span></div>
+        <div class="c"><span class="cap mute"><span class="lang-en">Audience</span><span class="lang-fr">Public</span></span><span class="kbd white"><span class="lang-en">Internal · Partners</span><span class="lang-fr">Interne · Partenaires</span></span></div>
+        <div class="c"><span class="cap mute"><span class="lang-en">Issued</span><span class="lang-fr">Émis</span></span><span class="kbd white">Tunis · 2026</span></div>
+      </div>
+      <span class="cap mute" style="text-shadow:0 1px 12px rgba(15,5,33,.6)">— Areen Cubs Creative Studio</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── 02 · INDEX · I ─────────── -->
+<section id="s-02" class="slide">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Index · I / IV</span></div>
+      <span class="cap mute">Sadine Tours · 2026</span>
+    </div>
+
+    <div style="margin-top:28px;display:flex;flex-direction:column;gap:14px">
+      <h2 class="h1">Inside this volume.</h2>
+      <p class="lead" style="max-width:780px">A complete identity system in six volumes — across forty-one pages. Click any line to jump.</p>
+    </div>
+
+    <div class="toc-grouped" style="margin-top:36px">
+      <div class="toc-col">
+        <div class="toc-section">
+          <span class="toc-section-head">Volume I · Strategy — opening</span>
+          <a class="toc-row" href="#s-01"><span class="num">01</span><span class="name">Cover</span><span class="pg">001</span></a>
+          <a class="toc-row" href="#s-02"><span class="num">02</span><span class="name">Index · I</span><span class="pg">002</span></a>
+          <a class="toc-row" href="#s-03"><span class="num">03</span><span class="name">Index · II</span><span class="pg">003</span></a>
+          <a class="toc-row" href="#s-04"><span class="num">04</span><span class="name">Index · III</span><span class="pg">004</span></a>
+          <a class="toc-row" href="#s-05"><span class="num">05</span><span class="name">Index · IV</span><span class="pg">005</span></a>
+        </div>
+      </div>
+      <div class="toc-col">
+        <div class="toc-section">
+          <span class="toc-section-head">Volume I · Strategy — foundation</span>
+          <a class="toc-row" href="#s-06"><span class="num">06</span><span class="name">Manifesto</span><span class="pg">006</span></a>
+          <a class="toc-row" href="#s-07"><span class="num">07</span><span class="name">Positioning</span><span class="pg">007</span></a>
+          <a class="toc-row" href="#s-08"><span class="num">08</span><span class="name">Mission &amp; Vision</span><span class="pg">008</span></a>
+          <a class="toc-row" href="#s-09"><span class="num">09</span><span class="name">Brand Values · I</span><span class="pg">009</span></a>
+          <a class="toc-row" href="#s-10"><span class="num">10</span><span class="name">Brand Values · II</span><span class="pg">010</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Index · I</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 03 · INDEX · II ─────────── -->
+<section id="s-03" class="slide dark">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Index · II / IV</span></div>
+      <span class="cap mute">Sadine Tours · 2026</span>
+    </div>
+
+    <div style="margin-top:28px;display:flex;flex-direction:column;gap:14px">
+      <h2 class="h1">Voice, audience &amp; mark.</h2>
+      <p class="lead" style="max-width:780px">The end of strategy and the start of identity — how the brand sounds, who it speaks to, what it looks like.</p>
+    </div>
+
+    <div class="toc-grouped" style="margin-top:36px">
+      <div class="toc-col">
+        <div class="toc-section">
+          <span class="toc-section-head">Volume I · Strategy — voice &amp; audience</span>
+          <a class="toc-row" href="#s-11"><span class="num">11</span><span class="name">Personality</span><span class="pg">011</span></a>
+          <a class="toc-row" href="#s-12"><span class="num">12</span><span class="name">Tone of Voice</span><span class="pg">012</span></a>
+          <a class="toc-row" href="#s-13"><span class="num">13</span><span class="name">Audience · The Quiet Professional</span><span class="pg">013</span></a>
+          <a class="toc-row" href="#s-14"><span class="num">14</span><span class="name">Audience · The Modern Couple</span><span class="pg">014</span></a>
+          <a class="toc-row" href="#s-15"><span class="num">15</span><span class="name">Audience · The Considered Family</span><span class="pg">015</span></a>
+          <a class="toc-row" href="#s-16"><span class="num">16</span><span class="name">Differentiation</span><span class="pg">016</span></a>
+        </div>
+      </div>
+      <div class="toc-col">
+        <div class="toc-section">
+          <span class="toc-section-head">Volume II · Identity — the mark</span>
+          <a class="toc-row" href="#s-17"><span class="num">17</span><span class="name">Logo — Primary</span><span class="pg">017</span></a>
+          <a class="toc-row" href="#s-18"><span class="num">18</span><span class="name">Lockups · Primary</span><span class="pg">018</span></a>
+          <a class="toc-row" href="#s-19"><span class="num">19</span><span class="name">Lockups · Mono &amp; Icon</span><span class="pg">019</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Index · II</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 04 · INDEX · III ─────────── -->
+<section id="s-04" class="slide">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Index · III / IV</span></div>
+      <span class="cap mute">Sadine Tours · 2026</span>
+    </div>
+
+    <div style="margin-top:28px;display:flex;flex-direction:column;gap:14px">
+      <h2 class="h1">Rules, color &amp; type.</h2>
+      <p class="lead" style="max-width:780px">How the mark must behave — clear space, misuse, palette, gradients, ratios, and the typographic system.</p>
+    </div>
+
+    <div class="toc-grouped" style="margin-top:36px">
+      <div class="toc-col">
+        <div class="toc-section">
+          <span class="toc-section-head">Volume II · Identity — rules</span>
+          <a class="toc-row" href="#s-20"><span class="num">20</span><span class="name">Clear Space &amp; Minimum Sizes</span><span class="pg">020</span></a>
+          <a class="toc-row" href="#s-21"><span class="num">21</span><span class="name">Misuse · I</span><span class="pg">021</span></a>
+          <a class="toc-row" href="#s-22"><span class="num">22</span><span class="name">Misuse · II</span><span class="pg">022</span></a>
+        </div>
+        <div class="toc-section">
+          <span class="toc-section-head">Volume III · Color</span>
+          <a class="toc-row" href="#s-23"><span class="num">23</span><span class="name">Color Palette</span><span class="pg">023</span></a>
+          <a class="toc-row" href="#s-24"><span class="num">24</span><span class="name">Gradients</span><span class="pg">024</span></a>
+          <a class="toc-row" href="#s-25"><span class="num">25</span><span class="name">Color Ratios</span><span class="pg">025</span></a>
+        </div>
+      </div>
+      <div class="toc-col">
+        <div class="toc-section">
+          <span class="toc-section-head">Volume III · Type</span>
+          <a class="toc-row" href="#s-26"><span class="num">26</span><span class="name">Satoshi · Display</span><span class="pg">026</span></a>
+          <a class="toc-row" href="#s-27"><span class="num">27</span><span class="name">Manrope · Text</span><span class="pg">027</span></a>
+          <a class="toc-row" href="#s-28"><span class="num">28</span><span class="name">Zain Mob · Arabic</span><span class="pg">028</span></a>
+          <a class="toc-row" href="#s-29"><span class="num">29</span><span class="name">Hierarchy</span><span class="pg">029</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Index · III</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 05 · INDEX · IV ─────────── -->
+<section id="s-05" class="slide dark">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Index · IV / IV</span></div>
+      <span class="cap mute">Sadine Tours · 2026</span>
+    </div>
+
+    <div style="margin-top:28px;display:flex;flex-direction:column;gap:14px">
+      <h2 class="h1">How the brand meets the world.</h2>
+      <p class="lead" style="max-width:780px">Visual language, social, the artifacts of a journey, the environments — and the closing standard that gates every piece.</p>
+    </div>
+
+    <div class="toc-grouped" style="margin-top:36px">
+      <div class="toc-col">
+        <div class="toc-section">
+          <span class="toc-section-head">Volume IV · Visual Language</span>
+          <a class="toc-row" href="#s-30"><span class="num">30</span><span class="name">Photography · Hero</span><span class="pg">030</span></a>
+          <a class="toc-row" href="#s-31"><span class="num">31</span><span class="name">Iconography &amp; Motion</span><span class="pg">031</span></a>
+        </div>
+        <div class="toc-section">
+          <span class="toc-section-head">Volume V · Applications</span>
+          <a class="toc-row" href="#s-32"><span class="num">32</span><span class="name">Stories &amp; Reels</span><span class="pg">032</span></a>
+          <a class="toc-row" href="#s-33"><span class="num">33</span><span class="name">Boarding Pass</span><span class="pg">033</span></a>
+        </div>
+      </div>
+      <div class="toc-col">
+        <div class="toc-section">
+          <span class="toc-section-head">Volume V · Applications (cont.)</span>
+          <a class="toc-row" href="#s-34"><span class="num">34</span><span class="name">Business Cards</span><span class="pg">034</span></a>
+          <a class="toc-row" href="#s-35"><span class="num">35</span><span class="name">Luggage Tag &amp; Pickup Sign</span><span class="pg">035</span></a>
+          <a class="toc-row" href="#s-36"><span class="num">36</span><span class="name">Environmental &amp; Vehicle</span><span class="pg">036</span></a>
+          <a class="toc-row" href="#s-37"><span class="num">37</span><span class="name">Digital — Web &amp; App</span><span class="pg">037</span></a>
+        </div>
+        <div class="toc-section">
+          <span class="toc-section-head">Volume VI · Closing</span>
+          <a class="toc-row" href="#s-38"><span class="num">38</span><span class="name">Standard &amp; Sign-off</span><span class="pg">038</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Index · IV</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 03 · MANIFESTO ─────────── -->
+<section id="s-06" class="slide dark">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Manifesto</span></div>
+      <span class="cap mute pgnum"></span>
+    </div>
+
+    <div style="flex:1;display:flex;align-items:center">
+      <div style="max-width:1180px">
+        <div class="hair gold short" style="margin-bottom:32px"></div>
+        <p class="manifesto-quote">
+          Sadine Tours organizes premium travel for people who refuse to choose between
+          <span class="gold">elegance</span> and
+          <span class="gold">ease</span>.
+        </p>
+        <p class="lead" style="margin-top:36px;max-width:880px;font-size:18px">
+          We are not the cheapest agency. We are not the loudest. We are the agency that organizes — and the organization itself is the luxury. Every detail is handled before you ask. Every surface is designed. Nothing rushes. Nothing is forgotten.
+        </p>
+        <p class="lead" style="margin-top:24px;max-width:880px;font-size:18px;color:var(--soft)">
+          The functional promise is travel without friction. The emotional promise is the feeling of arriving without effort. That feeling is the north star of this entire system.
+        </p>
+      </div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · The Brand</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 04 · POSITIONING ─────────── -->
+<section id="s-07" class="slide">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Positioning</span></div>
+      <span class="cap mute pgnum"></span>
+    </div>
+
+    <div style="margin-top:32px;display:grid;grid-template-columns:1.3fr 1fr;gap:64px;flex:1;align-items:center">
+      <div>
+        <span class="cap gold" style="margin-bottom:18px;display:block">01 · Where we stand</span>
+        <h2 class="h1" style="margin-bottom:32px">A digital-first travel house — not a package shop.</h2>
+        <p class="lead" style="max-width:560px;font-size:18px">For modern Tunisian and Maghreb travelers who want a curated, organized, premium journey, Sadine Tours designs and orchestrates every fragment of the trip with the precision of a luxury airline and the warmth of a private host.</p>
+        <p class="h3" style="margin-top:32px;color:var(--soft);font-style:italic;max-width:520px">We sell calm, taste, and time saved.</p>
+      </div>
+      <div class="card" style="background:rgba(0,0,0,.28);min-height:auto">
+        <span class="num">Category exit</span>
+        <p class="body" style="font-size:14.5px;color:var(--soft)">The Tunisian agency category competes on one axis — who can quote the cheapest package fastest. Same WhatsApp PDFs, same green-and-white logos, same crowded photography.</p>
+        <div class="hair" style="margin:6px 0"></div>
+        <span class="num">Our axis</span>
+        <p class="body" style="font-size:14.5px;color:var(--soft)">Not cheapest. Not loudest. The agency that <em>organizes</em> — and the organization itself is the luxury. Closer to a private travel concierge than a discount intermediary.</p>
+      </div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Strategy</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 05 · MISSION & VISION ─────────── -->
+<section id="s-08" class="slide dark">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Mission &amp; Vision</span></div>
+      <span class="cap mute pgnum"></span>
+    </div>
+
+    <div style="margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:32px;flex:1;align-items:stretch">
+      <div class="card" style="justify-content:center;min-height:auto;padding:48px">
+        <span class="num">02 · Mission</span>
+        <h2 class="h2" style="margin:14px 0 22px">Make organized, premium travel a default — not a privilege.</h2>
+        <p class="lead" style="font-size:16px">Take every fragment of the journey — visa, flight, transfer, hotel, restaurant, guide, return — and present it as a single, smooth, beautifully designed experience.</p>
+        <div class="hair gold short" style="margin:22px 0 6px"></div>
+        <p class="h4" style="color:var(--soft);font-style:italic">From boarding pass to last sunset — handled.</p>
+      </div>
+      <div class="card" style="justify-content:center;min-height:auto;padding:48px">
+        <span class="num">03 · Vision · 2030</span>
+        <h2 class="h2" style="margin:14px 0 22px">The most trusted modern travel brand in the Maghreb.</h2>
+        <p class="lead" style="font-size:16px">The first name a new generation of professionals, couples, and families thinks of when they decide to leave home well — across Tunisia, Algeria, Morocco, Libya, and the diaspora.</p>
+        <div class="hair gold short" style="margin:22px 0 6px"></div>
+        <p class="h4" style="color:var(--soft);font-style:italic">Not biggest. Most trusted.</p>
+      </div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Strategy</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 06 · BRAND VALUES · I ─────────── -->
+<section id="s-09" class="slide">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Brand Values · I / II</span></div>
+      <span class="cap mute pgnum"></span>
+    </div>
+
+    <div style="margin-top:32px;display:flex;justify-content:space-between;align-items:flex-end;gap:48px">
+      <h2 class="h1">Six values<br/>that govern<br/>every decision.</h2>
+      <p class="lead" style="max-width:380px">If a piece of work breaks one of these, it does not ship. There are no exceptions. The first three are below.</p>
+    </div>
+
+    <div class="six" style="grid-template-columns:repeat(3,1fr);margin-top:40px;flex:1">
+      <div class="v" style="padding:36px;justify-content:center;min-height:auto"><span class="n">01 · Precision</span><span class="t" style="font-size:28px;margin:8px 0">A flight time is a flight time.</span><span class="body" style="font-size:14px">Nothing is "approximate." Confirmations are confirmations. The flight is at 19:30, not "around 19:30."</span></div>
+      <div class="v" style="padding:36px;justify-content:center;min-height:auto"><span class="n">02 · Elegance</span><span class="t" style="font-size:28px;margin:8px 0">Quiet. Considered. Edited.</span><span class="body" style="font-size:14px">Loud is a sign of effort; we don't want effort to show. The brand whispers.</span></div>
+      <div class="v" style="padding:36px;justify-content:center;min-height:auto"><span class="n">03 · Warmth</span><span class="t" style="font-size:28px;margin:8px 0">Premium, never cold.</span><span class="body" style="font-size:14px">There is always a human voice underneath the system. Hosted, not transactional.</span></div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Values · I</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 07 · BRAND VALUES · II ─────────── -->
+<section id="s-10" class="slide dark">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Brand Values · II / II</span></div>
+      <span class="cap mute pgnum"></span>
+    </div>
+
+    <div style="margin-top:32px;display:flex;justify-content:space-between;align-items:flex-end;gap:48px">
+      <h2 class="h1">Three more —<br/>and the rule<br/>is unchanged.</h2>
+      <p class="lead" style="max-width:380px">Curation, modernity, discretion. Together with the first three, they form a six-rule contract — for every campaign, every email, every storefront.</p>
+    </div>
+
+    <div class="six" style="grid-template-columns:repeat(3,1fr);margin-top:40px;flex:1">
+      <div class="v" style="padding:36px;justify-content:center;min-height:auto"><span class="n">04 · Curation</span><span class="t" style="font-size:28px;margin:8px 0">We don't sell every destination.</span><span class="body" style="font-size:14px">We sell the ones we have personally vetted. The catalog is short on purpose.</span></div>
+      <div class="v" style="padding:36px;justify-content:center;min-height:auto"><span class="n">05 · Modernity</span><span class="t" style="font-size:28px;margin:8px 0">Digital-first, not paper-first.</span><span class="body" style="font-size:14px">Booking, communication, follow-up — app-native by default. Paper is for ceremony.</span></div>
+      <div class="v" style="padding:36px;justify-content:center;min-height:auto"><span class="n">06 · Discretion</span><span class="t" style="font-size:28px;margin:8px 0">What we know, we hold quietly.</span><span class="body" style="font-size:14px">Preferences, allergies, anniversaries — used invisibly. Discretion is part of the product.</span></div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Values · II</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 08 · PERSONALITY ─────────── -->
+<section id="s-11" class="slide">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Personality</span></div>
+      <span class="cap mute pgnum"></span>
+    </div>
+
+    <div style="margin-top:32px;display:grid;grid-template-columns:1.2fr 1fr;gap:64px;flex:1;align-items:center">
+      <div>
+        <span class="cap gold" style="margin-bottom:16px;display:block">If the brand were a person</span>
+        <h2 class="h1" style="margin-bottom:28px;max-width:600px">A host.<br/><span style="color:var(--lav)">Not a salesman.</span></h2>
+        <p class="lead" style="max-width:520px;font-size:18px">Late thirties. Bilingual — French, Arabic, fluent English. Trained somewhere precise: hotel school in Lausanne, an airline in Doha, a private concierge in Paris.</p>
+        <p class="lead" style="max-width:520px;font-size:18px;margin-top:18px;color:var(--soft)">Wears one good watch, not three. Doesn't seem busy even when they are. Notices things — the temperature of the car, the light at check-in, whether you've eaten.</p>
+      </div>
+
+      <div class="col" style="gap:18px">
+        <span class="cap mute">Three lines they would write</span>
+        <div class="sample">
+          <span class="lab">Onboarding email · opening line</span>
+          Welcome, Mr. Ben Aïcha. Your journey begins on Tuesday. Everything below is yours to keep — itinerary, contacts, and the small things we've already arranged.
+        </div>
+        <div class="sample">
+          <span class="lab">Delay handling · plain reassurance</span>
+          Your flight is delayed by two hours. We've already moved your transfer and notified the hotel. You don't need to do anything.
+        </div>
+        <div class="sample">
+          <span class="lab">Booking confirmation · subject line</span>
+          Confirmed · Istanbul · 12 → 17 May
+        </div>
+      </div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Personality</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 09 · TONE OF VOICE ─────────── -->
+<section id="s-12" class="slide dark">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Tone of Voice</span></div>
+      <span class="cap mute pgnum"></span>
+    </div>
+
+    <div style="margin-top:32px;display:flex;justify-content:space-between;align-items:flex-end;gap:48px">
+      <h2 class="h1">We are.<br/>We are not.</h2>
+      <p class="lead" style="max-width:380px">Six words on each side. They form the contract every email, caption, and conversation must honor.</p>
+    </div>
+
+    <div style="margin-top:48px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;flex:1;align-items:start">
+      <div class="tone-list" style="grid-template-columns:1fr 1fr;grid-column:span 2">
+        <div class="col y" style="gap:0">
+          <h5>We are</h5>
+          <ul>
+            <li>Warm</li>
+            <li>Confident</li>
+            <li>Specific</li>
+            <li>Brief</li>
+            <li>Bilingual</li>
+            <li>Refined</li>
+          </ul>
+        </div>
+        <div class="col n" style="gap:0">
+          <h5>We are not</h5>
+          <ul>
+            <li>Casual</li>
+            <li>Loud</li>
+            <li>Generic</li>
+            <li>Brusque</li>
+            <li>Mixed-up</li>
+            <li>Stiff</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col" style="gap:18px">
+        <div class="card" style="min-height:auto">
+          <span class="num">Writing rules</span>
+          <p class="body" style="color:var(--soft);font-size:14px">Short sentences. Specific nouns. No exclamation marks outside captions. No emojis in customer service. Honor the language the client wrote in. Never apologize for price — state it once, with confidence.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Voice</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 10 · AUDIENCE · QUIET PROFESSIONAL ─────────── -->
+<section id="s-13" class="slide">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Audience · I / III · Primary</span></div>
+      <span class="cap mute pgnum"></span>
+    </div>
+
+    <div style="margin-top:32px;display:grid;grid-template-columns:1.1fr 1fr;gap:72px;flex:1;align-items:center">
+      <div>
+        <span class="cap gold" style="margin-bottom:16px;display:block">Primary archetype · 01 / 03</span>
+        <h2 class="h1" style="margin-bottom:28px">The Quiet<br/>Professional.</h2>
+        <p class="lead" style="max-width:520px;font-size:18px">32–48 years old. Urban — Tunis, Sfax, Sousse, Casablanca, Algiers. Senior professional, entrepreneur, doctor, executive.</p>
+        <p class="lead" style="max-width:520px;font-size:18px;margin-top:14px;color:var(--soft)">Travels 4–8 times a year, half business, half leisure. Values <span class="gold">time over price</span>. Pays for invisible labor.</p>
+      </div>
+      <div class="col" style="gap:18px">
+        <div class="card" style="background:rgba(0,0,0,.28);min-height:auto;padding:36px">
+          <span class="num">Trigger phrase</span>
+          <p class="h3" style="font-style:italic;color:var(--soft);font-weight:500;line-height:1.3">"I just don't have time to organize this."</p>
+        </div>
+        <div class="card" style="min-height:auto;padding:28px;gap:12px">
+          <span class="num">How they read</span>
+          <p class="body">Books on phone. Reads in French and Arabic. Expects English to work. Replies in the language they wrote in. Trusts brands that look as careful as they are.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Audience · Primary</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 11 · AUDIENCE · MODERN COUPLE ─────────── -->
+<section id="s-14" class="slide dark">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Audience · II / III · Secondary</span></div>
+      <span class="cap mute pgnum"></span>
+    </div>
+
+    <div style="margin-top:32px;display:grid;grid-template-columns:1.1fr 1fr;gap:72px;flex:1;align-items:center">
+      <div>
+        <span class="cap gold" style="margin-bottom:16px;display:block">Secondary archetype · 02 / 03</span>
+        <h2 class="h1" style="margin-bottom:28px">The Modern<br/>Couple.</h2>
+        <p class="lead" style="max-width:520px;font-size:18px">28–40 years old. Dual income. No children, or one young child. Honeymoons, anniversaries, "we both need a break" weekends.</p>
+        <p class="lead" style="max-width:520px;font-size:18px;margin-top:14px;color:var(--soft)">Highly visual — cares how the trip <span class="gold">looks</span>, but in a refined way. Wants taste, not influencer-bait.</p>
+      </div>
+      <div class="col" style="gap:18px">
+        <div class="card" style="background:rgba(0,0,0,.28);min-height:auto;padding:36px">
+          <span class="num">Trigger phrase</span>
+          <p class="h3" style="font-style:italic;color:var(--soft);font-weight:500;line-height:1.3">"I want it to feel like a movie."</p>
+        </div>
+        <div class="card" style="min-height:auto;padding:28px;gap:12px">
+          <span class="num">How they buy</span>
+          <p class="body">Discovers via Instagram saves and friends. Compares two or three options, then decides over dinner. Will pay 30% more for a brand that gets the photography right.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Audience · Secondary</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 12 · AUDIENCE · CONSIDERED FAMILY ─────────── -->
+<section id="s-15" class="slide">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Audience · III / III · Tertiary</span></div>
+      <span class="cap mute pgnum"></span>
+    </div>
+
+    <div style="margin-top:32px;display:grid;grid-template-columns:1.1fr 1fr;gap:72px;flex:1;align-items:center">
+      <div>
+        <span class="cap gold" style="margin-bottom:16px;display:block">Tertiary archetype · 03 / 03</span>
+        <h2 class="h1" style="margin-bottom:28px">The Considered<br/>Family.</h2>
+        <p class="lead" style="max-width:520px;font-size:18px">38–55 years old. Two to three children. Will not compromise on safety, hygiene, or the children's experience.</p>
+        <p class="lead" style="max-width:520px;font-size:18px;margin-top:14px;color:var(--soft)">Wants the <span class="gold">adults' trip preserved</span> — real hotels, real food, real culture, with kids accommodated rather than catered to.</p>
+      </div>
+      <div class="col" style="gap:18px">
+        <div class="card" style="background:rgba(0,0,0,.28);min-height:auto;padding:36px">
+          <span class="num">Trigger phrase</span>
+          <p class="h3" style="font-style:italic;color:var(--soft);font-weight:500;line-height:1.3">"A real trip the kids can also enjoy."</p>
+        </div>
+        <div class="card" style="min-height:auto;padding:28px;gap:12px">
+          <span class="num">What they need from us</span>
+          <p class="body">Pre-arranged everything: car seats waiting, kids' menus pre-confirmed, hotel rooms pre-checked for adjoining doors. The parents should never have to ask.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Audience · Tertiary</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 13 · DIFFERENTIATION ─────────── -->
+<section id="s-16" class="slide dark">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Differentiation</span></div>
+      <span class="cap mute pgnum"></span>
+    </div>
+
+    <div style="margin-top:20px;display:flex;justify-content:space-between;align-items:flex-end;gap:48px">
+      <h2 class="h2">The defensible space is the last row.</h2>
+      <p class="lead" style="max-width:360px;font-size:14.5px">Across seven dimensions, the only one of three competitors that owns a brand is us. Pricing isn't the moat — taste and care are.</p>
+    </div>
+
+    <div class="card diff-table-card">
+      <div class="diff-row head">
+        <span class="cell">Dimension</span>
+        <span class="cell">Old-school agency</span>
+        <span class="cell">Online aggregator</span>
+        <span class="cell gold">Sadine Tours</span>
+      </div>
+      <div class="diff-row"><span class="cell dim">Channel</span><span class="cell">Walk-in shop</span><span class="cell">Web booking engine</span><span class="cell gold">Concierge + app + boutique</span></div>
+      <div class="diff-row"><span class="cell dim">Tone</span><span class="cell">Transactional</span><span class="cell">Algorithmic</span><span class="cell gold">Hosted</span></div>
+      <div class="diff-row"><span class="cell dim">Aesthetic</span><span class="cell">Crowded</span><span class="cell">Clinical</span><span class="cell gold">Cinematic</span></div>
+      <div class="diff-row"><span class="cell dim">Pricing</span><span class="cell">Lowest</span><span class="cell">Variable</span><span class="cell gold">Transparent premium</span></div>
+      <div class="diff-row"><span class="cell dim">After booking</span><span class="cell">Silent</span><span class="cell">Email blasts</span><span class="cell gold">Designed follow-up</span></div>
+      <div class="diff-row"><span class="cell dim">Failure handling</span><span class="cell">"Call airline"</span><span class="cell">Self-service portal</span><span class="cell gold">Already moved</span></div>
+      <div class="diff-row"><span class="cell dim">Brand asset</span><span class="cell">Logo on a pen</span><span class="cell">None</span><span class="cell gold">A complete identity</span></div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Differentiation</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 08 · LOGO PRIMARY ─────────── -->
+<section id="s-17" class="slide dark">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Logo · Primary Lockup</span></div>
+      <span class="cap mute pgnum"></span>
+    </div>
+
+    <div style="margin-top:24px">
+      <h2 class="h2">The mark.</h2>
+      <p class="lead" style="max-width:660px;margin-top:10px">A typography-led wordmark. The dot of the <em>i</em> is replaced with a small bird — drawn as a single gesture and reading, on second look, as an abstract <em>S</em>.</p>
+    </div>
+
+    <div class="logo-stage">
+      <div class="glow-l"></div>
+      <svg class="wm mark-default" viewBox="0 0 1180.44 377.17"><use href="#sadine-mark"/></svg>
+    </div>
+
+    <div class="logo-meta">
+      <div class="m"><h6>Construction</h6><p>Custom-finished rounded geometric sans</p></div>
+      <div class="m"><h6>Signature</h6><p>n + e joined by a single elegant arc</p></div>
+      <div class="m"><h6>Hidden monogram</h6><p>The bird above the i reads as an abstract S</p></div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Logo</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 09 · ANATOMY ─────────── -->
+<!-- ─────────── 16 · LOCKUPS · PRIMARY ─────────── -->
+<section id="s-18" class="slide dark">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Lockups · Primary · I / II</span></div>
+      <span class="cap mute pgnum"></span>
+    </div>
+
+    <div style="margin-top:32px;display:flex;justify-content:space-between;align-items:flex-end;gap:48px">
+      <h2 class="h1">Three primary<br/>backgrounds.</h2>
+      <p class="lead" style="max-width:380px">The full-color mark — white wordmark, gold bird — sits on three approved backgrounds. Always pick the one with the highest contrast against the surrounding context.</p>
+    </div>
+
+    <div class="logo-grid" style="grid-template-columns:repeat(3,1fr);margin-top:40px;flex:1">
+      <div class="tile purple" style="min-height:auto;padding:48px">
+        <span class="l">A · Primary on Purple</span>
+        <svg class="wm mark-default" viewBox="0 0 1180.44 377.17"><use href="#sadine-mark"/></svg>
+      </div>
+      <div class="tile dark" style="min-height:auto;padding:48px">
+        <span class="l">B · Primary on Dark</span>
+        <svg class="wm mark-default" viewBox="0 0 1180.44 377.17"><use href="#sadine-mark"/></svg>
+      </div>
+      <div class="tile light" style="min-height:auto;padding:48px">
+        <span class="l">C · Primary on Light</span>
+        <svg class="wm mark-on-light" viewBox="0 0 1180.44 377.17"><use href="#sadine-mark"/></svg>
+      </div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Lockups · Primary</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 17 · LOCKUPS · MONO & ICON ─────────── -->
+<section id="s-19" class="slide">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Lockups · Mono &amp; Icon · II / II</span></div>
+      <span class="cap mute pgnum"></span>
+    </div>
+
+    <div style="margin-top:32px;display:flex;justify-content:space-between;align-items:flex-end;gap:48px">
+      <h2 class="h1">Single-color &amp;<br/>icon-only.</h2>
+      <p class="lead" style="max-width:380px">Use the mono variants for engraving, embossing, foil stamping, and any context where one color is required. The bird-only icon is for app icons, favicons, lapel pins, and embroidery.</p>
+    </div>
+
+    <div class="logo-grid" style="grid-template-columns:repeat(3,1fr);margin-top:40px;flex:1">
+      <div class="tile dark" style="min-height:auto;padding:48px">
+        <span class="l">D · Mono White</span>
+        <svg class="wm mark-mono-white" viewBox="0 0 1180.44 377.17"><use href="#sadine-mark"/></svg>
+      </div>
+      <div class="tile light" style="min-height:auto;padding:48px">
+        <span class="l">E · Mono Purple</span>
+        <svg class="wm mark-mono-purple" viewBox="0 0 1180.44 377.17"><use href="#sadine-mark"/></svg>
+      </div>
+      <div class="tile purple" style="min-height:auto;padding:48px">
+        <span class="l">F · Icon Only — Bird</span>
+        <svg class="icon icon-white" viewBox="0 0 74.83 74.1" style="width:160px"><use href="#sadine-icon"/></svg>
+      </div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Lockups · Mono &amp; Icon</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 11 · CLEAR SPACE + MIN SIZE ─────────── -->
+<section id="s-20" class="slide">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Logo · Clear Space &amp; Minimum Size</span></div>
+      <span class="cap mute pgnum"></span>
+    </div>
+
+    <div style="margin-top:24px;display:flex;justify-content:space-between;align-items:flex-end">
+      <h2 class="h2">A safety zone equal to <span class="gold">x</span>.</h2>
+      <p class="lead" style="max-width:380px"><span class="gold">x</span> = the height of the bird icon. No element may enter the zone — text, photography, fold lines, frames.</p>
+    </div>
+
+    <div class="clear" style="margin-top:32px">
+      <div class="stage">
+        <img class="clear-space-svg" src="assets/clear-space.svg" alt="Sadine wordmark with clear-space x-zone diagram" />
+      </div>
+
+      <div class="min-list">
+        <div class="card" style="min-height:auto;padding:18px">
+          <span class="num">Minimum size · Digital</span>
+          <div style="display:flex;gap:18px;align-items:center;margin-top:6px">
+            <div class="min-item" style="flex:1;border:0;background:transparent;padding:0">
+              <div class="swatch" style="background:rgba(0,0,0,.25)"><svg style="width:60px" class="mark-default" viewBox="0 0 1180.44 377.17"><use href="#sadine-mark"/></svg></div>
+              <div class="meta"><h6>Full lockup</h6><p>96 px wide</p></div>
+            </div>
+            <div class="min-item" style="flex:1;border:0;background:transparent;padding:0">
+              <div class="swatch"><svg style="width:18px" class="icon-gold" viewBox="0 0 74.83 74.1"><use href="#sadine-icon"/></svg></div>
+              <div class="meta"><h6>Icon</h6><p>24 px wide</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="min-height:auto;padding:18px">
+          <span class="num">Minimum size · Print</span>
+          <div style="display:flex;gap:18px;align-items:center;margin-top:6px">
+            <div class="min-item" style="flex:1;border:0;background:transparent;padding:0">
+              <div class="swatch"><svg style="width:60px" class="mark-default" viewBox="0 0 1180.44 377.17"><use href="#sadine-mark"/></svg></div>
+              <div class="meta"><h6>Full lockup</h6><p>25 mm wide</p></div>
+            </div>
+            <div class="min-item" style="flex:1;border:0;background:transparent;padding:0">
+              <div class="swatch"><svg style="width:18px" class="icon-gold" viewBox="0 0 74.83 74.1"><use href="#sadine-icon"/></svg></div>
+              <div class="meta"><h6>Icon</h6><p>8 mm wide</p></div>
+            </div>
+          </div>
+        </div>
+
+        <p class="body" style="font-size:13px">Below these sizes, the bird's gesture loses its line; the mark loses its meaning.</p>
+      </div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Clear Space</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 19 · MISUSE · I ─────────── -->
+<section id="s-21" class="slide dark">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Misuse · I / II</span></div>
+      <span class="cap mute pgnum"></span>
+    </div>
+
+    <div style="margin-top:32px;display:flex;justify-content:space-between;align-items:flex-end;gap:48px">
+      <h2 class="h1">Three things —<br/>never to do.</h2>
+      <p class="lead" style="max-width:380px;color:#ff8a8a">Each of these breaks the mark. None of them are stylistic preferences. They are rules.</p>
+    </div>
+
+    <div class="misuse" style="grid-template-columns:repeat(3,1fr);grid-template-rows:1fr;margin-top:40px;flex:1">
+      <div class="m stretched" style="padding:48px">
+        <span class="lab">01 · Do not stretch</span>
+        <svg class="wm mark-default" viewBox="0 0 1180.44 377.17"><use href="#sadine-mark"/></svg>
+        <span class="x-overlay"></span>
+      </div>
+      <div class="m recolor" style="padding:48px">
+        <span class="lab">02 · Do not recolor</span>
+        <img class="wm" src="assets/logo-misuse-recolor.svg" alt="" />
+        <span class="x-overlay"></span>
+      </div>
+      <div class="m busy" style="padding:48px">
+        <span class="lab">03 · Do not place on busy bg</span>
+        <svg class="wm mark-default" viewBox="0 0 1180.44 377.17"><use href="#sadine-mark"/></svg>
+        <span class="x-overlay"></span>
+      </div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Misuse · I</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 20 · MISUSE · II ─────────── -->
+<section id="s-22" class="slide">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Misuse · II / II</span></div>
+      <span class="cap mute pgnum"></span>
+    </div>
+
+    <div style="margin-top:32px;display:flex;justify-content:space-between;align-items:flex-end;gap:48px">
+      <h2 class="h1">Three more —<br/>also forbidden.</h2>
+      <p class="lead" style="max-width:380px;color:#ff8a8a">Rotation, outlines, and drop-shadows. The mark exists in one orientation, one weight system, one finish. Resist all three temptations.</p>
+    </div>
+
+    <div class="misuse" style="grid-template-columns:repeat(3,1fr);grid-template-rows:1fr;margin-top:40px;flex:1">
+      <div class="m rotated" style="padding:48px">
+        <span class="lab">04 · Do not rotate</span>
+        <svg class="wm mark-default" viewBox="0 0 1180.44 377.17"><use href="#sadine-mark"/></svg>
+        <span class="x-overlay"></span>
+      </div>
+      <div class="m outlined" style="padding:48px">
+        <span class="lab">05 · Do not outline</span>
+        <img class="wm" src="assets/logo-misuse-outline.svg" alt="" />
+        <span class="x-overlay"></span>
+      </div>
+      <div class="m shadow" style="padding:48px">
+        <span class="lab">06 · Do not add drop-shadow</span>
+        <svg class="wm mark-default" viewBox="0 0 1180.44 377.17"><use href="#sadine-mark"/></svg>
+        <span class="x-overlay"></span>
+      </div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Misuse · II</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 13 · COLOR PALETTE ─────────── -->
+<section id="s-23" class="slide">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Color · Primary Palette</span></div>
+      <span class="cap mute pgnum"></span>
+    </div>
+
+    <div style="margin-top:24px;display:flex;justify-content:space-between;align-items:flex-end">
+      <h2 class="h2">Five colors. One mood.</h2>
+      <p class="lead" style="max-width:380px">Purple is the dominant. Gold is the accent — used as punctuation, never as a paragraph.</p>
+    </div>
+
+    <div class="palette" style="margin-top:36px">
+      <div class="swatch-card s-purple">
+        <span class="role">Primary</span>
+        <h3 class="name">Sadine Purple</h3>
+        <div class="vals">
+          <div class="row"><span>HEX</span><span>#4B2E83</span></div>
+          <div class="row"><span>RGB</span><span>75 · 46 · 131</span></div>
+          <div class="row"><span>CMYK</span><span>43 · 65 · 0 · 49</span></div>
+          <div class="row"><span>Use</span><span>Backgrounds · Hero</span></div>
+        </div>
+      </div>
+      <div class="swatch-card s-plum">
+        <span class="role">Depth</span>
+        <h3 class="name">Midnight Plum</h3>
+        <div class="vals">
+          <div class="row"><span>HEX</span><span>#2A124F</span></div>
+          <div class="row"><span>RGB</span><span>42 · 18 · 79</span></div>
+          <div class="row"><span>Use</span><span>Gradients · Cinema</span></div>
+        </div>
+      </div>
+      <div class="swatch-card s-gold">
+        <span class="role">Accent</span>
+        <h3 class="name">Sadine Gold</h3>
+        <div class="vals">
+          <div class="row"><span>HEX</span><span>#F5B942</span></div>
+          <div class="row"><span>RGB</span><span>245 · 185 · 66</span></div>
+          <div class="row"><span>Use</span><span>Bird · CTAs · Foil</span></div>
+        </div>
+      </div>
+      <div class="swatch-card s-soft">
+        <span class="role">Surface</span>
+        <h3 class="name">Soft White</h3>
+        <div class="vals">
+          <div class="row"><span>HEX</span><span>#F8F6FC</span></div>
+          <div class="row"><span>RGB</span><span>248 · 246 · 252</span></div>
+          <div class="row"><span>Use</span><span>Type · Light surfaces</span></div>
+        </div>
+      </div>
+      <div class="swatch-card s-lav">
+        <span class="role">Tint</span>
+        <h3 class="name">Light Lavender</h3>
+        <div class="vals">
+          <div class="row"><span>HEX</span><span>#D8C8F3</span></div>
+          <div class="row"><span>RGB</span><span>216 · 200 · 243</span></div>
+          <div class="row"><span>Use</span><span>Cards · Soft tints</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Color</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 22 · GRADIENTS ─────────── -->
+<section id="s-24" class="slide dark">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Color · Gradients</span></div>
+      <span class="cap mute pgnum"></span>
+    </div>
+
+    <div style="margin-top:32px;display:flex;justify-content:space-between;align-items:flex-end;gap:48px">
+      <h2 class="h1">Three gradients.<br/>Three jobs.</h2>
+      <p class="lead" style="max-width:420px">Depth lives behind hero photography. Glow gives motion to digital surfaces. Luxury is reserved for invitations, mailers, and milestone moments — never daily UI.</p>
+    </div>
+
+    <div class="gradients" style="grid-template-columns:1fr 1fr 1fr;margin-top:48px;flex:1">
+      <div class="grad g1" style="min-height:auto;padding:40px">
+        <div>
+          <span class="role">Depth · 01 / 03</span>
+          <h3 class="name" style="margin-top:6px;font-size:32px">Depth</h3>
+        </div>
+        <div>
+          <p class="role" style="margin-bottom:8px;opacity:.85">Heroes · Brand book · Editorial</p>
+          <div class="vals" style="font-size:13px">#2A124F → #4B2E83</div>
+        </div>
+      </div>
+      <div class="grad g2" style="min-height:auto;padding:40px">
+        <div>
+          <span class="role">Glow · 02 / 03</span>
+          <h3 class="name" style="margin-top:6px;font-size:32px">Glow</h3>
+        </div>
+        <div>
+          <p class="role" style="margin-bottom:8px;opacity:.85">UI lighting · Social · Motion</p>
+          <div class="vals" style="font-size:13px">#4B2E83 → #7B5BCE</div>
+        </div>
+      </div>
+      <div class="grad g3" style="min-height:auto;padding:40px">
+        <div>
+          <span class="role">Luxury · 03 / 03</span>
+          <h3 class="name" style="margin-top:6px;font-size:32px">Luxury</h3>
+        </div>
+        <div>
+          <p class="role" style="margin-bottom:8px;opacity:.85">Invites · Mailers · Milestones</p>
+          <div class="vals" style="font-size:13px">#4B2E83 → #F5B942</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Gradients</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 23 · COLOR RATIOS ─────────── -->
+<section id="s-25" class="slide">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Color · Usage Ratio</span></div>
+      <span class="cap mute pgnum"></span>
+    </div>
+
+    <div style="margin-top:32px;display:flex;justify-content:space-between;align-items:flex-end;gap:48px">
+      <h2 class="h1">Sixty-twenty-five<br/>ten-five.</h2>
+      <p class="lead" style="max-width:380px">Purple dominates. White breathes. Lavender softens. Gold punctuates. Keep this proportion in every layout, every campaign, every storefront.</p>
+    </div>
+
+    <div style="margin-top:48px;flex:1;display:flex;flex-direction:column;gap:32px">
+      <div class="ratio-bar" style="height:120px">
+        <div class="seg s60" style="font-size:13px;letter-spacing:.2em;padding:24px">60% · Purple / Plum</div>
+        <div class="seg s25" style="font-size:13px;letter-spacing:.2em;padding:24px">25% · Soft White</div>
+        <div class="seg s10" style="font-size:13px;letter-spacing:.2em;padding:24px">10% · Lavender</div>
+        <div class="seg s5" style="font-size:11px;letter-spacing:.16em;padding:24px 14px">5% · Gold</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px">
+        <div class="card" style="min-height:auto;padding:28px">
+          <span class="num">60% · Purple</span>
+          <p class="body" style="font-size:13.5px">Backgrounds, hero surfaces, product chrome. The brand's center of gravity.</p>
+        </div>
+        <div class="card" style="min-height:auto;padding:28px">
+          <span class="num">25% · Soft White</span>
+          <p class="body" style="font-size:13.5px">Typography, breathing space, light surfaces. The room the brand stands in.</p>
+        </div>
+        <div class="card" style="min-height:auto;padding:28px">
+          <span class="num">10% · Lavender</span>
+          <p class="body" style="font-size:13.5px">Cards, secondary surfaces, soft tints. Lifts dark slabs without breaking them.</p>
+        </div>
+        <div class="card" style="min-height:auto;padding:28px;border-color:rgba(245,185,66,.4)">
+          <span class="num" style="color:var(--gold)">5% · Gold</span>
+          <p class="body" style="font-size:13.5px"><span style="color:var(--soft)">A punctuation mark, not a paragraph.</span> If two pieces of gold appear in one layout, remove one.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Color Ratios</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 27 · TYPOGRAPHY · SATOSHI (Aeonik-style 3-column specimen) ─────────── -->
+<section id="s-26" class="slide dark">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Typography · I / IV · Display</span></div>
+      <span class="cap mute pgnum"></span>
+    </div>
+
+    <!-- Anatomy specimen: a giant cropped letterform with gold callout lines pointing to its parts. -->
+    <div class="type-anatomy">
+      <!-- Massive letter "a" on the left -->
+      <div class="anat-letter">
+        <span class="anat-glyph">a</span>
+        <!-- Gold thin guide lines (baseline / x-height / cap-height) -->
+        <span class="anat-guide gl-base"  data-l="baseline"></span>
+        <span class="anat-guide gl-x"     data-l="x-height"></span>
+        <span class="anat-guide gl-cap"   data-l="cap-height"></span>
+        <!-- Anatomy callouts -->
+        <span class="anat-callout c-stem">stem</span>
+        <span class="anat-callout c-bowl">bowl</span>
+        <span class="anat-callout c-counter">counter</span>
+        <span class="anat-callout c-terminal">terminal</span>
+      </div>
+
+      <!-- Right column · name, meta, weights, pangram -->
+      <div class="anat-meta">
+        <div>
+          <span class="cap gold" style="letter-spacing:.42em">Display · I / IV</span>
+          <h2 style="font-family:var(--display);font-weight:700;font-size:120px;line-height:.88;letter-spacing:-.04em;color:var(--soft);margin-top:14px">Satoshi.</h2>
+          <p class="lead" style="margin-top:14px;max-width:380px">Modern, rounded, geometric. The wordmark's voice in letters — strong at scale, elegant at small sizes.</p>
+        </div>
+
+        <!-- Weight ladder · horizontal compact -->
+        <div class="anat-weights">
+          <div class="aw"><span class="wlab">Bold</span><span class="wnum">700</span><span class="wspec" style="font-weight:700">Sadine</span></div>
+          <div class="aw"><span class="wlab">Medium</span><span class="wnum">500</span><span class="wspec" style="font-weight:500">Sadine</span></div>
+          <div class="aw"><span class="wlab">Regular</span><span class="wnum">400</span><span class="wspec" style="font-weight:400">Sadine</span></div>
+        </div>
+
+        <div class="anat-footnotes">
+          <span><strong>Foundry</strong> · Indian Type Foundry</span>
+          <span><strong>License</strong> · Fontshare · Open</span>
+          <span><strong>Pangram</strong> · "Five days in Istanbul. The trip is ready."</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Display · Satoshi</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 28 · TYPOGRAPHY · MANROPE (Aeonik-style 3-column specimen) ─────────── -->
+<section id="s-27" class="slide light">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Typography · II / IV · Text &amp; UI</span></div>
+      <span class="cap mute pgnum"></span>
+    </div>
+
+    <!-- Magazine spread: massive editorial headline across the top, real body type in two columns, masthead in the gutter. -->
+    <div class="type-magazine">
+      <!-- Top eyebrow strip with date + foundry, like a magazine masthead -->
+      <div class="mag-mast">
+        <span><strong>Manrope</strong> · Mikhail Sharanda</span>
+        <span>Grotesk · Modern · Google Fonts OFL</span>
+        <span>Weights · SemiBold 600 / Medium 500 / Regular 400</span>
+      </div>
+
+      <!-- Hero headline taking over the spread -->
+      <h1 class="mag-h1">Welcome,<br/>Mr. Ben Aïcha.</h1>
+
+      <!-- Two-column body + sidebar weights -->
+      <div class="mag-body">
+        <div class="mag-col">
+          <p>Your journey begins on Tuesday. Everything below is yours to keep — itinerary, contacts, and the small things we've already arranged. A car will collect you at 19:00 from your door.</p>
+          <p>Dinner is held for 21:00 at <em>Karaköy Lokantası</em>. The suite key has already been activated, and the concierge has your preferences on file.</p>
+        </div>
+        <div class="mag-col">
+          <p>Manrope is the brand's reading voice. Generous interletter spacing, balanced counters, and a soft humanist warmth — it carries long-form copy without fatigue.</p>
+          <p>Use it for paragraphs, UI, lists, forms, captions and metadata. Pair vertically with Satoshi; never mix the two inside a single sentence.</p>
+        </div>
+        <aside class="mag-side">
+          <div class="aw"><span class="wspec" style="font-weight:600;font-family:var(--text)">Aa</span><span class="wlab">SemiBold 600</span></div>
+          <div class="aw"><span class="wspec" style="font-weight:500;font-family:var(--text)">Aa</span><span class="wlab">Medium 500</span></div>
+          <div class="aw"><span class="wspec" style="font-weight:400;font-family:var(--text)">Aa</span><span class="wlab">Regular 400</span></div>
+        </aside>
+      </div>
+
+      <!-- Tracked alphabet at the foot -->
+      <div class="mag-foot">
+        <p>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z &nbsp;·&nbsp; a b c d e f g h i j k l m n o p q r s t u v w x y z &nbsp;·&nbsp; 0 1 2 3 4 5 6 7 8 9</p>
+      </div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Text · Manrope</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 29 · TYPOGRAPHY · ALEXANDRIA (Aeonik-style 3-col, RTL) ─────────── -->
+<section id="s-28" class="slide dark">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Typography · III / IV · Arabic</span></div>
+      <span class="cap mute pgnum"></span>
+    </div>
+
+    <!-- Eyebrow strip with credits, like the other type pages -->
+    <div class="ar-strip">
+      <span class="cap gold" style="letter-spacing:.42em">Arabic · Zain Mob</span>
+      <span class="cap mute" style="letter-spacing:.42em">Mostafa El Abasiry · Self-hosted · Open license</span>
+    </div>
+
+    <!-- Hero stage: centered massive سادين word -->
+    <div class="ar-stage">
+      <span class="ar-stage-eyebrow"><span class="dash"></span>The brand's Arabic voice<span class="dash"></span></span>
+      <h1 class="ar-word">سادين</h1>
+      <p class="ar-latin">Sadine</p>
+    </div>
+
+    <!-- Bottom band: 3 weight specimens (one per column) + pairing rule -->
+    <div class="ar-foot">
+      <div class="ar-wcell">
+        <span class="ar-wspec" style="font-weight:800">أب</span>
+        <div class="ar-wmeta"><strong>Bold · عريض</strong><span>800</span></div>
+      </div>
+      <div class="ar-wcell">
+        <span class="ar-wspec" style="font-weight:600">أب</span>
+        <div class="ar-wmeta"><strong>SemiBold · متوسط</strong><span>600</span></div>
+      </div>
+      <div class="ar-wcell">
+        <span class="ar-wspec" style="font-weight:400">أب</span>
+        <div class="ar-wmeta"><strong>Regular · عادي</strong><span>400</span></div>
+      </div>
+      <div class="ar-rule">
+        <span class="cap mute" style="font-size:10px;letter-spacing:.32em;display:block;margin-bottom:6px">Pairing rule</span>
+        <p>Pair Zain Mob and Satoshi <strong>vertically</strong> — Arabic above or below Latin, never inline.</p>
+      </div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Arabic · Zain Mob</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 18 · HIERARCHY ─────────── -->
+<section id="s-29" class="slide dark">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Typography · Hierarchy · IV / IV</span></div>
+      <span class="cap mute pgnum"></span>
+    </div>
+
+    <div style="margin-top:28px;display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--hair);padding-bottom:20px">
+      <span class="cap gold" style="letter-spacing:.4em">Hierarchy · Editorial demo</span>
+      <span class="cap mute" style="letter-spacing:.4em">Premium reads slow</span>
+    </div>
+
+    <div style="flex:1;display:grid;grid-template-columns:1.7fr 1fr;gap:64px;padding:36px 0;align-items:start">
+
+      <!-- Editorial article specimen -->
+      <article style="position:relative;padding-right:24px">
+        <p style="font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:24px">Boutique destination · Volume IV</p>
+
+        <h1 style="font-family:var(--display);font-weight:700;font-size:78px;line-height:1.0;letter-spacing:-.025em;color:var(--soft);margin-bottom:22px">Five days in Istanbul.</h1>
+
+        <p style="font-family:var(--display);font-weight:500;font-size:26px;line-height:1.25;letter-spacing:-.008em;color:var(--lav);margin-bottom:28px;max-width:640px">From boarding pass to last sunset — handled.</p>
+
+        <p style="font-family:var(--text);font-weight:400;font-size:15px;line-height:1.75;color:rgba(248,246,252,.8);max-width:640px">Sadine Tours organizes premium travel for people who refuse to choose between elegance and ease. Every detail is handled before you ask. Nothing rushes. Nothing is forgotten — from the boarding pass to the last sunset on the Bosphorus.</p>
+
+        <div style="margin-top:32px;display:flex;align-items:center;gap:18px">
+          <div style="height:1px;width:48px;background:var(--gold)"></div>
+          <p style="font-family:var(--text);font-weight:500;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--lav)">Photography · Bosphorus, blue hour</p>
+        </div>
+      </article>
+
+      <!-- Spec annotations stacked -->
+      <aside style="display:flex;flex-direction:column;gap:0;border-left:1px solid var(--hair);padding-left:32px">
+        <div style="padding:14px 0;border-bottom:1px solid var(--hair);display:flex;justify-content:space-between;align-items:baseline">
+          <div>
+            <span style="font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)">Eyebrow</span>
+            <p style="font-family:var(--text);font-size:11px;color:var(--lav);margin-top:4px">Satoshi Medium</p>
+          </div>
+          <span style="font-family:var(--display);font-weight:500;font-size:13px;color:var(--soft);font-variant-numeric:tabular-nums">11 / 16 · +.32em</span>
+        </div>
+        <div style="padding:14px 0;border-bottom:1px solid var(--hair);display:flex;justify-content:space-between;align-items:baseline">
+          <div>
+            <span style="font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)">H1 · Display</span>
+            <p style="font-family:var(--text);font-size:11px;color:var(--lav);margin-top:4px">Satoshi Bold</p>
+          </div>
+          <span style="font-family:var(--display);font-weight:500;font-size:13px;color:var(--soft);font-variant-numeric:tabular-nums">78 / 78 · −.025em</span>
+        </div>
+        <div style="padding:14px 0;border-bottom:1px solid var(--hair);display:flex;justify-content:space-between;align-items:baseline">
+          <div>
+            <span style="font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)">H3 · Subhead</span>
+            <p style="font-family:var(--text);font-size:11px;color:var(--lav);margin-top:4px">Satoshi Medium</p>
+          </div>
+          <span style="font-family:var(--display);font-weight:500;font-size:13px;color:var(--soft);font-variant-numeric:tabular-nums">26 / 32 · −.008em</span>
+        </div>
+        <div style="padding:14px 0;border-bottom:1px solid var(--hair);display:flex;justify-content:space-between;align-items:baseline">
+          <div>
+            <span style="font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)">Body</span>
+            <p style="font-family:var(--text);font-size:11px;color:var(--lav);margin-top:4px">Manrope Regular</p>
+          </div>
+          <span style="font-family:var(--display);font-weight:500;font-size:13px;color:var(--soft);font-variant-numeric:tabular-nums">15 / 26</span>
+        </div>
+        <div style="padding:14px 0;display:flex;justify-content:space-between;align-items:baseline">
+          <div>
+            <span style="font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)">Caption</span>
+            <p style="font-family:var(--text);font-size:11px;color:var(--lav);margin-top:4px">Manrope Medium</p>
+          </div>
+          <span style="font-family:var(--display);font-weight:500;font-size:13px;color:var(--soft);font-variant-numeric:tabular-nums">11 / 16 · +.16em</span>
+        </div>
+      </aside>
+    </div>
+
+    <div style="border-top:1px solid var(--hair);padding-top:18px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px">
+      <div>
+        <span class="cap mute">Spacing</span>
+        <p class="body" style="font-size:12.5px;margin-top:6px">Body line-height ≥ 1.6. Labels track +0.32em. Display tracks −0.025em.</p>
+      </div>
+      <div>
+        <span class="cap mute">Italic policy</span>
+        <p class="body" style="font-size:12.5px;margin-top:6px">Never on display. Allowed in body for sample lines, quotes, short emphasis.</p>
+      </div>
+      <div>
+        <span class="cap mute">Numerals</span>
+        <p class="body" style="font-size:12.5px;margin-top:6px">Tabular for tables and prices. Proportional for headlines and editorial.</p>
+      </div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Hierarchy</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 28 · PHOTOGRAPHY · HERO ─────────── -->
+<section id="s-30" class="slide">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Photography · Hero</span></div>
+      <span class="cap mute pgnum"></span>
+    </div>
+
+    <div style="margin-top:32px;display:flex;justify-content:space-between;align-items:flex-end;gap:48px">
+      <h2 class="h1">The moment<br/>of arrival.</h2>
+      <p class="lead" style="max-width:380px">Cinematic. Patient. Edited. We shoot the quiet seconds — when the light turns, when the door opens, when the first coffee lands.</p>
+    </div>
+
+    <div class="mood" style="grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,1fr);gap:18px;margin-top:40px;flex:1">
+      <div class="frame-img f1" style="min-height:auto"><span class="lab">01 · Sunset · golden hour</span></div>
+      <div class="frame-img f2" style="min-height:auto"><span class="lab">02 · Cabin window · blue hour</span></div>
+      <div class="frame-img f3" style="min-height:auto"><span class="lab">03 · Marble lobby · warm</span></div>
+      <div class="frame-img f4" style="min-height:auto"><span class="lab">04 · Doorway · low light</span></div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Photography · Hero</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 20 · ICONOGRAPHY + MOTION ─────────── -->
+<section id="s-31" class="slide dark">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Iconography &amp; Motion</span></div>
+      <span class="cap mute pgnum"></span>
+    </div>
+
+    <div style="margin-top:24px">
+      <h2 class="h2">Quiet shapes. Slow motion.</h2>
+    </div>
+
+    <div class="split" style="margin-top:32px;flex:1;grid-template-columns:1.3fr 1fr">
+      <div class="col">
+        <span class="cap mute">Icon system — 24 × 24, 1.5px stroke, rounded joins</span>
+        <div class="icon-grid">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 18h18M5 14l7-9 7 9M9 14v4M15 14v4"/></svg></div>
+          <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M8 6V4M16 6V4"/></svg></div>
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-5v-7h-4v7H5a1 1 0 01-1-1z"/></svg></div>
+          <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M5 12h14M14 5l7 7-7 7"/></svg></div>
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M21 11l-9-7-9 7v9a1 1 0 001 1h6v-7h4v7h6a1 1 0 001-1z"/></svg></div>
+          <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="11" rx="2"/><path d="M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2"/></svg></div>
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 8h18l-2 11H5L3 8zM8 8V5a4 4 0 018 0v3"/></svg></div>
+          <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 21s7-7 7-12a7 7 0 00-14 0c0 5 7 12 7 12z"/></svg></div>
+          <div class="ic"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg></div>
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17.5 6.5 21 8 13.5 3 9l6.5-.5z"/></svg></div>
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M2 12c2-4 6-7 10-7s8 3 10 7c-2 4-6 7-10 7s-8-3-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2v6M12 22v-2M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M2 12h6M16 12h6M4.93 19.07l4.24-4.24M14.83 9.17l4.24-4.24"/></svg></div>
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 12c0-5 4-9 9-9s9 4 9 9M7 12h10M9 12c0-3 1-5 3-5s3 2 3 5"/></svg></div>
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><path d="M3.27 6.96L12 12l8.73-5.04M12 22V12"/></svg></div>
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h12"/></svg></div>
+        </div>
+
+        <div class="card" style="min-height:auto">
+          <span class="num">Texture</span>
+          <p class="body">Subtle film grain on hero photography. Soft glow blooms behind isolated UI elements. Glassmorphism — blurred translucent purple — for floating cards on dark.</p>
+        </div>
+      </div>
+
+      <div class="col">
+        <span class="cap mute">Motion direction</span>
+        <div class="card" style="min-height:auto">
+          <span class="num">Easing &amp; duration</span>
+          <p class="body" style="font-family:'Courier New',monospace;font-size:13px;color:var(--soft)">cubic-bezier(0.22, 1, 0.36, 1)</p>
+          <p class="body">600–900 ms hero. 200–300 ms UI. No abrupt cuts.</p>
+        </div>
+        <div class="card" style="min-height:auto">
+          <span class="num">Camera language</span>
+          <p class="body">Dolly. Slow pan. Subtle parallax. <span style="color:var(--soft)">Never</span> punch-zooms or shakes.</p>
+        </div>
+        <div class="card" style="min-height:auto">
+          <span class="num">Signature gesture</span>
+          <p class="body">A soft purple halo travels across the screen on each section change — like a runway light passing.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Visual Language</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 22 · STORIES & REELS ─────────── -->
+<section id="s-32" class="slide dark">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Social · Stories &amp; Reels</span></div>
+      <span class="cap mute pgnum"></span>
+    </div>
+
+    <div style="margin-top:24px;display:flex;justify-content:space-between;align-items:flex-end">
+      <h2 class="h2">Vertical, slow, with one idea per frame.</h2>
+      <p class="lead" style="max-width:380px">Open on motion. Hook in the first 1.2 s. Close on the bird, held on Sadine Purple for 0.6 s.</p>
+    </div>
+
+    <div class="stories" style="margin-top:32px">
+      <div class="story s1"></div>
+      <div class="story s2">
+        <video class="reel-video" src="assets/social-reel.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
+      <div class="story s3"></div>
+      <div class="story s4"></div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Stories</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 33 · BOARDING PASS · HERO ─────────── -->
+<section id="s-33" class="slide dark">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Applications · Boarding Pass</span></div>
+      <span class="cap mute pgnum"></span>
+    </div>
+
+    <div style="margin-top:32px;display:grid;grid-template-columns:1fr 1.3fr;gap:64px;flex:1;align-items:center">
+      <div>
+        <span class="cap gold" style="margin-bottom:16px;display:block">Signature artifact · 100 × 210 mm</span>
+        <h2 class="h1" style="margin-bottom:28px">The boarding<br/>pass.</h2>
+        <p class="lead" style="max-width:480px;font-size:17px">Two panels, perforated. Left in Sadine Purple — destination, departure, gate. Right in Soft White — passenger details, itinerary block, reference number. Folded into a custom envelope, sealed in wax.</p>
+        <div class="hair" style="margin:28px 0 18px;width:48px;background:var(--gold)"></div>
+        <p class="body" style="font-size:13.5px;max-width:420px">Of every artifact in the system, this is the one the client will keep. Treat it accordingly.</p>
+      </div>
+
+      <div class="center">
+        <img class="bp-photo" src="assets/boarding.png" alt="Sadine Tours boarding pass mockup" />
+      </div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Boarding Pass</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 34 · BUSINESS CARDS · HERO ─────────── -->
+<section id="s-34" class="slide">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Applications · Business Cards</span></div>
+      <span class="cap mute pgnum"></span>
+    </div>
+
+    <div style="margin-top:32px;display:grid;grid-template-columns:1fr 1.4fr;gap:64px;flex:1;align-items:center">
+      <div>
+        <span class="cap gold" style="margin-bottom:16px;display:block">Stationery · 85 × 55 mm · 600 gsm</span>
+        <h2 class="h1" style="margin-bottom:28px">Embossed.<br/>Foiled.<br/>Restrained.</h2>
+        <p class="lead" style="max-width:480px;font-size:17px">Front: Sadine Purple cover, the wordmark blind-embossed (no ink), only the bird in gold foil. Reverse: Soft White, name in Satoshi Medium 10 pt, role and contact in Manrope.</p>
+        <div class="hair" style="margin:28px 0 18px;width:48px;background:var(--gold)"></div>
+        <p class="body" style="font-size:13.5px;max-width:420px">600 gsm cotton stock. The card has weight in the hand — that's deliberate.</p>
+      </div>
+
+      <div class="center" style="gap:28px">
+        <div class="bc-pair-photo">
+          <div class="bc-card">
+            <canvas class="pdf-canvas" data-pdf="assets/business-card-front.pdf" aria-label="Sadine business card · front"></canvas>
+          </div>
+          <div class="bc-card">
+            <canvas class="pdf-canvas" data-pdf="assets/business-card-back.pdf"  aria-label="Sadine business card · reverse"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Business Cards</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 35 · LUGGAGE TAG & PICKUP SIGNAGE ─────────── -->
+<section id="s-35" class="slide dark">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Applications · Luggage Tag &amp; Pickup Sign</span></div>
+      <span class="cap mute pgnum"></span>
+    </div>
+
+    <div style="margin-top:28px;flex:1;min-height:0;display:grid;grid-template-columns:1.4fr 1fr;gap:64px;align-items:center">
+      <div class="luggage-stage">
+        <img class="luggage-photo" src="assets/app-luggage-pickup.png" alt="Sadine Tours luggage tag and pickup sign" />
+      </div>
+
+      <div>
+        <span class="cap gold" style="margin-bottom:16px;display:block">Travel touchpoints</span>
+        <h2 class="h2" style="margin-bottom:22px;line-height:1.05">The objects you<br/>see at the airport.</h2>
+        <p class="lead" style="font-size:17px;max-width:460px">A leather-strapped luggage tag travelling alongside the suitcase. A leather-portfolio pickup sign waiting in arrivals. Both wordless from a distance, instantly recognized up close.</p>
+        <div class="hair" style="margin:24px 0 16px;width:48px;background:var(--gold)"></div>
+        <p class="body" style="font-size:13px;max-width:460px"><span style="color:var(--soft);font-weight:500">Luggage tag</span> · 60 × 110 mm · Sadine Purple, blind-embossed bird, gold leather strap.</p>
+        <p class="body" style="font-size:13px;max-width:460px;margin-top:8px"><span style="color:var(--soft);font-weight:500">Pickup signage</span> · A3 · held in leather portfolio.</p>
+      </div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Travel Touchpoints</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 24 · ENVIRONMENTAL ─────────── -->
+<section id="s-36" class="slide dark">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Applications · Environmental, Vehicle &amp; Uniform</span></div>
+      <span class="cap mute pgnum"></span>
+    </div>
+
+    <div style="margin-top:20px;display:flex;justify-content:space-between;align-items:flex-end">
+      <h2 class="h2">Discretion, in three dimensions.</h2>
+      <p class="lead" style="max-width:340px">No phone numbers on the vehicle. No window posters on the storefront. The brand earns attention by withholding it.</p>
+    </div>
+
+    <div class="environments" style="margin-top:24px">
+      <div class="env storefront photo-airport">
+        <span class="lab">A · Airport · OOH</span>
+      </div>
+      <div class="env vehicle photo-vehicle">
+        <span class="lab">B · Vehicle · Matte Plum</span>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:18px;margin-top:18px">
+      <div class="uniform-card">
+        <span class="lab">C · Lapel pin</span>
+        <div class="pin-photo" role="img" aria-label="Sadine gold lapel pin"></div>
+        <p class="body" style="text-align:center;font-size:12px;max-width:240px;margin:0">Worn on a Midnight-Plum blazer. Replaces the name tag.</p>
+      </div>
+      <div class="card" style="min-height:auto;padding:22px 28px;justify-content:center;gap:10px">
+        <span class="num">Environmental rules</span>
+        <p class="body" style="font-size:13px;line-height:1.55"><strong style="color:var(--soft)">Storefront</strong> — floor-to-ceiling glass, interior in Midnight Plum, single backlit wordmark above the desk, gold accent line at counter height.</p>
+        <p class="body" style="font-size:13px;line-height:1.55"><strong style="color:var(--soft)">Vehicle</strong> — matte Midnight Plum, gloss-on-matte wordmark, gold bird front fender. No URL, no phone — discretion is the point.</p>
+        <p class="body" style="font-size:13px;line-height:1.55"><strong style="color:var(--soft)">Uniform</strong> — Midnight Plum blazer, Soft White shirt, gold lapel pin, embossed leather pocket band in lieu of name tag.</p>
+      </div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Environmental</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 25 · DIGITAL — APP & WEBSITE ─────────── -->
+<section id="s-37" class="slide">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Applications · Digital — App &amp; Website</span></div>
+      <span class="cap mute pgnum"></span>
+    </div>
+
+    <div style="margin-top:20px">
+      <h2 class="h2">A digital house, not a digital shop.</h2>
+      <p class="lead" style="max-width:740px;margin-top:6px;font-size:15px">One question per screen. Keyboard-friendly. A persistent <em>Talk to a human</em> link at the top — discretion is part of the product.</p>
+    </div>
+
+    <div class="digital-grid">
+      <div class="col digital-col" style="gap:14px;justify-content:center">
+        <span class="cap mute">Website · Hero</span>
+        <div class="browser">
+          <div class="bar">
+            <span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span>
+            <span class="url">sadine.tours / journeys</span>
+          </div>
+          <img class="browser-photo" src="assets/website-banner.jpg" alt="Sadine Tours website hero" />
+        </div>
+      </div>
+
+      <div class="col digital-col" style="align-items:center;gap:14px;justify-content:flex-start">
+        <span class="cap mute" style="align-self:flex-start">App · Booking flow</span>
+        <img class="phone-photo" src="assets/app-phone.png" alt="Sadine Tours mobile app · concierge step 3 of 5" />
+      </div>
+    </div>
+
+    <div class="botbar"><span class="pg">Sadine Tours · Digital</span><span class="pg pgnum total"></span></div>
+  </div>
+</section>
+
+<!-- ─────────── 26 · CLOSING ─────────── -->
+<section id="s-38" class="slide cover dark">
+  <div class="frame">
+    <div class="topbar">
+      <div class="id"><span class="dot"></span><span class="cap mute">Closing</span></div>
+      <span class="cap mute">Edition 2026.01</span>
+    </div>
+
+    <div class="closing">
+      <div class="glow-c"></div>
+      <span class="sig">Welcome to</span>
+      <svg class="wm mark-default" viewBox="0 0 1180.44 377.17"><use href="#sadine-mark"/></svg>
+      <p class="lead" style="max-width:780px;text-align:center;font-size:18px;color:var(--soft);margin-top:8px">
+        A new piece of work is on-brand if all five answers are yes:
+      </p>
+      <ol style="list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:18px;max-width:1180px;width:100%;margin-top:8px;position:relative;z-index:2">
+        <li class="card" style="min-height:auto;padding:18px"><span class="num">01</span><span class="body" style="color:var(--soft);font-size:13px">Could this exist on the homepage of a luxury airline?</span></li>
+        <li class="card" style="min-height:auto;padding:18px"><span class="num">02</span><span class="body" style="color:var(--soft);font-size:13px">Is the gold doing one job and only one?</span></li>
+        <li class="card" style="min-height:auto;padding:18px"><span class="num">03</span><span class="body" style="color:var(--soft);font-size:13px">Could a competitor make this exact piece tomorrow?</span></li>
+        <li class="card" style="min-height:auto;padding:18px"><span class="num">04</span><span class="body" style="color:var(--soft);font-size:13px">Does the calm survive when the volume goes up?</span></li>
+        <li class="card" style="min-height:auto;padding:18px"><span class="num">05</span><span class="body" style="color:var(--soft);font-size:13px">Would the Quiet Professional show this to a friend?</span></li>
+      </ol>
+    </div>
+
+    <div class="botbar">
+      <span class="pg">Sadine Tours · Brand Identity System · Edition 2026.01</span>
+      <span class="pg pgnum total"></span>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<script src="assets/i18n.js"></script>
+<script>
+(function(){
+  'use strict';
+
+  const root = document.documentElement;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  if (!slides.length) return;
+
+  /* ───────── 0 · Language system (EN / FR) ───────── */
+  const LANG_KEY = 'sadine-lang';
+  const I18N = (window.SADINE_I18N && window.SADINE_I18N.fr) || {};
+  const originalText = new WeakMap();
+  const SKIP_TAG = /^(SCRIPT|STYLE|CODE|NOSCRIPT|SVG|PATH|USE|DEFS|SYMBOL)$/;
+
+  function isLangManaged(node){
+    /* Skip text inside .lang-en / .lang-fr containers — those are handled by CSS */
+    let el = node.parentNode;
+    while (el && el !== document.body){
+      if (el.classList && (el.classList.contains('lang-en') || el.classList.contains('lang-fr'))) return true;
+      el = el.parentNode;
+    }
+    return false;
+  }
+
+  function translateDOM(lang){
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode(n){
+        const p = n.parentNode;
+        if (!p || SKIP_TAG.test(p.nodeName)) return NodeFilter.FILTER_REJECT;
+        if (!n.nodeValue || !n.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        if (isLangManaged(n)) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    let node;
+    while ((node = walker.nextNode())){
+      if (!originalText.has(node)) originalText.set(node, node.nodeValue);
+      const orig = originalText.get(node);
+      const trimmed = orig.trim();
+      if (lang === 'fr' && I18N[trimmed]){
+        const lead = orig.match(/^\s*/)[0];
+        const tail = orig.match(/\s*$/)[0];
+        node.nodeValue = lead + I18N[trimmed] + tail;
+      } else {
+        node.nodeValue = orig;
+      }
+    }
+  }
+
+  const langButtons = () => Array.from(document.querySelectorAll('.lang-btn'));
+
+  function setLang(lang){
+    if (lang !== 'en' && lang !== 'fr') lang = 'en';
+    document.body.setAttribute('data-lang', lang);
+    document.documentElement.lang = lang;
+    langButtons().forEach(b => {
+      b.setAttribute('aria-pressed', b.getAttribute('data-set-lang') === lang ? 'true' : 'false');
+    });
+    translateDOM(lang);
+    try { localStorage.setItem(LANG_KEY, lang); } catch(_) {}
+  }
+
+  /* Initial: remembered choice → browser language → english */
+  let initial = 'en';
+  try {
+    const saved = localStorage.getItem(LANG_KEY);
+    if (saved === 'en' || saved === 'fr') initial = saved;
+    else if ((navigator.language || '').toLowerCase().startsWith('fr')) initial = 'fr';
+  } catch(_) {}
+
+  /* Wire static (cover-topbar) buttons */
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest('.lang-btn');
+    if (b) setLang(b.getAttribute('data-set-lang'));
+  });
+
+  /* ───────── 1 · Reactive scale: fit slides to any viewport ───────── */
+  const SLIDE_W = 1440;
+  const H_GUTTER = 48; /* matches .book left+right padding */
+
+  function applyScale(){
+    const w = window.innerWidth;
+    const target = SLIDE_W + H_GUTTER;
+    const s = w >= target ? 1 : Math.max(0.18, (w - 24) / SLIDE_W);
+    root.style.setProperty('--scale', s.toFixed(4));
+  }
+
+  let raf;
+  function schedule(fn){
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(fn);
+  }
+
+  applyScale();
+  window.addEventListener('resize', () => schedule(applyScale), { passive: true });
+  window.addEventListener('orientationchange', applyScale);
+
+  /* ───────── 2 · Scroll-reveal entrance ───────── */
+  if ('IntersectionObserver' in window && !reduceMotion){
+    slides.forEach(s => s.classList.add('reveal-init'));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting){
+          e.target.classList.add('in-view');
+          /* one-shot — keep .in-view to allow CSS transitions to run, but stop observing */
+          io.unobserve(e.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    slides.forEach(s => io.observe(s));
+  } else {
+    slides.forEach(s => s.classList.add('in-view'));
+  }
+
+  /* ───────── 3 · Floating progress bar ───────── */
+  const progress = document.createElement('div');
+  progress.className = 'nav-progress';
+  progress.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(progress);
+
+  /* (Removed: the bottom-right slide-indicator chip and the EN/FR pill —
+     they were appearing on every slide. The cover's EN/FR picker in the
+     topbar is the single source of language switching now.) */
+  const indicator = { querySelector(){ return { textContent:'' } } }; // no-op stub
+  const indCur = { textContent:'' };
+
+  /* Apply the initial language NOW that the cover buttons exist in the DOM */
+  setLang(initial);
+
+  let lastCurrent = 1;
+  function tick(){
+    const sy = window.scrollY;
+    const docH = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docH > 0 ? Math.min(100, Math.max(0, (sy / docH) * 100)) : 0;
+    progress.style.width = pct.toFixed(2) + '%';
+
+    /* Find the slide whose visual center is closest to the viewport mid */
+    const mid = sy + window.innerHeight / 2;
+    let best = 1, bestDist = Infinity;
+    for (let i = 0; i < slides.length; i++){
+      const r = slides[i].getBoundingClientRect();
+      const top = r.top + sy;
+      const bot = top + r.height;
+      const c = (top + bot) / 2;
+      const d = Math.abs(c - mid);
+      if (d < bestDist){ bestDist = d; best = i + 1; }
+    }
+    if (best !== lastCurrent){
+      indCur.textContent = String(best).padStart(3, '0');
+      lastCurrent = best;
+    }
+  }
+
+  tick();
+  window.addEventListener('scroll', () => schedule(tick), { passive: true });
+  window.addEventListener('resize', () => schedule(tick), { passive: true });
+
+  /* ───────── 4 · Cover scroll cue ───────── */
+  const cover = document.querySelector('.slide.cover');
+  if (cover && !document.querySelector('.scroll-cue')){
+    const cue = document.createElement('div');
+    cue.className = 'scroll-cue';
+    cue.textContent = 'Scroll';
+    cover.appendChild(cue);
+  }
+
+  /* ───────── 5 · Keyboard navigation: Page Up / Down jump slide-by-slide ───────── */
+  function scrollToSlide(idx){
+    const target = slides[Math.max(0, Math.min(slides.length - 1, idx))];
+    if (target) target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+  }
+  window.addEventListener('keydown', (e) => {
+    if (e.target.matches('input, textarea, select')) return;
+    if (e.key === 'PageDown' || e.key === 'ArrowDown' && e.shiftKey){
+      e.preventDefault();
+      scrollToSlide(lastCurrent);
+    } else if (e.key === 'PageUp' || e.key === 'ArrowUp' && e.shiftKey){
+      e.preventDefault();
+      scrollToSlide(lastCurrent - 2);
+    } else if (e.key === 'Home'){
+      e.preventDefault();
+      scrollToSlide(0);
+    } else if (e.key === 'End'){
+      e.preventDefault();
+      scrollToSlide(slides.length - 1);
+    }
+  });
+
+  /* ───────── 6 · (Removed: click slide indicator to jump back to top) ───────── */
+
+  /* ───────── 7 · Render any .pdf-canvas elements via PDF.js (no browser chrome) ───────── */
+  const pdfCanvases = document.querySelectorAll('canvas.pdf-canvas[data-pdf]');
+  if (pdfCanvases.length){
+    const PDFJS_VER = '4.6.82';
+    const s = document.createElement('script');
+    s.src = `https://cdn.jsdelivr.net/npm/pdfjs-dist@${PDFJS_VER}/legacy/build/pdf.min.mjs`;
+    s.type = 'module';
+    s.onload = () => {/* module loads via dynamic import below */};
+    /* Use dynamic import so we can grab the namespace */
+    (async () => {
+      try{
+        const pdfjs = await import(`https://cdn.jsdelivr.net/npm/pdfjs-dist@${PDFJS_VER}/legacy/build/pdf.min.mjs`);
+        pdfjs.GlobalWorkerOptions.workerSrc =
+          `https://cdn.jsdelivr.net/npm/pdfjs-dist@${PDFJS_VER}/legacy/build/pdf.worker.min.mjs`;
+        const dpr = Math.max(window.devicePixelRatio || 1, 2);
+        for (const canvas of pdfCanvases){
+          const url = canvas.getAttribute('data-pdf');
+          try{
+            const doc = await pdfjs.getDocument({ url, useSystemFonts:true }).promise;
+            const page = await doc.getPage(1);
+            const cssRect = canvas.getBoundingClientRect();
+            /* If canvas hasn't rendered (display:none / 0 size), wait & retry later */
+            const targetCssWidth = cssRect.width || canvas.parentElement.clientWidth || 280;
+            const viewport0 = page.getViewport({ scale: 1 });
+            const scale = (targetCssWidth * dpr) / viewport0.width;
+            const viewport = page.getViewport({ scale });
+            canvas.width  = Math.ceil(viewport.width);
+            canvas.height = Math.ceil(viewport.height);
+            canvas.style.aspectRatio = `${viewport0.width} / ${viewport0.height}`;
+            const ctx = canvas.getContext('2d');
+            await page.render({ canvasContext: ctx, viewport }).promise;
+          } catch(err){ console.warn('PDF render failed for', url, err); }
+        }
+      } catch(err){ console.warn('PDF.js load failed', err); }
+    })();
+  }
+})();
+</script>
+
+</body>
+</html>
