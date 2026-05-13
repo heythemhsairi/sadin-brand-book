@@ -1517,10 +1517,15 @@ html,body{background:var(--soft);color:var(--plum)}
 .slide:not(.cover) .manifesto-quote{color:var(--plum) !important}
 .slide:not(.cover) .manifesto-quote .gold{color:var(--purple) !important}
 
-/* Misuse panels — keep dark for legibility of "wrong" demos but tint to subtle */
+/* Misuse panels — light plum tint for the "white" demos so they read
+   on the new light slide, but the "busy bg" tile keeps its chaotic
+   multi-colour gradient because that's literally the demo. */
 .slide:not(.cover) .misuse .m{
   background:rgba(42,18,79,.08) !important;
   border-color:rgba(42,18,79,.18) !important;
+}
+.slide:not(.cover) .misuse .m.busy{
+  background:linear-gradient(135deg,#ff6b6b 0%,#4ecdc4 50%,#ffd93d 100%) !important;
 }
 
 /* Logo grid tiles — keep tile.purple / tile.dark / tile.light untouched
