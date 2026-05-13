@@ -62,7 +62,7 @@
 
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-html,body{background:#0A0418;color:var(--soft);font-family:var(--text);-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
+html,body{background:#0A0418;color:var(--purple-deep);font-family:var(--text);-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
 img,svg{display:block;max-width:100%}
 a{color:inherit}
 .slide{scroll-margin-top:16px}
@@ -86,7 +86,7 @@ a{color:inherit}
     radial-gradient(120% 90% at 85% 10%, rgba(245,185,66,.08) 0%, rgba(245,185,66,0) 55%),
     radial-gradient(80% 70% at 15% 90%, rgba(123,91,206,.35) 0%, rgba(123,91,206,0) 60%),
     linear-gradient(135deg, var(--plum) 0%, var(--purple) 100%);
-  color:var(--soft);
+  color:var(--purple-deep);
   overflow:hidden;
   border:1px solid var(--hair);
   border-radius:18px;
@@ -118,7 +118,7 @@ a{color:inherit}
 }
 .eyebrow{
   font-family:var(--display);font-weight:500;letter-spacing:.32em;
-  font-size:11px;text-transform:uppercase;color:var(--lav);
+  font-size:11px;text-transform:uppercase;color:rgba(42,18,79,.7);
 }
 .slide.light .eyebrow{color:rgba(42,18,79,.6)}
 
@@ -143,7 +143,7 @@ a{color:inherit}
 .frame > *:has(+ .botbar){
   padding-bottom:22px;
 }
-.botbar .pg{font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--lav)}
+.botbar .pg{font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:rgba(42,18,79,.7)}
 .slide.light .botbar{border-top-color:rgba(42,18,79,.18)}
 .slide.light .botbar .pg{color:rgba(42,18,79,.6)}
 
@@ -171,17 +171,17 @@ a{color:inherit}
 .col{display:flex;flex-direction:column;gap:var(--s-6)}
 .center{display:flex;align-items:center;justify-content:center;flex-direction:column}
 .grow{flex:1}
-.mute{color:var(--lav)}
+.mute{color:rgba(42,18,79,.7)}
 .gold{color:var(--gold)}
-.white{color:var(--soft)}
+.white{color:var(--purple-deep)}
 .cap{font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.4em;text-transform:uppercase}
 .h1{font-family:var(--display);font-weight:700;font-size:84px;line-height:1.0;letter-spacing:-.025em}
 .h2{font-family:var(--display);font-weight:700;font-size:52px;line-height:1.05;letter-spacing:-.018em}
 .h3{font-family:var(--display);font-weight:500;font-size:30px;line-height:1.2;letter-spacing:-.005em}
 .h4{font-family:var(--display);font-weight:500;font-size:22px;line-height:1.25}
-.lead{font-family:var(--text);font-weight:400;font-size:17px;line-height:1.6;color:var(--lav);letter-spacing:-.003em}
-.body{font-family:var(--text);font-weight:400;font-size:14px;line-height:1.7;color:var(--lav)}
-.kbd{font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--lav)}
+.lead{font-family:var(--text);font-weight:400;font-size:17px;line-height:1.6;color:rgba(42,18,79,.7);letter-spacing:-.003em}
+.body{font-family:var(--text);font-weight:400;font-size:14px;line-height:1.7;color:rgba(42,18,79,.7)}
+.kbd{font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(42,18,79,.7)}
 
 /* page break for print */
 @media print{
@@ -212,7 +212,7 @@ a{color:inherit}
   padding:8px 14px;border:1px solid var(--hair-strong);border-radius:999px;
   font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;
   background:rgba(255,255,255,.06);backdrop-filter:blur(10px);
-  color:var(--soft);
+  color:var(--purple-deep);
 }
 .cover .stamp .pulse{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px var(--gold)}
 .cover .credits{display:flex;gap:48px}
@@ -255,7 +255,7 @@ a{color:inherit}
 .cover-hero .cover-eyebrow{
   font-family:var(--display);font-weight:500;font-size:12px;
   letter-spacing:.4em;text-transform:uppercase;
-  color:rgba(248,246,252,.82);
+  color:rgba(42,18,79,.82);
   text-shadow:0 1px 12px rgba(15,5,33,.65);
   display:inline-flex;align-items:center;gap:14px;
 }
@@ -266,14 +266,14 @@ a{color:inherit}
 .cover-hero .cover-h{
   font-family:var(--display);font-weight:700;
   font-size:228px;line-height:.86;letter-spacing:-.045em;
-  color:var(--soft);
+  color:var(--purple-deep);
   text-shadow:0 8px 48px rgba(15,5,33,.55), 0 1px 2px rgba(15,5,33,.6);
   margin:0;
 }
 .cover-hero .cover-sub{
   font-family:var(--display);font-weight:500;font-size:14px;
   letter-spacing:.32em;text-transform:uppercase;
-  color:rgba(248,246,252,.78);
+  color:rgba(42,18,79,.78);
   text-shadow:0 1px 12px rgba(15,5,33,.65);
   margin-top:6px;
 }
@@ -281,11 +281,11 @@ a{color:inherit}
 .cover-hero .botbar .pg,
 .cover-hero .botbar .cap,
 .cover-hero .topbar .cap{
-  color:rgba(248,246,252,.85);
+  color:rgba(42,18,79,.85);
   text-shadow:0 1px 12px rgba(15,5,33,.6);
 }
-.cover-hero .credits .c .cap{color:rgba(248,246,252,.65)}
-.cover-hero .credits .c .kbd{color:var(--soft)}
+.cover-hero .credits .c .cap{color:rgba(42,18,79,.6)}
+.cover-hero .credits .c .kbd{color:var(--purple-deep)}
 
 /* ─────────── Language system ─────────── */
 .lang-fr{display:none}
@@ -298,11 +298,11 @@ body[data-lang="fr"] .lang-fr{display:inline}
   font-family:var(--display);font-weight:500;
   font-size:11px;letter-spacing:.32em;text-transform:uppercase;
 }
-.lang-picker .lang-sep{opacity:.35;color:var(--soft)}
+.lang-picker .lang-sep{opacity:.35;color:var(--purple-deep)}
 .lang-btn{
   display:inline-flex;align-items:center;gap:8px;
   background:transparent;border:0;padding:4px 0;
-  color:rgba(248,246,252,.55);
+  color:rgba(42,18,79,.55);
   font:inherit;letter-spacing:inherit;text-transform:inherit;
   cursor:pointer;transition:color .3s;
   text-shadow:0 1px 12px rgba(15,5,33,.6);
@@ -312,7 +312,7 @@ body[data-lang="fr"] .lang-fr{display:inline}
   background:transparent;border:1px solid rgba(248,246,252,.4);
   transition:background .3s,border-color .3s,box-shadow .3s;
 }
-.lang-btn:hover{color:var(--soft)}
+.lang-btn:hover{color:var(--purple-deep)}
 .lang-btn[aria-pressed="true"]{color:var(--gold)}
 .lang-btn[aria-pressed="true"] .dot{
   background:var(--gold);border-color:var(--gold);
@@ -334,9 +334,9 @@ body[data-lang="fr"] .lang-fr{display:inline}
   text-decoration:none;color:inherit;cursor:pointer;border-radius:4px;
 }
 .toc-row:last-child{border-bottom:0}
-.toc-row .num{font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.3em;color:var(--lav);min-width:24px}
+.toc-row .num{font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.3em;color:rgba(42,18,79,.7);min-width:24px}
 .toc-row .name{font-family:var(--display);font-weight:500;font-size:14.5px;flex:1;line-height:1.3}
-.toc-row .pg{font-family:var(--display);font-weight:500;font-size:10px;color:var(--lav);letter-spacing:.16em}
+.toc-row .pg{font-family:var(--display);font-weight:500;font-size:10px;color:rgba(42,18,79,.7);letter-spacing:.16em}
 .toc-row:hover{background:rgba(245,185,66,.05);padding-left:10px;padding-right:10px;border-color:rgba(245,185,66,.32)}
 .toc-row:hover .name{color:var(--gold)}
 .toc-row:hover .pg{color:var(--gold)}
@@ -374,12 +374,12 @@ body[data-lang="fr"] .lang-fr{display:inline}
 .split{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:start}
 .tone-list{display:grid;grid-template-columns:1fr 1fr;gap:32px}
 .tone-list .col{gap:0}
-.tone-list .col h5{font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--lav);margin-bottom:18px}
+.tone-list .col h5{font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:rgba(42,18,79,.7);margin-bottom:18px}
 .tone-list ul{list-style:none;display:flex;flex-direction:column;gap:0}
 .tone-list li{font-family:var(--display);font-weight:500;font-size:17px;border-bottom:1px solid var(--hair);padding:10px 0}
 .tone-list li:first-child{padding-top:0}
-.tone-list .y li{color:var(--soft)}
-.tone-list .n li{color:rgba(248,246,252,.4);text-decoration:line-through;text-decoration-color:rgba(248,246,252,.2)}
+.tone-list .y li{color:var(--purple-deep)}
+.tone-list .n li{color:rgba(42,18,79,.45);text-decoration:line-through;text-decoration-color:rgba(42,18,79,.3)}
 .sample{background:rgba(0,0,0,.28);border-left:2px solid var(--gold);padding:18px 22px;border-radius:0 12px 12px 0;font-family:var(--text);font-size:14.5px;line-height:1.6}
 .sample .lab{display:block;font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
 
@@ -396,7 +396,7 @@ body[data-lang="fr"] .lang-fr{display:inline}
 .logo-stage .wm{position:relative;width:760px}
 .logo-stage .wm.small{width:520px}
 .logo-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;border-top:1px solid var(--hair);padding-top:22px;margin-top:24px}
-.logo-meta .m h6{font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--lav);margin-bottom:8px}
+.logo-meta .m h6{font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(42,18,79,.7);margin-bottom:8px}
 .logo-meta .m p{font-family:var(--display);font-weight:500;font-size:14px;line-height:1.4}
 
 /* Anatomy — wordmark with construction lines */
@@ -456,7 +456,7 @@ body[data-lang="fr"] .lang-fr{display:inline}
 .clear .min-list{display:flex;flex-direction:column;gap:16px}
 .clear .min-item{padding:20px;border:1px solid var(--hair);border-radius:14px;background:rgba(255,255,255,.03);display:flex;align-items:center;gap:18px}
 .clear .min-item .swatch{width:80px;display:flex;align-items:center;justify-content:center;flex-shrink:0;height:42px;background:rgba(0,0,0,.25);border-radius:6px}
-.clear .min-item .meta h6{font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--lav)}
+.clear .min-item .meta h6{font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(42,18,79,.7)}
 .clear .min-item .meta p{font-family:var(--display);font-weight:500;font-size:16px;margin-top:4px}
 
 /* Misuse grid */
@@ -497,9 +497,9 @@ body[data-lang="fr"] .lang-fr{display:inline}
 .swatch-card .vals{display:flex;flex-direction:column;gap:6px;font-family:var(--display);font-weight:500;font-size:11.5px;letter-spacing:.04em}
 .swatch-card .vals .row{display:flex;justify-content:space-between;border-top:1px solid currentColor;padding-top:8px;opacity:.85}
 .swatch-card .vals .row:first-child{border-top:0;padding-top:0}
-.s-purple{background:linear-gradient(160deg,#9C82DF 0%, #7B5BCE 60%, #5A3FA6 100%);color:var(--soft)}
-.s-purple-deep{background:linear-gradient(160deg,#5C3AA1 0%, #4B2E83 60%, #3A2266 100%);color:var(--soft)}
-.s-plum{background:linear-gradient(160deg, #3A1A6B 0%, #2A124F 60%, #1A0833 100%);color:var(--soft)}
+.s-purple{background:linear-gradient(160deg,#9C82DF 0%, #7B5BCE 60%, #5A3FA6 100%);color:var(--purple-deep)}
+.s-purple-deep{background:linear-gradient(160deg,#5C3AA1 0%, #4B2E83 60%, #3A2266 100%);color:var(--purple-deep)}
+.s-plum{background:linear-gradient(160deg, #3A1A6B 0%, #2A124F 60%, #1A0833 100%);color:var(--purple-deep)}
 .s-soft{background:linear-gradient(160deg,#FFFFFF 0%, #F8F6FC 60%, #ECE5F8 100%);color:var(--plum)}
 .s-lav{background:linear-gradient(160deg,#E5D8FA 0%, #D8C8F3 60%, #BFA9E6 100%);color:var(--plum)}
 
@@ -512,21 +512,21 @@ body[data-lang="fr"] .lang-fr{display:inline}
 .grad .name{font-family:var(--display);font-weight:700;font-size:24px;line-height:1.1}
 .grad .role{font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.32em;text-transform:uppercase;opacity:.75;margin-top:6px}
 .grad .vals{font-family:var(--display);font-weight:500;font-size:12px;letter-spacing:.04em;opacity:.85}
-.grad.g1{background:linear-gradient(135deg,#2A124F 0%, #4B2E83 100%);color:var(--soft)}
-.grad.g2{background:linear-gradient(135deg,#4B2E83 0%, #7B5BCE 100%);color:var(--soft)}
+.grad.g1{background:linear-gradient(135deg,#2A124F 0%, #4B2E83 100%);color:var(--purple-deep)}
+.grad.g2{background:linear-gradient(135deg,#4B2E83 0%, #7B5BCE 100%);color:var(--purple-deep)}
 .grad.g3{background:linear-gradient(135deg,#D8C8F3 0%, #F8F6FC 100%);color:var(--plum)}
 
 /* Color ratios */
 .ratio-bar{display:flex;height:88px;border-radius:14px;overflow:hidden;border:1px solid var(--hair)}
 .ratio-bar .seg{display:flex;align-items:flex-end;padding:18px;font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
-.ratio-bar .s60{flex:60;background:var(--purple);color:var(--soft)}
+.ratio-bar .s60{flex:60;background:var(--purple);color:var(--purple-deep)}
 .ratio-bar .s25{flex:25;background:var(--soft);color:var(--plum)}
 .ratio-bar .s10{flex:10;background:var(--lav);color:var(--plum)}
 .ratio-bar .s5{flex:5;background:var(--gold);color:#3D2700}
 /* New white-led ratio bar (replaces 60-purple / 25-white / 10-lav / 5-gold) */
 .ratio-bar .s60-white {flex:60;background:var(--soft);   color:var(--plum)}
-.ratio-bar .s25-purple{flex:25;background:var(--purple); color:var(--soft)}
-.ratio-bar .s10-plum  {flex:10;background:var(--plum);   color:var(--soft)}
+.ratio-bar .s25-purple{flex:25;background:var(--purple); color:var(--purple-deep)}
+.ratio-bar .s10-plum  {flex:10;background:var(--plum);   color:var(--purple-deep)}
 .ratio-bar .s5-lav    {flex:5; background:var(--lav);    color:var(--plum)}
 
 /* Typography */
@@ -543,7 +543,7 @@ body[data-lang="fr"] .lang-fr{display:inline}
 .glyph{
   border:1px solid var(--hair);border-radius:10px;aspect-ratio:1;
   display:flex;align-items:center;justify-content:center;
-  font-family:var(--display);font-weight:500;font-size:32px;color:var(--soft);
+  font-family:var(--display);font-weight:500;font-size:32px;color:var(--purple-deep);
   background:rgba(0,0,0,.25);
 }
 .glyph.man{font-family:var(--text);font-weight:500}
@@ -552,7 +552,7 @@ body[data-lang="fr"] .lang-fr{display:inline}
 .weights .w{font-family:var(--display);font-size:32px;border-bottom:1px solid var(--hair);padding-bottom:14px;line-height:1.1}
 .weights .w.man{font-family:var(--text)}
 .weights .w.ar{font-family:var(--ar);direction:rtl;text-align:right}
-.weights .w small{font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--lav);float:right;margin-top:14px}
+.weights .w small{font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(42,18,79,.7);float:right;margin-top:14px}
 .weights .w.man small,.weights .w.ar small{font-family:var(--display)}
 
 /* Differentiation table — fills the whole frame area below the title
@@ -576,14 +576,14 @@ body[data-lang="fr"] .lang-fr{display:inline}
 .diff-row .cell{
   font-family:var(--display);font-weight:400;
   font-size:13.5px;line-height:1.35;
-  color:var(--soft);
+  color:var(--purple-deep);
 }
 .diff-row.head .cell{
   font-weight:500;font-size:10px;letter-spacing:.32em;
-  text-transform:uppercase;color:var(--lav);
+  text-transform:uppercase;color:rgba(42,18,79,.7);
 }
 .diff-row.head .cell.gold{color:var(--gold)}
-.diff-row .cell.dim{color:var(--lav)}
+.diff-row .cell.dim{color:rgba(42,18,79,.7)}
 .diff-row .cell.gold{color:var(--gold)}
 
 /* ─────────── Creative type pages: anatomy / magazine / arabic-hero ─────────── */
@@ -602,7 +602,7 @@ body[data-lang="fr"] .lang-fr{display:inline}
 }
 .anat-glyph{
   font-family:var(--display);font-weight:700;
-  font-size:520px;line-height:.78;letter-spacing:-.06em;color:var(--soft);
+  font-size:520px;line-height:.78;letter-spacing:-.06em;color:var(--purple-deep);
   text-shadow:0 0 60px rgba(123,91,206,.15);
   position:relative;z-index:2;
 }
@@ -656,15 +656,15 @@ body[data-lang="fr"] .lang-fr{display:inline}
 .anat-weights .aw{
   display:grid;grid-template-columns:auto auto 1fr;align-items:baseline;gap:18px;
 }
-.aw .wlab{font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--lav)}
-.aw .wnum{font-family:var(--display);font-weight:500;font-size:11px;color:rgba(216,200,243,.55);font-variant-numeric:tabular-nums}
-.aw .wspec{font-family:var(--display);font-size:40px;line-height:1;letter-spacing:-.022em;color:var(--soft);text-align:right;justify-self:end}
+.aw .wlab{font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:rgba(42,18,79,.7)}
+.aw .wnum{font-family:var(--display);font-weight:500;font-size:11px;color:rgba(42,18,79,.45);font-variant-numeric:tabular-nums}
+.aw .wspec{font-family:var(--display);font-size:40px;line-height:1;letter-spacing:-.022em;color:var(--purple-deep);text-align:right;justify-self:end}
 .aw .wspec.ar{font-family:var(--ar);font-size:42px}
 .anat-footnotes{
   display:flex;flex-direction:column;gap:6px;
 }
-.anat-footnotes span{font-family:var(--text);font-size:11px;color:var(--lav);line-height:1.5}
-.anat-footnotes strong{color:var(--soft);font-weight:500}
+.anat-footnotes span{font-family:var(--text);font-size:11px;color:rgba(42,18,79,.7);line-height:1.5}
+.anat-footnotes strong{color:var(--purple-deep);font-weight:500}
 
 /* MANROPE — magazine spread */
 .type-magazine{
@@ -734,7 +734,7 @@ body[data-lang="fr"] .lang-fr{display:inline}
 .ar-stage-eyebrow .dash{display:inline-block;width:36px;height:1px;background:var(--gold)}
 .ar-word{
   font-family:var(--ar);font-weight:800;
-  font-size:280px;line-height:.95;color:var(--soft);
+  font-size:280px;line-height:.95;color:var(--purple-deep);
   direction:rtl;
   text-shadow:0 0 80px rgba(123,91,206,.22);
   margin:0;
@@ -742,7 +742,7 @@ body[data-lang="fr"] .lang-fr{display:inline}
 .ar-latin{
   font-family:var(--display);font-weight:500;
   font-size:18px;letter-spacing:.42em;text-transform:uppercase;
-  color:var(--lav);margin-top:18px;
+  color:rgba(42,18,79,.7);margin-top:18px;
 }
 
 .ar-foot{
@@ -753,17 +753,17 @@ body[data-lang="fr"] .lang-fr{display:inline}
   display:flex;align-items:baseline;gap:16px;
 }
 .ar-wspec{
-  font-family:var(--ar);font-size:60px;line-height:1;color:var(--soft);
+  font-family:var(--ar);font-size:60px;line-height:1;color:var(--purple-deep);
   direction:rtl;
 }
 .ar-wmeta{display:flex;flex-direction:column;gap:2px}
 .ar-wmeta strong{
   font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.28em;
-  text-transform:uppercase;color:var(--lav);
+  text-transform:uppercase;color:rgba(42,18,79,.7);
 }
 .ar-wmeta span{
   font-family:var(--display);font-weight:500;font-size:11px;
-  color:rgba(216,200,243,.55);font-variant-numeric:tabular-nums;
+  color:rgba(42,18,79,.45);font-variant-numeric:tabular-nums;
 }
 .ar-rule{
   padding-left:24px;border-left:1px solid var(--hair);
@@ -771,7 +771,7 @@ body[data-lang="fr"] .lang-fr{display:inline}
 }
 .ar-rule p{
   font-family:var(--display);font-weight:500;font-size:12.5px;line-height:1.55;
-  color:var(--soft);margin:0;
+  color:var(--purple-deep);margin:0;
 }
 .ar-rule p strong{color:var(--gold);font-weight:600}
 
@@ -779,20 +779,20 @@ body[data-lang="fr"] .lang-fr{display:inline}
 .hier{display:grid;grid-template-columns:1.4fr 1fr;gap:56px;flex:1}
 .hier .stack{display:flex;flex-direction:column;gap:20px}
 .hier .stack .row{display:flex;align-items:baseline;gap:24px;border-bottom:1px solid var(--hair);padding-bottom:18px}
-.hier .stack .row .lab{font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--lav);width:170px;flex-shrink:0}
+.hier .stack .row .lab{font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(42,18,79,.7);width:170px;flex-shrink:0}
 .hier .stack .row .ex{flex:1}
 .hier-h1{font-family:var(--display);font-weight:700;font-size:64px;line-height:1;letter-spacing:-.02em}
 .hier-h2{font-family:var(--display);font-weight:700;font-size:40px;line-height:1.05;letter-spacing:-.015em}
 .hier-h3{font-family:var(--display);font-weight:500;font-size:24px}
 .hier-eyebrow{font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
-.hier-body{font-family:var(--text);font-weight:400;font-size:15px;line-height:1.7;color:var(--lav)}
-.hier-cap{font-family:var(--text);font-weight:500;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--lav)}
+.hier-body{font-family:var(--text);font-weight:400;font-size:15px;line-height:1.7;color:rgba(42,18,79,.7)}
+.hier-cap{font-family:var(--text);font-weight:500;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(42,18,79,.7)}
 
 /* Photography mood */
 .mood{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,1fr);gap:16px;flex:1}
 .mood .frame-img{
   position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--hair);
-  display:flex;align-items:flex-end;padding:20px;color:var(--soft);min-height:200px;
+  display:flex;align-items:flex-end;padding:20px;color:var(--purple-deep);min-height:200px;
 }
 .mood .frame-img .lab{font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.32em;text-transform:uppercase;background:rgba(0,0,0,.5);padding:7px 12px;border-radius:99px;backdrop-filter:blur(6px)}
 /* Photography hero — real photo backgrounds + subtle dark fade for label legibility */
@@ -834,7 +834,7 @@ body[data-lang="fr"] .lang-fr{display:inline}
 .feed-grid .post{
   position:relative;overflow:hidden;border-radius:6px;
   display:flex;align-items:center;justify-content:center;flex-direction:column;
-  padding:22px;color:var(--soft);
+  padding:22px;color:var(--purple-deep);
 }
 .feed-grid .post.cinema{background:linear-gradient(180deg, #1a0a36 0%, #4B2E83 50%, #C77B3A 100%)}
 .feed-grid .post.cinema2{background:linear-gradient(120deg, #2A124F 0%, #7B5BCE 100%)}
@@ -849,7 +849,7 @@ body[data-lang="fr"] .lang-fr{display:inline}
 .stories{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;flex:1}
 .stories .story{
   aspect-ratio:9/16;border-radius:20px;overflow:hidden;border:1px solid var(--hair);
-  display:flex;flex-direction:column;justify-content:space-between;padding:24px;color:var(--soft);
+  display:flex;flex-direction:column;justify-content:space-between;padding:24px;color:var(--purple-deep);
   position:relative;
 }
 /* Stories — clean full-bleed photo / video (overlays removed; the
@@ -870,10 +870,10 @@ body[data-lang="fr"] .lang-fr{display:inline}
 
 /* Mockups — boarding pass */
 .bp{display:flex;width:680px;max-width:100%;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -20px rgba(0,0,0,.5);border:1px solid var(--hair)}
-.bp .left{background:linear-gradient(160deg,#2A124F,#4B2E83);padding:32px;display:flex;flex-direction:column;justify-content:space-between;color:var(--soft);width:300px;flex-shrink:0;position:relative;gap:18px}
+.bp .left{background:linear-gradient(160deg,#2A124F,#4B2E83);padding:32px;display:flex;flex-direction:column;justify-content:space-between;color:var(--purple-deep);width:300px;flex-shrink:0;position:relative;gap:18px}
 .bp .left .icon{width:42px}
 .bp .left .dest{font-family:var(--display);font-weight:700;font-size:36px;line-height:1;letter-spacing:-.01em;margin-top:6px}
-.bp .left .code{font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--lav)}
+.bp .left .code{font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:rgba(42,18,79,.7)}
 .bp .perf{width:1px;background:repeating-linear-gradient(180deg, rgba(255,255,255,.4) 0px, rgba(255,255,255,.4) 6px, transparent 6px, transparent 12px)}
 .bp .right{background:var(--soft);color:var(--plum);padding:32px;flex:1;display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .bp .right .field{display:flex;flex-direction:column;gap:6px}
@@ -889,7 +889,7 @@ body[data-lang="fr"] .lang-fr{display:inline}
   box-shadow:0 30px 60px -20px rgba(0,0,0,.5);
   position:relative;overflow:hidden;
 }
-.bc.front{background:linear-gradient(160deg,#2A124F 0%, #4B2E83 100%);color:var(--soft);padding:24px;flex-direction:column;align-items:flex-start;justify-content:space-between}
+.bc.front{background:linear-gradient(160deg,#2A124F 0%, #4B2E83 100%);color:var(--purple-deep);padding:24px;flex-direction:column;align-items:flex-start;justify-content:space-between}
 .bc.back{background:var(--soft);color:var(--plum);padding:24px;flex-direction:column;align-items:flex-start;justify-content:space-between}
 .bc .icn{width:32px}
 .bc .wm{width:62%}
@@ -908,21 +908,21 @@ body[data-lang="fr"] .lang-fr{display:inline}
 }
 .tag::before{content:"";position:absolute;top:16px;left:50%;transform:translateX(-50%);width:18px;height:6px;border-radius:99px;background:var(--gold)}
 .tag .icn{width:48px;margin-top:18px}
-.tag .lab{font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--lav)}
-.tag .num{font-family:var(--display);font-weight:700;font-size:22px;color:var(--soft)}
+.tag .lab{font-family:var(--display);font-weight:500;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(42,18,79,.7)}
+.tag .num{font-family:var(--display);font-weight:700;font-size:22px;color:var(--purple-deep)}
 
 /* Pickup signage */
 .sign{
   width:440px;aspect-ratio:3/4;border-radius:18px;
   background:linear-gradient(160deg,#2A124F 0%, #4B2E83 100%);
   display:flex;flex-direction:column;justify-content:space-between;
-  padding:40px;color:var(--soft);
+  padding:40px;color:var(--purple-deep);
   box-shadow:0 30px 60px -20px rgba(0,0,0,.5);position:relative;
 }
 .sign .top{display:flex;justify-content:space-between;align-items:center}
 .sign .top .icn{width:32px}
 .sign .name{font-family:var(--display);font-weight:700;font-size:56px;line-height:1.02;letter-spacing:-.01em}
-.sign .meta{font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--lav)}
+.sign .meta{font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:rgba(42,18,79,.7)}
 
 /* App phone photo — transparent PNG renders directly with a soft
    purple glow + plum-deep drop-shadow to lift it off the slide */
@@ -949,9 +949,9 @@ body[data-lang="fr"] .lang-fr{display:inline}
   background:
     radial-gradient(80% 60% at 50% 0%, rgba(123,91,206,.5) 0%, transparent 60%),
     linear-gradient(180deg, #2A124F 0%, #4B2E83 100%);
-  padding:48px 18px 24px;color:var(--soft);display:flex;flex-direction:column;gap:14px;
+  padding:48px 18px 24px;color:var(--purple-deep);display:flex;flex-direction:column;gap:14px;
 }
-.phone .screen .top{display:flex;justify-content:space-between;font-family:var(--text);font-size:10px;color:var(--lav)}
+.phone .screen .top{display:flex;justify-content:space-between;font-family:var(--text);font-size:10px;color:rgba(42,18,79,.7)}
 .phone .screen h2{font-family:var(--display);font-weight:700;font-size:22px;line-height:1.1;margin-top:16px}
 .phone .screen .pill{display:inline-flex;padding:5px 10px;border:1px solid var(--hair-strong);border-radius:99px;font-family:var(--display);font-weight:500;font-size:9px;letter-spacing:.32em;text-transform:uppercase}
 .phone .screen .card{
@@ -959,7 +959,7 @@ body[data-lang="fr"] .lang-fr{display:inline}
   display:flex;flex-direction:column;gap:6px;font-family:var(--text);font-size:11px;
 }
 .phone .screen .card .row{display:flex;justify-content:space-between}
-.phone .screen .card .lab{font-family:var(--display);font-weight:500;font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:var(--lav)}
+.phone .screen .card .lab{font-family:var(--display);font-weight:500;font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:rgba(42,18,79,.7)}
 .phone .screen .card .val{font-family:var(--display);font-weight:500;font-size:13px}
 .phone .screen .card.gold-row{border-color:rgba(245,185,66,.4)}
 .phone .screen .cta{margin-top:auto;background:var(--gold);color:#3D2700;text-align:center;padding:12px;border-radius:99px;font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.04em}
@@ -984,7 +984,7 @@ body[data-lang="fr"] .lang-fr{display:inline}
 .browser .bar{background:#15082B;padding:12px 18px;display:flex;align-items:center;gap:10px}
 .browser .bar .dot{width:10px;height:10px;border-radius:50%}
 .browser .bar .d1{background:#ff5f57}.browser .bar .d2{background:#febc2e}.browser .bar .d3{background:#28c840}
-.browser .bar .url{flex:1;background:#0a0418;border:1px solid var(--hair);border-radius:99px;padding:6px 16px;font-family:var(--text);font-size:11px;color:var(--lav);text-align:center}
+.browser .bar .url{flex:1;background:#0a0418;border:1px solid var(--hair);border-radius:99px;padding:6px 16px;font-family:var(--text);font-size:11px;color:rgba(42,18,79,.7);text-align:center}
 .browser .browser-photo{width:100%;height:auto;display:block;max-height:480px;object-fit:cover;object-position:top center}
 
 /* Digital slide — two-column grid sized so both columns fit the
@@ -1009,13 +1009,13 @@ body[data-lang="fr"] .lang-fr{display:inline}
     linear-gradient(180deg, #15082B 0%, #2A124F 100%);
   min-height:320px;display:flex;flex-direction:column;justify-content:space-between;gap:40px;
 }
-.browser .hero .nav{display:flex;justify-content:space-between;align-items:center;color:var(--soft)}
-.browser .hero .nav .links{display:flex;gap:28px;font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--lav)}
+.browser .hero .nav{display:flex;justify-content:space-between;align-items:center;color:var(--purple-deep)}
+.browser .hero .nav .links{display:flex;gap:28px;font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(42,18,79,.7)}
 .browser .hero .nav .nav-mark{width:120px}
-.browser .hero h1{font-family:var(--display);font-weight:700;font-size:54px;line-height:1.05;letter-spacing:-.022em;color:var(--soft);max-width:600px}
+.browser .hero h1{font-family:var(--display);font-weight:700;font-size:54px;line-height:1.05;letter-spacing:-.022em;color:var(--purple-deep);max-width:600px}
 .browser .hero .ctas{display:flex;gap:18px;align-items:center}
 .browser .hero .cta-primary{background:var(--gold);color:#3D2700;padding:13px 24px;border-radius:99px;font-family:var(--display);font-weight:700;font-size:13px}
-.browser .hero .cta-secondary{font-family:var(--display);font-weight:500;font-size:13px;color:var(--soft);border-bottom:1px solid var(--gold);padding-bottom:2px}
+.browser .hero .cta-secondary{font-family:var(--display);font-weight:500;font-size:13px;color:var(--purple-deep);border-bottom:1px solid var(--gold);padding-bottom:2px}
 
 /* Storefront / vehicle */
 .environments{display:grid;grid-template-columns:1fr 1fr;gap:24px;flex:1}
@@ -1121,7 +1121,7 @@ body[data-lang="fr"] .lang-fr{display:inline}
 .closing{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:36px;flex:1;text-align:center;position:relative}
 .closing .glow-c{position:absolute;width:760px;height:760px;border-radius:50%;background:radial-gradient(closest-side, rgba(123,91,206,.45) 0%, rgba(123,91,206,0) 70%);filter:blur(30px);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
 .closing .wm{width:520px;position:relative;z-index:2}
-.closing .sig{font-family:var(--display);font-weight:500;font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:var(--lav)}
+.closing .sig{font-family:var(--display);font-weight:500;font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:rgba(42,18,79,.7)}
 
 /* ─────────── Reactive scaling — fits any viewport ─────────── */
 :root{--scale:1}
@@ -1164,7 +1164,7 @@ html,body{overflow-x:hidden}
     border:1px solid var(--hair-strong);border-radius:99px;
     padding:9px 16px;
     font-family:var(--display);font-weight:500;font-size:11px;
-    letter-spacing:.28em;text-transform:uppercase;color:var(--soft);
+    letter-spacing:.28em;text-transform:uppercase;color:var(--purple-deep);
     box-shadow:0 12px 32px -8px rgba(0,0,0,.6);
     transition:opacity .5s,transform .5s;
     pointer-events:none;
@@ -1260,7 +1260,7 @@ html,body{overflow-x:hidden}
   border:1px solid var(--hair-strong);border-radius:99px;
   padding:11px 18px 11px 14px;display:flex;align-items:center;gap:10px;
   font-family:var(--display);font-weight:500;font-size:11px;
-  letter-spacing:.32em;color:var(--soft);text-transform:uppercase;
+  letter-spacing:.32em;color:var(--purple-deep);text-transform:uppercase;
   z-index:999;font-variant-numeric:tabular-nums;
   box-shadow:0 12px 32px -8px rgba(0,0,0,.5), 0 0 0 1px rgba(255,255,255,.04) inset;
   transition:opacity .4s, transform .4s cubic-bezier(.22,1,.36,1);
@@ -1276,13 +1276,13 @@ html,body{overflow-x:hidden}
   box-shadow:0 12px 32px -8px rgba(0,0,0,.5), 0 0 0 1px rgba(255,255,255,.04) inset;
 }
 .lang-pill .lang-btn{
-  padding:3px 8px;color:rgba(248,246,252,.55);background:transparent;border:0;
+  padding:3px 8px;color:rgba(42,18,79,.55);background:transparent;border:0;
   font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;
   transition:color .3s;
 }
-.lang-pill .lang-btn:hover{color:var(--soft)}
+.lang-pill .lang-btn:hover{color:var(--purple-deep)}
 .lang-pill .lang-btn[aria-pressed="true"]{color:var(--gold)}
-.lang-pill .lang-sep{opacity:.35;color:var(--soft)}
+.lang-pill .lang-sep{opacity:.35;color:var(--purple-deep)}
 @media print{ .lang-pill{display:none !important} }
 .slide-indicator .dot{
   width:7px;height:7px;border-radius:50%;background:var(--gold);
@@ -1290,7 +1290,7 @@ html,body{overflow-x:hidden}
   animation:sadine-pulse-dot 2.4s ease-in-out infinite;
 }
 .slide-indicator .sep{opacity:.4}
-.slide-indicator .tot{color:var(--lav)}
+.slide-indicator .tot{color:rgba(42,18,79,.7)}
 @keyframes sadine-pulse-dot{
   0%,100%{transform:scale(1);opacity:1}
   50%{transform:scale(1.35);opacity:.7}
@@ -1300,7 +1300,7 @@ html,body{overflow-x:hidden}
 .scroll-cue{
   position:absolute;bottom:84px;left:50%;transform:translateX(-50%);
   font-family:var(--display);font-weight:500;font-size:10px;
-  letter-spacing:.4em;text-transform:uppercase;color:var(--lav);
+  letter-spacing:.4em;text-transform:uppercase;color:rgba(42,18,79,.7);
   display:flex;flex-direction:column;align-items:center;gap:8px;z-index:3;
   pointer-events:none;
 }
@@ -1525,7 +1525,7 @@ html,body{background:var(--soft);color:var(--plum)}
 
 /* Logo grid tiles — keep tile.purple / tile.dark / tile.light untouched
    since they're literal showcases of the mark on different surfaces */
-.slide:not(.cover) .logo-grid .tile.dark .l{color:rgba(248,246,252,.5)}
+.slide:not(.cover) .logo-grid .tile.dark .l{color:rgba(42,18,79,.5)}
 
 /* Mood photography — labels stay light on photos */
 /* Stories tiles — full-bleed photos, no inversion needed */
@@ -1851,7 +1851,7 @@ html,body{background:var(--soft);color:var(--plum)}
         <p class="lead" style="margin-top:36px;max-width:880px;font-size:18px">
           We are not the cheapest agency. We are not the loudest. We are the agency that organizes — and the organization itself is the luxury. Every detail is handled before you ask. Every surface is designed. Nothing rushes. Nothing is forgotten.
         </p>
-        <p class="lead" style="margin-top:24px;max-width:880px;font-size:18px;color:var(--soft)">
+        <p class="lead" style="margin-top:24px;max-width:880px;font-size:18px;color:var(--purple-deep)">
           The functional promise is travel without friction. The emotional promise is the feeling of arriving without effort. That feeling is the north star of this entire system.
         </p>
       </div>
@@ -1874,14 +1874,14 @@ html,body{background:var(--soft);color:var(--plum)}
         <span class="cap gold" style="margin-bottom:18px;display:block">01 · Where we stand</span>
         <h2 class="h1" style="margin-bottom:32px">A digital-first travel house — not a package shop.</h2>
         <p class="lead" style="max-width:560px;font-size:18px">For modern Tunisian and Maghreb travelers who want a curated, organized, premium journey, Sadine Tours designs and orchestrates every fragment of the trip with the precision of a luxury airline and the warmth of a private host.</p>
-        <p class="h3" style="margin-top:32px;color:var(--soft);font-style:italic;max-width:520px">We sell calm, taste, and time saved.</p>
+        <p class="h3" style="margin-top:32px;color:var(--purple-deep);font-style:italic;max-width:520px">We sell calm, taste, and time saved.</p>
       </div>
       <div class="card" style="background:rgba(0,0,0,.28);min-height:auto">
         <span class="num">Category exit</span>
-        <p class="body" style="font-size:14.5px;color:var(--soft)">The Tunisian agency category competes on one axis — who can quote the cheapest package fastest. Same WhatsApp PDFs, same green-and-white logos, same crowded photography.</p>
+        <p class="body" style="font-size:14.5px;color:var(--purple-deep)">The Tunisian agency category competes on one axis — who can quote the cheapest package fastest. Same WhatsApp PDFs, same green-and-white logos, same crowded photography.</p>
         <div class="hair" style="margin:6px 0"></div>
         <span class="num">Our axis</span>
-        <p class="body" style="font-size:14.5px;color:var(--soft)">Not cheapest. Not loudest. The agency that <em>organizes</em> — and the organization itself is the luxury. Closer to a private travel concierge than a discount intermediary.</p>
+        <p class="body" style="font-size:14.5px;color:var(--purple-deep)">Not cheapest. Not loudest. The agency that <em>organizes</em> — and the organization itself is the luxury. Closer to a private travel concierge than a discount intermediary.</p>
       </div>
     </div>
 
@@ -1903,14 +1903,14 @@ html,body{background:var(--soft);color:var(--plum)}
         <h2 class="h2" style="margin:14px 0 22px">Make organized, premium travel a default — not a privilege.</h2>
         <p class="lead" style="font-size:16px">Take every fragment of the journey — visa, flight, transfer, hotel, restaurant, guide, return — and present it as a single, smooth, beautifully designed experience.</p>
         <div class="hair gold short" style="margin:22px 0 6px"></div>
-        <p class="h4" style="color:var(--soft);font-style:italic">From boarding pass to last sunset — handled.</p>
+        <p class="h4" style="color:var(--purple-deep);font-style:italic">From boarding pass to last sunset — handled.</p>
       </div>
       <div class="card" style="justify-content:center;min-height:auto;padding:48px">
         <span class="num">03 · Vision · 2030</span>
         <h2 class="h2" style="margin:14px 0 22px">The most trusted modern travel brand in the Maghreb.</h2>
         <p class="lead" style="font-size:16px">The first name a new generation of professionals, couples, and families thinks of when they decide to leave home well — across Tunisia, Algeria, Morocco, Libya, and the diaspora.</p>
         <div class="hair gold short" style="margin:22px 0 6px"></div>
-        <p class="h4" style="color:var(--soft);font-style:italic">Not biggest. Most trusted.</p>
+        <p class="h4" style="color:var(--purple-deep);font-style:italic">Not biggest. Most trusted.</p>
       </div>
     </div>
 
@@ -1975,9 +1975,9 @@ html,body{background:var(--soft);color:var(--plum)}
     <div style="margin-top:32px;display:grid;grid-template-columns:1.2fr 1fr;gap:64px;flex:1;align-items:center">
       <div>
         <span class="cap gold" style="margin-bottom:16px;display:block">If the brand were a person</span>
-        <h2 class="h1" style="margin-bottom:28px;max-width:600px">A host.<br/><span style="color:var(--lav)">Not a salesman.</span></h2>
+        <h2 class="h1" style="margin-bottom:28px;max-width:600px">A host.<br/><span style="color:rgba(42,18,79,.7)">Not a salesman.</span></h2>
         <p class="lead" style="max-width:520px;font-size:18px">Late thirties. Bilingual — French, Arabic, fluent English. Trained somewhere precise: hotel school in Lausanne, an airline in Doha, a private concierge in Paris.</p>
-        <p class="lead" style="max-width:520px;font-size:18px;margin-top:18px;color:var(--soft)">Wears one good watch, not three. Doesn't seem busy even when they are. Notices things — the temperature of the car, the light at check-in, whether you've eaten.</p>
+        <p class="lead" style="max-width:520px;font-size:18px;margin-top:18px;color:var(--purple-deep)">Wears one good watch, not three. Doesn't seem busy even when they are. Notices things — the temperature of the car, the light at check-in, whether you've eaten.</p>
       </div>
 
       <div class="col" style="gap:18px">
@@ -2043,7 +2043,7 @@ html,body{background:var(--soft);color:var(--plum)}
       <div class="col" style="gap:18px">
         <div class="card" style="min-height:auto">
           <span class="num">Writing rules</span>
-          <p class="body" style="color:var(--soft);font-size:14px">Short sentences. Specific nouns. No exclamation marks outside captions. No emojis in customer service. Honor the language the client wrote in. Never apologize for price — state it once, with confidence.</p>
+          <p class="body" style="color:var(--purple-deep);font-size:14px">Short sentences. Specific nouns. No exclamation marks outside captions. No emojis in customer service. Honor the language the client wrote in. Never apologize for price — state it once, with confidence.</p>
         </div>
       </div>
     </div>
@@ -2065,12 +2065,12 @@ html,body{background:var(--soft);color:var(--plum)}
         <span class="cap gold" style="margin-bottom:16px;display:block">Primary archetype · 01 / 03</span>
         <h2 class="h1" style="margin-bottom:28px">The Quiet<br/>Professional.</h2>
         <p class="lead" style="max-width:520px;font-size:18px">32–48 years old. Urban — Tunis, Sfax, Sousse, Casablanca, Algiers. Senior professional, entrepreneur, doctor, executive.</p>
-        <p class="lead" style="max-width:520px;font-size:18px;margin-top:14px;color:var(--soft)">Travels 4–8 times a year, half business, half leisure. Values <span class="gold">time over price</span>. Pays for invisible labor.</p>
+        <p class="lead" style="max-width:520px;font-size:18px;margin-top:14px;color:var(--purple-deep)">Travels 4–8 times a year, half business, half leisure. Values <span class="gold">time over price</span>. Pays for invisible labor.</p>
       </div>
       <div class="col" style="gap:18px">
         <div class="card" style="background:rgba(0,0,0,.28);min-height:auto;padding:36px">
           <span class="num">Trigger phrase</span>
-          <p class="h3" style="font-style:italic;color:var(--soft);font-weight:500;line-height:1.3">"I just don't have time to organize this."</p>
+          <p class="h3" style="font-style:italic;color:var(--purple-deep);font-weight:500;line-height:1.3">"I just don't have time to organize this."</p>
         </div>
         <div class="card" style="min-height:auto;padding:28px;gap:12px">
           <span class="num">How they read</span>
@@ -2096,12 +2096,12 @@ html,body{background:var(--soft);color:var(--plum)}
         <span class="cap gold" style="margin-bottom:16px;display:block">Secondary archetype · 02 / 03</span>
         <h2 class="h1" style="margin-bottom:28px">The Modern<br/>Couple.</h2>
         <p class="lead" style="max-width:520px;font-size:18px">28–40 years old. Dual income. No children, or one young child. Honeymoons, anniversaries, "we both need a break" weekends.</p>
-        <p class="lead" style="max-width:520px;font-size:18px;margin-top:14px;color:var(--soft)">Highly visual — cares how the trip <span class="gold">looks</span>, but in a refined way. Wants taste, not influencer-bait.</p>
+        <p class="lead" style="max-width:520px;font-size:18px;margin-top:14px;color:var(--purple-deep)">Highly visual — cares how the trip <span class="gold">looks</span>, but in a refined way. Wants taste, not influencer-bait.</p>
       </div>
       <div class="col" style="gap:18px">
         <div class="card" style="background:rgba(0,0,0,.28);min-height:auto;padding:36px">
           <span class="num">Trigger phrase</span>
-          <p class="h3" style="font-style:italic;color:var(--soft);font-weight:500;line-height:1.3">"I want it to feel like a movie."</p>
+          <p class="h3" style="font-style:italic;color:var(--purple-deep);font-weight:500;line-height:1.3">"I want it to feel like a movie."</p>
         </div>
         <div class="card" style="min-height:auto;padding:28px;gap:12px">
           <span class="num">How they buy</span>
@@ -2127,12 +2127,12 @@ html,body{background:var(--soft);color:var(--plum)}
         <span class="cap gold" style="margin-bottom:16px;display:block">Tertiary archetype · 03 / 03</span>
         <h2 class="h1" style="margin-bottom:28px">The Considered<br/>Family.</h2>
         <p class="lead" style="max-width:520px;font-size:18px">38–55 years old. Two to three children. Will not compromise on safety, hygiene, or the children's experience.</p>
-        <p class="lead" style="max-width:520px;font-size:18px;margin-top:14px;color:var(--soft)">Wants the <span class="gold">adults' trip preserved</span> — real hotels, real food, real culture, with kids accommodated rather than catered to.</p>
+        <p class="lead" style="max-width:520px;font-size:18px;margin-top:14px;color:var(--purple-deep)">Wants the <span class="gold">adults' trip preserved</span> — real hotels, real food, real culture, with kids accommodated rather than catered to.</p>
       </div>
       <div class="col" style="gap:18px">
         <div class="card" style="background:rgba(0,0,0,.28);min-height:auto;padding:36px">
           <span class="num">Trigger phrase</span>
-          <p class="h3" style="font-style:italic;color:var(--soft);font-weight:500;line-height:1.3">"A real trip the kids can also enjoy."</p>
+          <p class="h3" style="font-style:italic;color:var(--purple-deep);font-weight:500;line-height:1.3">"A real trip the kids can also enjoy."</p>
         </div>
         <div class="card" style="min-height:auto;padding:28px;gap:12px">
           <span class="num">What they need from us</span>
@@ -2549,7 +2549,7 @@ html,body{background:var(--soft);color:var(--plum)}
         </div>
         <div class="card" style="min-height:auto;padding:28px">
           <span class="num">5% · Lavender</span>
-          <p class="body" style="font-size:13.5px"><span style="color:var(--soft)">Soft tint, not a colour block.</span> Cards, sub-surfaces, dividers — never a paragraph of its own.</p>
+          <p class="body" style="font-size:13.5px"><span style="color:var(--purple-deep)">Soft tint, not a colour block.</span> Cards, sub-surfaces, dividers — never a paragraph of its own.</p>
         </div>
       </div>
     </div>
@@ -2586,7 +2586,7 @@ html,body{background:var(--soft);color:var(--plum)}
       <div class="anat-meta">
         <div>
           <span class="cap gold" style="letter-spacing:.42em">Display · I / IV</span>
-          <h2 style="font-family:var(--display);font-weight:700;font-size:120px;line-height:.88;letter-spacing:-.04em;color:var(--soft);margin-top:14px">Satoshi.</h2>
+          <h2 style="font-family:var(--display);font-weight:700;font-size:120px;line-height:.88;letter-spacing:-.04em;color:var(--purple-deep);margin-top:14px">Satoshi.</h2>
           <p class="lead" style="margin-top:14px;max-width:380px">Modern, rounded, geometric. The wordmark's voice in letters — strong at scale, elegant at small sizes.</p>
         </div>
 
@@ -2720,15 +2720,15 @@ html,body{background:var(--soft);color:var(--plum)}
       <article style="position:relative;padding-right:24px">
         <p style="font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:24px">Boutique destination · Volume IV</p>
 
-        <h1 style="font-family:var(--display);font-weight:700;font-size:78px;line-height:1.0;letter-spacing:-.025em;color:var(--soft);margin-bottom:22px">Five days in Istanbul.</h1>
+        <h1 style="font-family:var(--display);font-weight:700;font-size:78px;line-height:1.0;letter-spacing:-.025em;color:var(--purple-deep);margin-bottom:22px">Five days in Istanbul.</h1>
 
-        <p style="font-family:var(--display);font-weight:500;font-size:26px;line-height:1.25;letter-spacing:-.008em;color:var(--lav);margin-bottom:28px;max-width:640px">From boarding pass to last sunset — handled.</p>
+        <p style="font-family:var(--display);font-weight:500;font-size:26px;line-height:1.25;letter-spacing:-.008em;color:rgba(42,18,79,.7);margin-bottom:28px;max-width:640px">From boarding pass to last sunset — handled.</p>
 
-        <p style="font-family:var(--text);font-weight:400;font-size:15px;line-height:1.75;color:rgba(248,246,252,.8);max-width:640px">Sadine Tours organizes premium travel for people who refuse to choose between elegance and ease. Every detail is handled before you ask. Nothing rushes. Nothing is forgotten — from the boarding pass to the last sunset on the Bosphorus.</p>
+        <p style="font-family:var(--text);font-weight:400;font-size:15px;line-height:1.75;color:rgba(42,18,79,.78);max-width:640px">Sadine Tours organizes premium travel for people who refuse to choose between elegance and ease. Every detail is handled before you ask. Nothing rushes. Nothing is forgotten — from the boarding pass to the last sunset on the Bosphorus.</p>
 
         <div style="margin-top:32px;display:flex;align-items:center;gap:18px">
           <div style="height:1px;width:48px;background:var(--gold)"></div>
-          <p style="font-family:var(--text);font-weight:500;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--lav)">Photography · Bosphorus, blue hour</p>
+          <p style="font-family:var(--text);font-weight:500;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(42,18,79,.7)">Photography · Bosphorus, blue hour</p>
         </div>
       </article>
 
@@ -2737,37 +2737,37 @@ html,body{background:var(--soft);color:var(--plum)}
         <div style="padding:14px 0;border-bottom:1px solid var(--hair);display:flex;justify-content:space-between;align-items:baseline">
           <div>
             <span style="font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)">Eyebrow</span>
-            <p style="font-family:var(--text);font-size:11px;color:var(--lav);margin-top:4px">Satoshi Medium</p>
+            <p style="font-family:var(--text);font-size:11px;color:rgba(42,18,79,.7);margin-top:4px">Satoshi Medium</p>
           </div>
-          <span style="font-family:var(--display);font-weight:500;font-size:13px;color:var(--soft);font-variant-numeric:tabular-nums">11 / 16 · +.32em</span>
+          <span style="font-family:var(--display);font-weight:500;font-size:13px;color:var(--purple-deep);font-variant-numeric:tabular-nums">11 / 16 · +.32em</span>
         </div>
         <div style="padding:14px 0;border-bottom:1px solid var(--hair);display:flex;justify-content:space-between;align-items:baseline">
           <div>
             <span style="font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)">H1 · Display</span>
-            <p style="font-family:var(--text);font-size:11px;color:var(--lav);margin-top:4px">Satoshi Bold</p>
+            <p style="font-family:var(--text);font-size:11px;color:rgba(42,18,79,.7);margin-top:4px">Satoshi Bold</p>
           </div>
-          <span style="font-family:var(--display);font-weight:500;font-size:13px;color:var(--soft);font-variant-numeric:tabular-nums">78 / 78 · −.025em</span>
+          <span style="font-family:var(--display);font-weight:500;font-size:13px;color:var(--purple-deep);font-variant-numeric:tabular-nums">78 / 78 · −.025em</span>
         </div>
         <div style="padding:14px 0;border-bottom:1px solid var(--hair);display:flex;justify-content:space-between;align-items:baseline">
           <div>
             <span style="font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)">H3 · Subhead</span>
-            <p style="font-family:var(--text);font-size:11px;color:var(--lav);margin-top:4px">Satoshi Medium</p>
+            <p style="font-family:var(--text);font-size:11px;color:rgba(42,18,79,.7);margin-top:4px">Satoshi Medium</p>
           </div>
-          <span style="font-family:var(--display);font-weight:500;font-size:13px;color:var(--soft);font-variant-numeric:tabular-nums">26 / 32 · −.008em</span>
+          <span style="font-family:var(--display);font-weight:500;font-size:13px;color:var(--purple-deep);font-variant-numeric:tabular-nums">26 / 32 · −.008em</span>
         </div>
         <div style="padding:14px 0;border-bottom:1px solid var(--hair);display:flex;justify-content:space-between;align-items:baseline">
           <div>
             <span style="font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)">Body</span>
-            <p style="font-family:var(--text);font-size:11px;color:var(--lav);margin-top:4px">Manrope Regular</p>
+            <p style="font-family:var(--text);font-size:11px;color:rgba(42,18,79,.7);margin-top:4px">Manrope Regular</p>
           </div>
-          <span style="font-family:var(--display);font-weight:500;font-size:13px;color:var(--soft);font-variant-numeric:tabular-nums">15 / 26</span>
+          <span style="font-family:var(--display);font-weight:500;font-size:13px;color:var(--purple-deep);font-variant-numeric:tabular-nums">15 / 26</span>
         </div>
         <div style="padding:14px 0;display:flex;justify-content:space-between;align-items:baseline">
           <div>
             <span style="font-family:var(--display);font-weight:500;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)">Caption</span>
-            <p style="font-family:var(--text);font-size:11px;color:var(--lav);margin-top:4px">Manrope Medium</p>
+            <p style="font-family:var(--text);font-size:11px;color:rgba(42,18,79,.7);margin-top:4px">Manrope Medium</p>
           </div>
-          <span style="font-family:var(--display);font-weight:500;font-size:13px;color:var(--soft);font-variant-numeric:tabular-nums">11 / 16 · +.16em</span>
+          <span style="font-family:var(--display);font-weight:500;font-size:13px;color:var(--purple-deep);font-variant-numeric:tabular-nums">11 / 16 · +.16em</span>
         </div>
       </aside>
     </div>
@@ -2859,12 +2859,12 @@ html,body{background:var(--soft);color:var(--plum)}
         <span class="cap mute">Motion direction</span>
         <div class="card" style="min-height:auto">
           <span class="num">Easing &amp; duration</span>
-          <p class="body" style="font-family:'Courier New',monospace;font-size:13px;color:var(--soft)">cubic-bezier(0.22, 1, 0.36, 1)</p>
+          <p class="body" style="font-family:'Courier New',monospace;font-size:13px;color:var(--purple-deep)">cubic-bezier(0.22, 1, 0.36, 1)</p>
           <p class="body">600–900 ms hero. 200–300 ms UI. No abrupt cuts.</p>
         </div>
         <div class="card" style="min-height:auto">
           <span class="num">Camera language</span>
-          <p class="body">Dolly. Slow pan. Subtle parallax. <span style="color:var(--soft)">Never</span> punch-zooms or shakes.</p>
+          <p class="body">Dolly. Slow pan. Subtle parallax. <span style="color:var(--purple-deep)">Never</span> punch-zooms or shakes.</p>
         </div>
         <div class="card" style="min-height:auto">
           <span class="num">Signature gesture</span>
@@ -2980,8 +2980,8 @@ html,body{background:var(--soft);color:var(--plum)}
         <h2 class="h2" style="margin-bottom:22px;line-height:1.05">The objects you<br/>see at the airport.</h2>
         <p class="lead" style="font-size:17px;max-width:460px">A leather-strapped luggage tag travelling alongside the suitcase. A leather-portfolio pickup sign waiting in arrivals. Both wordless from a distance, instantly recognized up close.</p>
         <div class="hair" style="margin:24px 0 16px;width:48px;background:var(--gold)"></div>
-        <p class="body" style="font-size:13px;max-width:460px"><span style="color:var(--soft);font-weight:500">Luggage tag</span> · 60 × 110 mm · Sadine Purple, blind-embossed bird, gold leather strap.</p>
-        <p class="body" style="font-size:13px;max-width:460px;margin-top:8px"><span style="color:var(--soft);font-weight:500">Pickup signage</span> · A3 · held in leather portfolio.</p>
+        <p class="body" style="font-size:13px;max-width:460px"><span style="color:var(--purple-deep);font-weight:500">Luggage tag</span> · 60 × 110 mm · Sadine Purple, blind-embossed bird, gold leather strap.</p>
+        <p class="body" style="font-size:13px;max-width:460px;margin-top:8px"><span style="color:var(--purple-deep);font-weight:500">Pickup signage</span> · A3 · held in leather portfolio.</p>
       </div>
     </div>
 
@@ -3019,9 +3019,9 @@ html,body{background:var(--soft);color:var(--plum)}
       </div>
       <div class="card" style="min-height:auto;padding:22px 28px;justify-content:center;gap:10px">
         <span class="num">Environmental rules</span>
-        <p class="body" style="font-size:13px;line-height:1.55"><strong style="color:var(--soft)">Storefront</strong> — floor-to-ceiling glass, interior in Midnight Plum, single backlit wordmark above the desk, gold accent line at counter height.</p>
-        <p class="body" style="font-size:13px;line-height:1.55"><strong style="color:var(--soft)">Vehicle</strong> — matte Midnight Plum, gloss-on-matte wordmark, gold bird front fender. No URL, no phone — discretion is the point.</p>
-        <p class="body" style="font-size:13px;line-height:1.55"><strong style="color:var(--soft)">Uniform</strong> — Midnight Plum blazer, Soft White shirt, gold lapel pin, embossed leather pocket band in lieu of name tag.</p>
+        <p class="body" style="font-size:13px;line-height:1.55"><strong style="color:var(--purple-deep)">Storefront</strong> — floor-to-ceiling glass, interior in Midnight Plum, single backlit wordmark above the desk, gold accent line at counter height.</p>
+        <p class="body" style="font-size:13px;line-height:1.55"><strong style="color:var(--purple-deep)">Vehicle</strong> — matte Midnight Plum, gloss-on-matte wordmark, gold bird front fender. No URL, no phone — discretion is the point.</p>
+        <p class="body" style="font-size:13px;line-height:1.55"><strong style="color:var(--purple-deep)">Uniform</strong> — Midnight Plum blazer, Soft White shirt, gold lapel pin, embossed leather pocket band in lieu of name tag.</p>
       </div>
     </div>
 
