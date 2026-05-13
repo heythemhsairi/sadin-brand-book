@@ -13,10 +13,11 @@
 
 <style>
 :root{
-  --purple:#4B2E83;
+  --purple:#7B5BCE;        /* PRIMARY — brighter violet (was #4B2E83) */
+  --purple-deep:#4B2E83;   /* the previous primary, now "deep" tier */
   --plum:#2A124F;
   --plum-deep:#1B0A36;
-  --gold:#F5B942;
+  --gold:#7B5BCE;          /* GOLD removed — alias keeps existing selectors working but the colour is now the bright purple */
   --soft:#F8F6FC;
   --lav:#D8C8F3;
   --lav-dim:rgba(216,200,243,.55);
@@ -496,9 +497,9 @@ body[data-lang="fr"] .lang-fr{display:inline}
 .swatch-card .vals{display:flex;flex-direction:column;gap:6px;font-family:var(--display);font-weight:500;font-size:11.5px;letter-spacing:.04em}
 .swatch-card .vals .row{display:flex;justify-content:space-between;border-top:1px solid currentColor;padding-top:8px;opacity:.85}
 .swatch-card .vals .row:first-child{border-top:0;padding-top:0}
-.s-purple{background:linear-gradient(160deg,#5C3AA1 0%, #4B2E83 60%, #3A2266 100%);color:var(--soft)}
+.s-purple{background:linear-gradient(160deg,#9C82DF 0%, #7B5BCE 60%, #5A3FA6 100%);color:var(--soft)}
+.s-purple-deep{background:linear-gradient(160deg,#5C3AA1 0%, #4B2E83 60%, #3A2266 100%);color:var(--soft)}
 .s-plum{background:linear-gradient(160deg, #3A1A6B 0%, #2A124F 60%, #1A0833 100%);color:var(--soft)}
-.s-gold{background:linear-gradient(160deg,#FFD06E 0%, #F5B942 60%, #D89A24 100%);color:#3D2700}
 .s-soft{background:linear-gradient(160deg,#FFFFFF 0%, #F8F6FC 60%, #ECE5F8 100%);color:var(--plum)}
 .s-lav{background:linear-gradient(160deg,#E5D8FA 0%, #D8C8F3 60%, #BFA9E6 100%);color:var(--plum)}
 
@@ -513,7 +514,7 @@ body[data-lang="fr"] .lang-fr{display:inline}
 .grad .vals{font-family:var(--display);font-weight:500;font-size:12px;letter-spacing:.04em;opacity:.85}
 .grad.g1{background:linear-gradient(135deg,#2A124F 0%, #4B2E83 100%);color:var(--soft)}
 .grad.g2{background:linear-gradient(135deg,#4B2E83 0%, #7B5BCE 100%);color:var(--soft)}
-.grad.g3{background:linear-gradient(135deg,#4B2E83 0%, #F5B942 100%);color:var(--soft)}
+.grad.g3{background:linear-gradient(135deg,#D8C8F3 0%, #F8F6FC 100%);color:var(--plum)}
 
 /* Color ratios */
 .ratio-bar{display:flex;height:88px;border-radius:14px;overflow:hidden;border:1px solid var(--hair)}
@@ -522,6 +523,11 @@ body[data-lang="fr"] .lang-fr{display:inline}
 .ratio-bar .s25{flex:25;background:var(--soft);color:var(--plum)}
 .ratio-bar .s10{flex:10;background:var(--lav);color:var(--plum)}
 .ratio-bar .s5{flex:5;background:var(--gold);color:#3D2700}
+/* New white-led ratio bar (replaces 60-purple / 25-white / 10-lav / 5-gold) */
+.ratio-bar .s60-white {flex:60;background:var(--soft);   color:var(--plum)}
+.ratio-bar .s25-purple{flex:25;background:var(--purple); color:var(--soft)}
+.ratio-bar .s10-plum  {flex:10;background:var(--plum);   color:var(--soft)}
+.ratio-bar .s5-lav    {flex:5; background:var(--lav);    color:var(--plum)}
 
 /* Typography */
 .type-stage{flex:1;display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:stretch}
@@ -1362,9 +1368,9 @@ html,body{overflow-x:hidden}
     </symbol>
     <symbol id="sadine-icon" viewBox="0 0 74.83 74.1">
       <g>
-        <path class="cls-1" fill="#F5B942" d="M17.72,73.96c7.04-3.59,13.5-6.7,19.6-11.11,3.64-2.76,6.97-5.67,9.54-9.29,1.42-2.19,1.84-4.53,1.32-6.65-.19-.75-.79-2.71-3.52-4.82-6.95-5.37-27.8-11.89-29.57-12.44C3.75,25.31-1.2,12.32.24,0c8.98,7.71,17.11,12.23,22.74,14.9,12.03,5.7,27.46,9.96,36.61,19.58,1.54,1.62,3.59,4.15,4.53,7.78,1.08,4.15.51,8.67-1.78,12.75-7.47,13.29-29.07,20.22-44.62,18.96Z"/>
-        <path class="cls-1" fill="#F5B942" d="M40.57,43.81c.31.1,3.47,1.14,4.25,4.05.26.98.17,1.86.04,2.46l-19.33-2.5c-7.78-1.01-13.53-6.85-14.28-14.89,9.78,3.63,19.55,7.26,29.33,10.88Z"/>
-        <path class="cls-1" fill="#F5B942" d="M62.61,21.36c-1.54,2.47-2.42,5.24-3.05,8.36-3.89-3.33-7.85-5.76-12.45-7.61,4.85-9.48,13.9-14.34,23.17-9,1.32.76,3.2.87,4.55,2.39-5.09-.11-9.33,1.73-12.22,5.87Z"/>
+        <path class="cls-1" fill="currentColor" d="M17.72,73.96c7.04-3.59,13.5-6.7,19.6-11.11,3.64-2.76,6.97-5.67,9.54-9.29,1.42-2.19,1.84-4.53,1.32-6.65-.19-.75-.79-2.71-3.52-4.82-6.95-5.37-27.8-11.89-29.57-12.44C3.75,25.31-1.2,12.32.24,0c8.98,7.71,17.11,12.23,22.74,14.9,12.03,5.7,27.46,9.96,36.61,19.58,1.54,1.62,3.59,4.15,4.53,7.78,1.08,4.15.51,8.67-1.78,12.75-7.47,13.29-29.07,20.22-44.62,18.96Z"/>
+        <path class="cls-1" fill="currentColor" d="M40.57,43.81c.31.1,3.47,1.14,4.25,4.05.26.98.17,1.86.04,2.46l-19.33-2.5c-7.78-1.01-13.53-6.85-14.28-14.89,9.78,3.63,19.55,7.26,29.33,10.88Z"/>
+        <path class="cls-1" fill="currentColor" d="M62.61,21.36c-1.54,2.47-2.42,5.24-3.05,8.36-3.89-3.33-7.85-5.76-12.45-7.61,4.85-9.48,13.9-14.34,23.17-9,1.32.76,3.2.87,4.55,2.39-5.09-.11-9.33,1.73-12.22,5.87Z"/>
       </g>
     </symbol>
   </defs>
@@ -1376,15 +1382,16 @@ html,body{overflow-x:hidden}
      fill="var(--mark-bird,#F5B942)"). Both inherit reliably through
      the <use> shadow tree in every modern browser, so the mark
      re-colors correctly without overriding presentation attributes. */
-  .mark-default       { color:#F8F6FC; --mark-bird:#F5B942 }
-  .mark-on-light      { color:#4B2E83; --mark-bird:#F5B942 }
+  /* Bird now matches the wordmark colour in every variant — gold removed completely. */
+  .mark-default       { color:#F8F6FC; --mark-bird:#F8F6FC }
+  .mark-on-light      { color:#7B5BCE; --mark-bird:#7B5BCE }
   .mark-mono-white    { color:#F8F6FC; --mark-bird:#F8F6FC }
-  .mark-mono-purple   { color:#4B2E83; --mark-bird:#4B2E83 }
-  .mark-mono-plum     { color:#0A0418; --mark-bird:#0A0418 }
-  .mark-gold-on-purple{ color:#F8F6FC; --mark-bird:#F5B942 }
+  .mark-mono-purple   { color:#7B5BCE; --mark-bird:#7B5BCE }
+  .mark-mono-plum     { color:#2A124F; --mark-bird:#2A124F }
+  .mark-gold-on-purple{ color:#F8F6FC; --mark-bird:#7B5BCE }   /* class kept for back-compat; gold tier is now bright purple */
 
   /* icon variants */
-  .icon-gold .cls-1{fill:#F5B942 !important}
+  .icon-gold .cls-1{fill:var(--purple) !important}   /* "gold" icon variant now renders bright purple */
   .icon-white .cls-1{fill:#F8F6FC !important}
   .icon-purple .cls-1{fill:#4B2E83 !important}
   .icon-plum .cls-1{fill:#2A124F !important}
@@ -2171,49 +2178,50 @@ html,body{overflow-x:hidden}
 
     <div style="margin-top:24px;display:flex;justify-content:space-between;align-items:flex-end">
       <h2 class="h2">Five colors. One mood.</h2>
-      <p class="lead" style="max-width:380px">Purple is the dominant. Gold is the accent — used as punctuation, never as a paragraph.</p>
+      <p class="lead" style="max-width:380px">Soft White leads. Purple carries the accent. Plum holds the depth. No gold, no decoration — just five tones working in service of taste.</p>
     </div>
 
     <div class="palette" style="margin-top:36px">
-      <div class="swatch-card s-purple">
-        <span class="role">Primary</span>
-        <h3 class="name">Sadine Purple</h3>
-        <div class="vals">
-          <div class="row"><span>HEX</span><span>#4B2E83</span></div>
-          <div class="row"><span>RGB</span><span>75 · 46 · 131</span></div>
-          <div class="row"><span>CMYK</span><span>43 · 65 · 0 · 49</span></div>
-          <div class="row"><span>Use</span><span>Backgrounds · Hero</span></div>
-        </div>
-      </div>
-      <div class="swatch-card s-plum">
-        <span class="role">Depth</span>
-        <h3 class="name">Midnight Plum</h3>
-        <div class="vals">
-          <div class="row"><span>HEX</span><span>#2A124F</span></div>
-          <div class="row"><span>RGB</span><span>42 · 18 · 79</span></div>
-          <div class="row"><span>Use</span><span>Gradients · Cinema</span></div>
-        </div>
-      </div>
-      <div class="swatch-card s-gold">
-        <span class="role">Accent</span>
-        <h3 class="name">Sadine Gold</h3>
-        <div class="vals">
-          <div class="row"><span>HEX</span><span>#F5B942</span></div>
-          <div class="row"><span>RGB</span><span>245 · 185 · 66</span></div>
-          <div class="row"><span>Use</span><span>Bird · CTAs · Foil</span></div>
-        </div>
-      </div>
       <div class="swatch-card s-soft">
-        <span class="role">Surface</span>
+        <span class="role">Primary · 01</span>
         <h3 class="name">Soft White</h3>
         <div class="vals">
           <div class="row"><span>HEX</span><span>#F8F6FC</span></div>
           <div class="row"><span>RGB</span><span>248 · 246 · 252</span></div>
-          <div class="row"><span>Use</span><span>Type · Light surfaces</span></div>
+          <div class="row"><span>CMYK</span><span>2 · 2 · 0 · 1</span></div>
+          <div class="row"><span>Use</span><span>Surfaces · Typography</span></div>
+        </div>
+      </div>
+      <div class="swatch-card s-purple">
+        <span class="role">Accent · 02</span>
+        <h3 class="name">Sadine Purple</h3>
+        <div class="vals">
+          <div class="row"><span>HEX</span><span>#7B5BCE</span></div>
+          <div class="row"><span>RGB</span><span>123 · 91 · 206</span></div>
+          <div class="row"><span>CMYK</span><span>40 · 56 · 0 · 19</span></div>
+          <div class="row"><span>Use</span><span>Brand · CTAs · Bird</span></div>
+        </div>
+      </div>
+      <div class="swatch-card s-purple-deep">
+        <span class="role">Depth · 03</span>
+        <h3 class="name">Deep Purple</h3>
+        <div class="vals">
+          <div class="row"><span>HEX</span><span>#4B2E83</span></div>
+          <div class="row"><span>RGB</span><span>75 · 46 · 131</span></div>
+          <div class="row"><span>Use</span><span>Gradients · Headlines</span></div>
+        </div>
+      </div>
+      <div class="swatch-card s-plum">
+        <span class="role">Cinema · 04</span>
+        <h3 class="name">Midnight Plum</h3>
+        <div class="vals">
+          <div class="row"><span>HEX</span><span>#2A124F</span></div>
+          <div class="row"><span>RGB</span><span>42 · 18 · 79</span></div>
+          <div class="row"><span>Use</span><span>Hero · Editorial</span></div>
         </div>
       </div>
       <div class="swatch-card s-lav">
-        <span class="role">Tint</span>
+        <span class="role">Tint · 05</span>
         <h3 class="name">Light Lavender</h3>
         <div class="vals">
           <div class="row"><span>HEX</span><span>#D8C8F3</span></div>
@@ -2237,7 +2245,7 @@ html,body{overflow-x:hidden}
 
     <div style="margin-top:32px;display:flex;justify-content:space-between;align-items:flex-end;gap:48px">
       <h2 class="h1">Three gradients.<br/>Three jobs.</h2>
-      <p class="lead" style="max-width:420px">Depth lives behind hero photography. Glow gives motion to digital surfaces. Luxury is reserved for invitations, mailers, and milestone moments — never daily UI.</p>
+      <p class="lead" style="max-width:420px">Depth lives behind hero photography. Glow gives motion to digital surfaces. Mist softens light surfaces and ambient cards.</p>
     </div>
 
     <div class="gradients" style="grid-template-columns:1fr 1fr 1fr;margin-top:48px;flex:1">
@@ -2263,12 +2271,12 @@ html,body{overflow-x:hidden}
       </div>
       <div class="grad g3" style="min-height:auto;padding:40px">
         <div>
-          <span class="role">Luxury · 03 / 03</span>
-          <h3 class="name" style="margin-top:6px;font-size:32px">Luxury</h3>
+          <span class="role">Mist · 03 / 03</span>
+          <h3 class="name" style="margin-top:6px;font-size:32px;color:var(--plum)">Mist</h3>
         </div>
         <div>
-          <p class="role" style="margin-bottom:8px;opacity:.85">Invites · Mailers · Milestones</p>
-          <div class="vals" style="font-size:13px">#4B2E83 → #F5B942</div>
+          <p class="role" style="margin-bottom:8px;opacity:.85;color:var(--plum)">Light surfaces · Cards · Ambient</p>
+          <div class="vals" style="font-size:13px;color:var(--plum)">#D8C8F3 → #F8F6FC</div>
         </div>
       </div>
     </div>
@@ -2287,33 +2295,33 @@ html,body{overflow-x:hidden}
 
     <div style="margin-top:32px;display:flex;justify-content:space-between;align-items:flex-end;gap:48px">
       <h2 class="h1">Sixty-twenty-five<br/>ten-five.</h2>
-      <p class="lead" style="max-width:380px">Purple dominates. White breathes. Lavender softens. Gold punctuates. Keep this proportion in every layout, every campaign, every storefront.</p>
+      <p class="lead" style="max-width:380px">Soft White breathes through every layout. Purple carries the brand. Plum sets the depth. Lavender softens. No gold — the proportion never changes.</p>
     </div>
 
     <div style="margin-top:48px;flex:1;display:flex;flex-direction:column;gap:32px">
       <div class="ratio-bar" style="height:120px">
-        <div class="seg s60" style="font-size:13px;letter-spacing:.2em;padding:24px">60% · Purple / Plum</div>
-        <div class="seg s25" style="font-size:13px;letter-spacing:.2em;padding:24px">25% · Soft White</div>
-        <div class="seg s10" style="font-size:13px;letter-spacing:.2em;padding:24px">10% · Lavender</div>
-        <div class="seg s5" style="font-size:11px;letter-spacing:.16em;padding:24px 14px">5% · Gold</div>
+        <div class="seg s60-white"  style="font-size:13px;letter-spacing:.2em;padding:24px">60% · Soft White</div>
+        <div class="seg s25-purple" style="font-size:13px;letter-spacing:.2em;padding:24px">25% · Sadine Purple</div>
+        <div class="seg s10-plum"   style="font-size:13px;letter-spacing:.2em;padding:24px">10% · Plum</div>
+        <div class="seg s5-lav"     style="font-size:11px;letter-spacing:.16em;padding:24px 14px">5% · Lavender</div>
       </div>
 
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px">
         <div class="card" style="min-height:auto;padding:28px">
-          <span class="num">60% · Purple</span>
-          <p class="body" style="font-size:13.5px">Backgrounds, hero surfaces, product chrome. The brand's center of gravity.</p>
+          <span class="num">60% · Soft White</span>
+          <p class="body" style="font-size:13.5px">The primary surface. Pages, cards, body type, breathing space. The room the brand lives in.</p>
         </div>
         <div class="card" style="min-height:auto;padding:28px">
-          <span class="num">25% · Soft White</span>
-          <p class="body" style="font-size:13.5px">Typography, breathing space, light surfaces. The room the brand stands in.</p>
+          <span class="num">25% · Sadine Purple</span>
+          <p class="body" style="font-size:13.5px">The brand accent. Headlines, the bird, CTAs, hairlines — every place attention should land.</p>
         </div>
         <div class="card" style="min-height:auto;padding:28px">
-          <span class="num">10% · Lavender</span>
-          <p class="body" style="font-size:13.5px">Cards, secondary surfaces, soft tints. Lifts dark slabs without breaking them.</p>
+          <span class="num">10% · Midnight Plum</span>
+          <p class="body" style="font-size:13.5px">Hero photography, cinematic surfaces, deep backgrounds. The brand's quiet weight.</p>
         </div>
-        <div class="card" style="min-height:auto;padding:28px;border-color:rgba(245,185,66,.4)">
-          <span class="num" style="color:var(--gold)">5% · Gold</span>
-          <p class="body" style="font-size:13.5px"><span style="color:var(--soft)">A punctuation mark, not a paragraph.</span> If two pieces of gold appear in one layout, remove one.</p>
+        <div class="card" style="min-height:auto;padding:28px">
+          <span class="num">5% · Lavender</span>
+          <p class="body" style="font-size:13.5px"><span style="color:var(--soft)">Soft tint, not a colour block.</span> Cards, sub-surfaces, dividers — never a paragraph of its own.</p>
         </div>
       </div>
     </div>
@@ -2434,10 +2442,10 @@ html,body{overflow-x:hidden}
       <span class="cap mute" style="letter-spacing:.42em">Mostafa El Abasiry · Self-hosted · Open license</span>
     </div>
 
-    <!-- Hero stage: centered massive سادين word -->
+    <!-- Hero stage: centered massive سدين word -->
     <div class="ar-stage">
       <span class="ar-stage-eyebrow"><span class="dash"></span>The brand's Arabic voice<span class="dash"></span></span>
-      <h1 class="ar-word">سادين</h1>
+      <h1 class="ar-word">سدين</h1>
       <p class="ar-latin">Sadine</p>
     </div>
 
