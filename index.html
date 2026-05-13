@@ -1564,6 +1564,25 @@ html,body{background:var(--soft);color:var(--plum)}
 
 /* Browser mockup (Digital slide) — keep the chrome dark-themed for realism */
 /* Phone PNG already transparent — its shadows still look fine on light */
+
+/* ─────────── Dark-card text override ───────────
+   Swatch cards (s-purple / s-purple-deep / s-plum) and gradient cards
+   (.grad.g1 / .grad.g2) have intentionally dark backgrounds — the
+   global plum-text flip would make their headings and metadata
+   invisible. Force every text child back to Soft White on those
+   specific surfaces. */
+.slide:not(.cover) .swatch-card.s-purple,
+.slide:not(.cover) .swatch-card.s-purple-deep,
+.slide:not(.cover) .swatch-card.s-plum,
+.slide:not(.cover) .swatch-card.s-purple *,
+.slide:not(.cover) .swatch-card.s-purple-deep *,
+.slide:not(.cover) .swatch-card.s-plum *,
+.slide:not(.cover) .grad.g1,
+.slide:not(.cover) .grad.g2,
+.slide:not(.cover) .grad.g1 *,
+.slide:not(.cover) .grad.g2 *{
+  color:var(--soft) !important;
+}
 </style>
 </head>
 <body>
