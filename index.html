@@ -1336,6 +1336,234 @@ html,body{overflow-x:hidden}
     .slide{transform:none !important;margin-bottom:0 !important}
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   LIGHT IDENTITY INVERSION — every slide except the cover becomes
+   white-led. The brand is now Soft White as primary, Sadine Purple
+   as accent, with dark plum text. This block lives at the end of
+   the stylesheet so it overrides all earlier definitions.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+html,body{background:var(--soft);color:var(--plum)}
+
+/* Update the global --hair / --hair-strong to dark-on-light */
+:root{
+  --hair:rgba(42,18,79,.14);
+  --hair-strong:rgba(42,18,79,.22);
+}
+
+/* Slide bg — flip every slide except .cover (which has the photo) */
+.slide:not(.cover),
+.slide.dark:not(.cover){
+  background:
+    radial-gradient(70% 60% at 90% 0%, rgba(216,200,243,.55) 0%, rgba(216,200,243,0) 60%),
+    radial-gradient(60% 50% at 10% 100%, rgba(123,91,206,.10) 0%, rgba(123,91,206,0) 60%),
+    linear-gradient(180deg, var(--soft) 0%, #ECE5F8 100%) !important;
+  color:var(--plum) !important;
+}
+
+/* Default text and chrome */
+.slide:not(.cover) .topbar .cap.mute,
+.slide:not(.cover) .botbar .pg{color:rgba(42,18,79,.55) !important}
+.slide:not(.cover) .botbar{border-top-color:rgba(42,18,79,.18) !important}
+.slide:not(.cover) .topbar .id .dot{background:var(--purple)}
+.slide:not(.cover) .hair{background:rgba(42,18,79,.18) !important}
+
+/* Common type classes */
+.slide:not(.cover) .h1,
+.slide:not(.cover) .h2,
+.slide:not(.cover) .h3,
+.slide:not(.cover) .h4,
+.slide:not(.cover) .white{color:var(--plum) !important}
+.slide:not(.cover) .lead{color:rgba(42,18,79,.7) !important}
+.slide:not(.cover) .body{color:rgba(42,18,79,.7) !important}
+.slide:not(.cover) .cap.mute{color:rgba(42,18,79,.55) !important}
+.slide:not(.cover) .cap.gold{color:var(--purple) !important}
+.slide:not(.cover) .gold{color:var(--purple) !important}
+
+/* Cards */
+.slide:not(.cover) .card{
+  background:rgba(123,91,206,.06) !important;
+  border-color:rgba(42,18,79,.12) !important;
+  color:var(--plum) !important;
+  backdrop-filter:none;
+}
+.slide:not(.cover) .card .num{color:var(--purple) !important}
+.slide:not(.cover) .card.dark{background:rgba(42,18,79,.06) !important}
+.slide:not(.cover) .card.lav{background:rgba(123,91,206,.10) !important;color:var(--plum) !important}
+
+/* Six grid (Values) */
+.slide:not(.cover) .six .v{
+  background:rgba(123,91,206,.05) !important;
+  border-color:rgba(42,18,79,.10) !important;
+  color:var(--plum) !important;
+}
+.slide:not(.cover) .six .v .n{color:var(--purple) !important}
+.slide:not(.cover) .six .v .t{color:var(--plum) !important}
+.slide:not(.cover) .six .v .body{color:rgba(42,18,79,.7) !important}
+
+/* TOC */
+.slide:not(.cover) .toc-row{border-bottom-color:rgba(42,18,79,.12) !important}
+.slide:not(.cover) .toc-row .num,
+.slide:not(.cover) .toc-row .pg{color:rgba(42,18,79,.55) !important}
+.slide:not(.cover) .toc-row .name{color:var(--plum) !important}
+.slide:not(.cover) .toc-section-head{color:var(--purple) !important;border-bottom-color:rgba(123,91,206,.35) !important}
+.slide:not(.cover) .toc-row:hover{background:rgba(123,91,206,.08) !important;border-color:rgba(123,91,206,.32) !important}
+.slide:not(.cover) .toc-row:hover .name,
+.slide:not(.cover) .toc-row:hover .pg{color:var(--purple) !important}
+
+/* Tone-of-voice list (We are / We are not) */
+.slide:not(.cover) .tone-list li{border-bottom-color:rgba(42,18,79,.14) !important}
+.slide:not(.cover) .tone-list .y li{color:var(--plum) !important}
+.slide:not(.cover) .tone-list .n li{color:rgba(42,18,79,.35) !important;text-decoration-color:rgba(42,18,79,.2)}
+.slide:not(.cover) .tone-list .col h5{color:rgba(42,18,79,.55) !important}
+
+/* Sample blocks */
+.slide:not(.cover) .sample{
+  background:rgba(123,91,206,.06) !important;
+  color:var(--plum) !important;
+  border-left-color:var(--purple) !important;
+}
+.slide:not(.cover) .sample .lab{color:var(--purple) !important}
+
+/* Differentiation table */
+.slide:not(.cover) .diff-table-card{background:rgba(123,91,206,.05) !important}
+.slide:not(.cover) .diff-row{border-top-color:rgba(42,18,79,.12) !important}
+.slide:not(.cover) .diff-row:first-child{background:rgba(123,91,206,.12) !important}
+.slide:not(.cover) .diff-row .cell{color:var(--plum) !important}
+.slide:not(.cover) .diff-row.head .cell{color:rgba(42,18,79,.65) !important}
+.slide:not(.cover) .diff-row.head .cell.gold{color:var(--purple) !important}
+.slide:not(.cover) .diff-row .cell.dim{color:rgba(42,18,79,.55) !important}
+.slide:not(.cover) .diff-row .cell.gold{color:var(--purple) !important}
+
+/* Anatomy specimen */
+.slide:not(.cover) .anat-letter{border-right-color:rgba(42,18,79,.18) !important}
+.slide:not(.cover) .anat-glyph{color:var(--plum) !important;text-shadow:0 0 40px rgba(123,91,206,.18)}
+.slide:not(.cover) .anat-guide{background:linear-gradient(90deg, transparent 0%, rgba(123,91,206,.4) 12%, rgba(123,91,206,.4) 88%, transparent 100%) !important}
+.slide:not(.cover) .anat-guide::after{color:var(--purple) !important}
+.slide:not(.cover) .anat-callout{
+  background:rgba(248,246,252,.92) !important;
+  border-color:rgba(123,91,206,.45) !important;
+  color:var(--purple) !important;
+}
+.slide:not(.cover) .anat-callout::before{background:rgba(123,91,206,.55) !important}
+.slide:not(.cover) .anat-weights{border-color:rgba(42,18,79,.14) !important}
+.slide:not(.cover) .aw .wspec{color:var(--plum) !important}
+.slide:not(.cover) .aw .wlab{color:rgba(42,18,79,.55) !important}
+.slide:not(.cover) .aw .wnum{color:rgba(42,18,79,.4) !important}
+.slide:not(.cover) .anat-footnotes span,
+.slide:not(.cover) .anat-footnotes strong{color:var(--plum) !important}
+
+/* Magazine spread (Manrope) — already light; preserve */
+.slide:not(.cover) .mag-h1{color:var(--plum) !important}
+.slide:not(.cover) .mag-mast strong{color:var(--purple) !important}
+
+/* Arabic page */
+.slide:not(.cover) .ar-strip{border-bottom-color:rgba(42,18,79,.18) !important}
+.slide:not(.cover) .ar-stage-eyebrow{color:var(--purple) !important}
+.slide:not(.cover) .ar-stage-eyebrow .dash{background:var(--purple) !important}
+.slide:not(.cover) .ar-word{color:var(--plum) !important;text-shadow:0 0 60px rgba(123,91,206,.2)}
+.slide:not(.cover) .ar-latin{color:rgba(42,18,79,.55) !important}
+.slide:not(.cover) .ar-foot{border-top-color:rgba(42,18,79,.18) !important}
+.slide:not(.cover) .ar-wspec{color:var(--plum) !important}
+.slide:not(.cover) .ar-wmeta strong{color:rgba(42,18,79,.65) !important}
+.slide:not(.cover) .ar-wmeta span{color:rgba(42,18,79,.4) !important}
+.slide:not(.cover) .ar-rule{border-left-color:rgba(42,18,79,.18) !important}
+.slide:not(.cover) .ar-rule p{color:var(--plum) !important}
+.slide:not(.cover) .ar-rule p strong{color:var(--purple) !important}
+
+/* Type hierarchy demo */
+.slide:not(.cover) .hier-h1,
+.slide:not(.cover) .hier-h2,
+.slide:not(.cover) .hier-h3{color:var(--plum) !important}
+.slide:not(.cover) .hier-eyebrow{color:var(--purple) !important}
+.slide:not(.cover) .hier-body,
+.slide:not(.cover) .hier-cap{color:rgba(42,18,79,.7) !important}
+.slide:not(.cover) .hier .stack .row{border-bottom-color:rgba(42,18,79,.14) !important}
+.slide:not(.cover) .hier .stack .row .lab{color:rgba(42,18,79,.55) !important}
+
+/* Icon grid */
+.slide:not(.cover) .icon-grid .ic{
+  background:rgba(123,91,206,.05) !important;
+  border-color:rgba(42,18,79,.12) !important;
+}
+.slide:not(.cover) .icon-grid .ic svg{stroke:var(--purple)}
+
+/* Glyph cells */
+.slide:not(.cover) .glyph{
+  background:rgba(123,91,206,.05) !important;
+  border-color:rgba(42,18,79,.12) !important;
+  color:var(--plum) !important;
+}
+
+/* Section heads (eyebrow + headline pairs) */
+.slide:not(.cover) .section-head{}
+.slide:not(.cover) .eyebrow{color:rgba(42,18,79,.55) !important}
+
+/* Min-item (clear-space spec cells) */
+.slide:not(.cover) .min-item{
+  background:rgba(123,91,206,.05) !important;
+  border-color:rgba(42,18,79,.12) !important;
+}
+.slide:not(.cover) .min-item .swatch{background:rgba(123,91,206,.1) !important}
+.slide:not(.cover) .min-item .meta h6{color:rgba(42,18,79,.55) !important}
+.slide:not(.cover) .min-item .meta p{color:var(--plum) !important}
+.slide:not(.cover) .clear .stage{
+  background:rgba(123,91,206,.04) !important;
+  border-color:rgba(42,18,79,.12) !important;
+}
+
+/* Manifesto + Positioning + Audience callouts */
+.slide:not(.cover) .manifesto-quote{color:var(--plum) !important}
+.slide:not(.cover) .manifesto-quote .gold{color:var(--purple) !important}
+
+/* Misuse panels — keep dark for legibility of "wrong" demos but tint to subtle */
+.slide:not(.cover) .misuse .m{
+  background:rgba(42,18,79,.08) !important;
+  border-color:rgba(42,18,79,.18) !important;
+}
+
+/* Logo grid tiles — keep tile.purple / tile.dark / tile.light untouched
+   since they're literal showcases of the mark on different surfaces */
+.slide:not(.cover) .logo-grid .tile.dark .l{color:rgba(248,246,252,.5)}
+
+/* Mood photography — labels stay light on photos */
+/* Stories tiles — full-bleed photos, no inversion needed */
+
+/* Environmental panels — keep photo backgrounds */
+/* Uniform card */
+.slide:not(.cover) .uniform-card{
+  background:linear-gradient(160deg,#F8F6FC 0%, #ECE5F8 100%) !important;
+  border-color:rgba(42,18,79,.12) !important;
+}
+.slide:not(.cover) .uniform-card .lab{color:var(--purple) !important}
+
+/* Footer "Sadine Tours · …" botbar text */
+.slide:not(.cover) .botbar .pg:first-child{color:rgba(42,18,79,.6) !important}
+
+/* Reveal sweep — switch to dark-on-light blend */
+.slide:not(.cover).in-view::before{
+  mix-blend-mode:multiply !important;
+  background:linear-gradient(90deg, transparent 0%, rgba(123,91,206,.10) 35%, rgba(123,91,206,.15) 50%, rgba(123,91,206,.10) 65%, transparent 100%) !important;
+}
+
+/* Logo Primary slide — flip the mark to mark-on-light variant via CSS */
+.slide:not(.cover) .logo-stage .wm{color:var(--purple)}
+.slide:not(.cover) .logo-stage .wm .cls-2,
+.slide:not(.cover) .logo-stage .wm path[fill="currentColor"]{fill:currentColor !important}
+
+/* Logo-meta footnote text */
+.slide:not(.cover) .logo-meta{border-top-color:rgba(42,18,79,.18) !important}
+.slide:not(.cover) .logo-meta .m h6{color:rgba(42,18,79,.55) !important}
+.slide:not(.cover) .logo-meta .m p{color:var(--plum) !important}
+
+/* Type-stage (Satoshi/Manrope/Arabic) right column metadata */
+.slide:not(.cover) .type-stage .weights .w{border-bottom-color:rgba(42,18,79,.14) !important;color:var(--plum) !important}
+.slide:not(.cover) .type-stage .weights .w small{color:rgba(42,18,79,.55) !important}
+.slide:not(.cover) .specimen{color:var(--plum)}
+
+/* Browser mockup (Digital slide) — keep the chrome dark-themed for realism */
+/* Phone PNG already transparent — its shadows still look fine on light */
 </style>
 </head>
 <body>
@@ -1965,7 +2193,7 @@ html,body{overflow-x:hidden}
 
     <div class="logo-stage">
       <div class="glow-l"></div>
-      <svg class="wm mark-default" viewBox="0 0 1180.44 377.17"><use href="#sadine-mark"/></svg>
+      <svg class="wm mark-on-light" viewBox="0 0 1180.44 377.17"><use href="#sadine-mark"/></svg>
     </div>
 
     <div class="logo-meta">
@@ -2847,16 +3075,16 @@ html,body{overflow-x:hidden}
     <div class="closing">
       <div class="glow-c"></div>
       <span class="sig">Welcome to</span>
-      <svg class="wm mark-default" viewBox="0 0 1180.44 377.17"><use href="#sadine-mark"/></svg>
-      <p class="lead" style="max-width:780px;text-align:center;font-size:18px;color:var(--soft);margin-top:8px">
+      <svg class="wm mark-on-light" viewBox="0 0 1180.44 377.17"><use href="#sadine-mark"/></svg>
+      <p class="lead" style="max-width:780px;text-align:center;font-size:18px;color:var(--plum);margin-top:8px">
         A new piece of work is on-brand if all five answers are yes:
       </p>
       <ol style="list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:18px;max-width:1180px;width:100%;margin-top:8px;position:relative;z-index:2">
-        <li class="card" style="min-height:auto;padding:18px"><span class="num">01</span><span class="body" style="color:var(--soft);font-size:13px">Could this exist on the homepage of a luxury airline?</span></li>
-        <li class="card" style="min-height:auto;padding:18px"><span class="num">02</span><span class="body" style="color:var(--soft);font-size:13px">Is the gold doing one job and only one?</span></li>
-        <li class="card" style="min-height:auto;padding:18px"><span class="num">03</span><span class="body" style="color:var(--soft);font-size:13px">Could a competitor make this exact piece tomorrow?</span></li>
-        <li class="card" style="min-height:auto;padding:18px"><span class="num">04</span><span class="body" style="color:var(--soft);font-size:13px">Does the calm survive when the volume goes up?</span></li>
-        <li class="card" style="min-height:auto;padding:18px"><span class="num">05</span><span class="body" style="color:var(--soft);font-size:13px">Would the Quiet Professional show this to a friend?</span></li>
+        <li class="card" style="min-height:auto;padding:18px"><span class="num">01</span><span class="body" style="font-size:13px">Could this exist on the homepage of a luxury airline?</span></li>
+        <li class="card" style="min-height:auto;padding:18px"><span class="num">02</span><span class="body" style="font-size:13px">Is the purple doing one job and only one?</span></li>
+        <li class="card" style="min-height:auto;padding:18px"><span class="num">03</span><span class="body" style="font-size:13px">Could a competitor make this exact piece tomorrow?</span></li>
+        <li class="card" style="min-height:auto;padding:18px"><span class="num">04</span><span class="body" style="font-size:13px">Does the calm survive when the volume goes up?</span></li>
+        <li class="card" style="min-height:auto;padding:18px"><span class="num">05</span><span class="body" style="font-size:13px">Would the Quiet Professional show this to a friend?</span></li>
       </ol>
     </div>
 
