@@ -1528,6 +1528,42 @@ html,body{background:var(--soft);color:var(--plum)}
   background:linear-gradient(135deg,#ff6b6b 0%,#4ecdc4 50%,#ffd93d 100%) !important;
 }
 
+/* ─────────── Cover — soft white text + extra translucent white wash ───────────
+   The .cover-hero slide keeps its photo overlay; force every text
+   element back to Soft White (the global plum-text flip caught these
+   too) and layer a diagonal translucent-white sheen over the photo
+   for editorial softness. */
+.slide.cover .topbar .cap,
+.slide.cover .botbar .pg,
+.slide.cover .botbar .cap,
+.slide.cover .cover-eyebrow,
+.slide.cover .cover-h,
+.slide.cover .cover-sub,
+.slide.cover .credits .c .cap,
+.slide.cover .credits .c .kbd,
+.slide.cover .stamp{
+  color:var(--soft) !important;
+}
+.slide.cover .cover-eyebrow{color:rgba(248,246,252,.82) !important}
+.slide.cover .cover-sub{color:rgba(248,246,252,.78) !important}
+.slide.cover .credits .c .cap{color:rgba(248,246,252,.65) !important}
+.slide.cover .botbar .pg,
+.slide.cover .topbar .cap{color:rgba(248,246,252,.85) !important}
+
+/* Translucent white wash — sits between the photo and the dark
+   gradient overlay so the whole cover feels lifted and editorial. */
+.slide.cover .cover-overlay{
+  background:
+    /* Diagonal white sheen — soft, premium, never opaque */
+    linear-gradient(140deg, rgba(255,255,255,.18) 0%, rgba(255,255,255,.05) 35%, rgba(255,255,255,0) 65%),
+    /* Soft brand-purple wash across the whole photo */
+    linear-gradient(180deg, rgba(123,91,206,.16) 0%, rgba(75,46,131,.20) 60%, rgba(27,10,54,.30) 100%),
+    /* Top haze + lower fade for chrome legibility */
+    linear-gradient(180deg, rgba(15,5,33,.40) 0%, rgba(15,5,33,0) 22%, rgba(15,5,33,0) 50%, rgba(42,18,79,.28) 65%, rgba(15,5,33,.82) 100%),
+    /* Subtle radial vignette pulls focus to middle */
+    radial-gradient(130% 90% at 50% 45%, rgba(15,5,33,0) 35%, rgba(15,5,33,.32) 100%) !important;
+}
+
 /* Logo grid tiles — keep tile.purple / tile.dark / tile.light untouched
    since they're literal showcases of the mark on different surfaces */
 .slide:not(.cover) .logo-grid .tile.dark .l{color:rgba(42,18,79,.5)}
